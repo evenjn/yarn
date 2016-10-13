@@ -18,7 +18,7 @@
 package org.github.evenjn.yarn;
 
 @FunctionalInterface
-public interface CursableMaph<I, O> {
+public interface CursableMapH<I, O> {
 
 	Cursable<O> get( Hook h, I input );
 }

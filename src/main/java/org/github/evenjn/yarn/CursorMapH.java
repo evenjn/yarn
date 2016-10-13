@@ -18,7 +18,7 @@
 package org.github.evenjn.yarn;
 
 @FunctionalInterface
-public interface CursorMaph<I, O> {
+public interface CursorMapH<I, O> {
 
 	Cursor<O> get( Hook h, I input );
 }
