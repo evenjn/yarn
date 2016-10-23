@@ -21,7 +21,7 @@ import java.util.function.Function;
 
 import org.github.evenjn.yarn.Tuple;
 
-/*
+/**
  * A Maple is a function from tuples to tuples.
  */
 public interface Maple<I, O>
