@@ -17,8 +17,11 @@
  */
 package org.github.evenjn.yarn;
 
-@FunctionalInterface
-public interface IterableMaph<I, O> {
+import java.util.Iterator;
 
-	Iterable<O> get( Hook hook, I input );
+@FunctionalInterface
+public interface IteratorMapH<I, O> {
+
+	Iterator<O> get( Hook hook, I input );
+
 }
