@@ -17,11 +17,9 @@
  */
 package org.github.evenjn.yarn;
 
-/**
- * Similar to an iterable, except that returns itterators instead of iterators.
- */
-@FunctionalInterface
-public interface Itterable<I> {
+public interface Di<F, B> {
 
-	Itterator<I> pull( );
+	F front( );
+
+	B back( );
 }

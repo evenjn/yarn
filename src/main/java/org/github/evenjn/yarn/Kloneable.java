@@ -17,22 +17,16 @@
  */
 package org.github.evenjn.yarn;
 
-/*
- * Bi objects are not invariant, and we recommend to use them as a carrier.
- */
-public final class Bi<A, B> {
+public interface Kloneable {
 
-	public static <A, B> Bi<A, B> nu( A first, B second ) {
-		return new Bi<A, B>( ).set( first, second );
-	}
-	
-	public A first;
-
-	public B second;
-	
-	public Bi<A, B> set(A first, B second) {
-		this.first = first;
-		this.second = second;
-		return this;
-	}
+	/**
+	 * Returns a copy of the argument object.
+	 * 
+	 * When the argument is not the same object as THIS, behaviour is not defined.
+	 * 
+	 * @param kloneable
+	 *          the object to copy
+	 * @return a copy of the argument
+	 */
+	<K extends Kloneable> K klone( K kloneable );
 }
