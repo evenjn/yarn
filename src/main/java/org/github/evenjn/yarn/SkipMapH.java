@@ -17,7 +17,6 @@
  */
 package org.github.evenjn.yarn;
 
-
 @FunctionalInterface
 public interface SkipMapH<I, O> {
 
