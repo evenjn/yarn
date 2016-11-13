@@ -18,8 +18,7 @@
 package org.github.evenjn.yarn;
 
 /**
- * An auto-hook represents a system that takes the responsability to close any
- * autocloseable objects it receives, and that can closed itself.
+ * An auto-hook is an autocloseable hook.
  * 
  */
 public interface AutoHook extends

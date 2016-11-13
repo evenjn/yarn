@@ -17,15 +17,12 @@
  */
 package org.github.evenjn.yarn;
 
-public interface Progress extends ProgressSpawner {
+public interface Progress extends
+		ProgressSpawner {
 
 	void step( int distance );
 
 	Progress target( int target );
 
 	Progress info( String info );
-
-	RuntimeException quit( Throwable t );
-	
-	void log( Throwable t );
 }
