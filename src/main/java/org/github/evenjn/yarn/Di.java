@@ -17,7 +17,9 @@
  */
 package org.github.evenjn.yarn;
 
-public interface Di<F, B> {
+import java.io.Serializable;
+
+public interface Di<F extends Serializable, B extends Serializable> extends Serializable {
 
 	F front( );
 
