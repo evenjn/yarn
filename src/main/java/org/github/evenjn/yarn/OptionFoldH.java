@@ -1,6 +1,6 @@
 /**
  *
- * Copyright 2016 Marco Trevisan
+ * Copyright 2017 Marco Trevisan
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,8 +19,9 @@ package org.github.evenjn.yarn;
 
 import java.util.Optional;
 
-@FunctionalInterface
-public interface OptionalMapH<I, O> {
+public interface OptionFoldH<I, O> {
 
-	Optional<O> get( Hook hook, I object );
+	Optional<O> next( Hook hook, I input );
+
+	Optional<O> end( Hook hook );
 }

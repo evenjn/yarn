@@ -1,6 +1,6 @@
 /**
  *
- * Copyright 2016 Marco Trevisan
+ * Copyright 2017 Marco Trevisan
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,16 +17,8 @@
  */
 package org.github.evenjn.yarn;
 
-public interface Kloneable {
+@FunctionalInterface
+public interface OptionFoldFactory<I, O> {
 
-	/**
-	 * Returns a copy of the argument object.
-	 * 
-	 * When the argument is not the same object as THIS, behaviour is not defined.
-	 * 
-	 * @param kloneable
-	 *          the object to copy
-	 * @return a copy of the argument
-	 */
-	<K extends Kloneable> K klone( K kloneable );
+	OptionFold<I, O> create( );
 }
