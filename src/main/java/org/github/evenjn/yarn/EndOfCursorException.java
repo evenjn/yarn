@@ -18,16 +18,20 @@
 package org.github.evenjn.yarn;
 
 /**
- * Signals an attempt to read past the end of a sequence.
+ * Signals an attempt to read past the end of a cursor.
  */
-public final class PastTheEndException
+public final class EndOfCursorException
 		extends Exception {
 
 	private static final long serialVersionUID = -4059996515894331359L;
 
-	private PastTheEndException() {
+	private EndOfCursorException() {
 	}
 
-	public static final PastTheEndException neo =
-			new PastTheEndException( );
+	private static final EndOfCursorException neo =
+			new EndOfCursorException( );
+
+	public static final EndOfCursorException neo( ) {
+		return neo;
+	}
 }

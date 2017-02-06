@@ -17,12 +17,13 @@
  */
 package org.github.evenjn.yarn;
 
-/**
- * Similar to an iterator, except that after each invocation of next, the
- * references returned at previous invocations may or may not be valid.
- */
-public interface Cursor<T> {
+@Deprecated
+public interface Progress extends
+		ProgressSpawner {
 
-	T next( )
-			throws EndOfCursorException;
+	void step( int distance );
+
+	Progress target( int target );
+
+	Progress info( String info );
 }

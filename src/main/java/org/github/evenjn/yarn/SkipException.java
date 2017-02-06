@@ -18,7 +18,34 @@
 package org.github.evenjn.yarn;
 
 /**
- * Signals that the map does not assign any output to the given input.
+ * {@link org.github.evenjn.yarn.SkipMap SkipMap} and
+ * {@link org.github.evenjn.yarn.SkipFold SkipFold} use {@code SkipException} to
+ * signal that no output is associated to the given input.
+ * 
+ * <h2>⚠ Warning</h2>
+ * <p>
+ * Code that relies on exceptions to implement anything other than aborting and
+ * logging is error-prone. This is the case even with so-called <em>checked
+ * exceptions</em>. Specifically, adding an invocation that throws a checked
+ * exception into a block that already deals with that exception gives no
+ * warning to the developer, and the fact that the invocation throws a checked
+ * exception may go unnoticed. If so, this introduces a hidden control flow path
+ * which may have unintended consequences.
+ * </p>
+ * 
+ * <p>
+ * Code that deals with exceptions, either by floating them or by catching them,
+ * always requires a careful inspection of all signatures of invoked methods to
+ * make sure no hidden control flow paths exist. For this reason, exceptions are
+ * best avoided if possible.
+ * </p>
+ * 
+ * <p>
+ * In particular, we recommend against using {@code SkipException} for purposes
+ * other than its intended one. This means we recommend not to declare functions
+ * that throw {@code SkipException} except functions that implement interface
+ * methods.
+ * </p>
  */
 public final class SkipException
 		extends Exception {
@@ -28,5 +55,8 @@ public final class SkipException
 	private SkipException() {
 	}
 
+	/**
+	 * Singleton instance.
+	 */
 	public static final SkipException neo = new SkipException( );
 }

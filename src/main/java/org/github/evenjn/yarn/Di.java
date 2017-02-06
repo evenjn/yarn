@@ -17,7 +17,7 @@
  */
 package org.github.evenjn.yarn;
 
-public interface Di<F, B> {
+public interface Di<F, B> extends Bi<F, B> {
 
 	F front( );
 
