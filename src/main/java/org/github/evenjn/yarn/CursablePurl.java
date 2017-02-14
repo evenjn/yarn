@@ -17,7 +17,9 @@
  */
 package org.github.evenjn.yarn;
 
-public interface CursableUnfoldFactory<I, O> {
+public interface CursablePurl<I, O> {
 
-	CursableUnfold<I, O> create( );
+	Cursable<O> next( I input );
+
+	Cursable<O> end( );
 }

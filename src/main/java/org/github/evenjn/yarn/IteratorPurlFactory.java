@@ -17,7 +17,8 @@
  */
 package org.github.evenjn.yarn;
 
-public interface StreamUnfoldHFactory<I, O> {
+import java.util.function.Supplier;
 
-	StreamUnfoldH<I, O> create( );
+public interface IteratorPurlFactory<I, O> extends
+		Supplier<IteratorPurl<I, O>> {
 }

@@ -17,11 +17,8 @@
  */
 package org.github.evenjn.yarn;
 
-public interface CursableUnfoldH<I, O> {
+import java.util.function.Supplier;
 
-	Cursable<O> next( Hook hook, I input );
-
-	default Cursable<O> end( Hook hook ) {
-		return null;
-	}
+public interface CursablePurlFactory<I, O> extends
+		Supplier<CursablePurl<I, O>> {
 }

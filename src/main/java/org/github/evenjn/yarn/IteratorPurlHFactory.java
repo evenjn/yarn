@@ -17,7 +17,8 @@
  */
 package org.github.evenjn.yarn;
 
-public interface CursableUnfoldHFactory<I, O> {
+import java.util.function.Supplier;
 
-	CursableUnfoldH<I, O> create( );
+public interface IteratorPurlHFactory<I, O> extends
+		Supplier<IteratorPurlH<I, O>> {
 }

@@ -17,11 +17,9 @@
  */
 package org.github.evenjn.yarn;
 
-public interface IterableUnfold<I, O> {
+import java.util.function.Supplier;
 
-	Iterable<O> next( I input );
-
-	default Iterable<O> end( ) {
-		return null;
-	}
+@FunctionalInterface
+public interface OptionalPurlFactory<I, O> extends
+		Supplier<OptionalPurl<I, O>> {
 }

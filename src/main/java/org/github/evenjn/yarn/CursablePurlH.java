@@ -17,7 +17,9 @@
  */
 package org.github.evenjn.yarn;
 
-public interface IterableUnfoldHFactory<I, O> {
+public interface CursablePurlH<I, O> {
 
-	IterableUnfoldH<I, O> create( );
+	Cursable<O> next( Hook hook, I input );
+
+	Cursable<O> end( Hook hook );
 }

@@ -17,13 +17,12 @@
  */
 package org.github.evenjn.yarn;
 
-import java.util.Iterator;
+import java.util.Optional;
 
-public interface IteratorUnfold<I, O> {
+public interface OptionalPurlH<I, O> {
 
-	Iterator<O> next( I input );
+	Optional<O> next( Hook hook, I input );
 
-	default Iterator<O> end( ) {
-		return null;
-	}
+	Optional<O> end( Hook hook );
+
 }

@@ -17,7 +17,11 @@
  */
 package org.github.evenjn.yarn;
 
-public interface CursorUnfoldFactory<I, O> {
+import java.util.stream.Stream;
 
-	CursorUnfold<I, O> create( );
+public interface StreamPurlH<I, O> {
+
+	Stream<O> next( Hook hook, I input );
+
+	Stream<O> end( Hook hook );
 }

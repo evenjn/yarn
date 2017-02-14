@@ -17,11 +17,8 @@
  */
 package org.github.evenjn.yarn;
 
-public interface CursorUnfold<I, O> {
+import java.util.function.Supplier;
 
-	Cursor<O> next( I input );
-
-	default Cursor<O> end( ) {
-		return null;
-	}
+public interface StreamPurlHFactory<I, O> extends
+		Supplier<StreamPurlH<I, O>> {
 }

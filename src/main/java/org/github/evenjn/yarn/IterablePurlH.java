@@ -17,13 +17,9 @@
  */
 package org.github.evenjn.yarn;
 
-import java.util.stream.Stream;
+public interface IterablePurlH<I, O> {
 
-public interface StreamUnfoldH<I, O> {
+	Iterable<O> next( Hook hook, I input );
 
-	Stream<O> next( Hook hook, I input );
-
-	default Stream<O> end( Hook hook ) {
-		return null;
-	}
+	Iterable<O> end( Hook hook );
 }

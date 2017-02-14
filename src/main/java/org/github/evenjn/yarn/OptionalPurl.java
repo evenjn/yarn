@@ -19,9 +19,10 @@ package org.github.evenjn.yarn;
 
 import java.util.Optional;
 
-public interface OptionFold<I, O> {
+public interface OptionalPurl<I, O> {
 
 	Optional<O> next( I input );
 
 	Optional<O> end( );
+
 }

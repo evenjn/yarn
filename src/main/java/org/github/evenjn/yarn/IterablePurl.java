@@ -17,11 +17,9 @@
  */
 package org.github.evenjn.yarn;
 
-import java.util.Optional;
+public interface IterablePurl<I, O> {
 
-public interface OptionFoldH<I, O> {
+	Iterable<O> next( I input );
 
-	Optional<O> next( Hook hook, I input );
-
-	Optional<O> end( Hook hook );
+	Iterable<O> end( );
 }

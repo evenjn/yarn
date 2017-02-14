@@ -17,7 +17,9 @@
  */
 package org.github.evenjn.yarn;
 
-public interface CursorUnfoldHFactory<I, O> {
+public interface CursorPurl<I, O> {
 
-	CursorUnfoldH<I, O> create( );
+	Cursor<O> next( I input );
+
+	Cursor<O> end( );
 }

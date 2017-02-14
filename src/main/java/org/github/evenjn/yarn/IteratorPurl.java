@@ -17,11 +17,11 @@
  */
 package org.github.evenjn.yarn;
 
-public interface ArrayUnfold<I, O> {
+import java.util.Iterator;
 
-	O[] next( I input );
+public interface IteratorPurl<I, O> {
 
-	default O[] end( ) {
-		return null;
-	}
+	Iterator<O> next( I input );
+
+	Iterator<O> end( );
 }

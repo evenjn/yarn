@@ -17,7 +17,9 @@
  */
 package org.github.evenjn.yarn;
 
-public interface IteratorUnfoldFactory<I, O> {
+public interface CursorPurlH<I, O> {
 
-	IteratorUnfold<I, O> create( );
+	Cursor<O> next( Hook hook, I input );
+
+	Cursor<O> end( Hook hook );
 }

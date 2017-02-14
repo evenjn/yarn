@@ -17,8 +17,8 @@
  */
 package org.github.evenjn.yarn;
 
-@FunctionalInterface
-public interface OptionFoldFactory<I, O> {
+import java.util.function.Supplier;
 
-	OptionFold<I, O> create( );
+public interface CursorPurlFactory<I, O> extends
+		Supplier<CursorPurl<I, O>> {
 }

@@ -17,13 +17,9 @@
  */
 package org.github.evenjn.yarn;
 
-import java.util.Iterator;
+import java.util.function.Supplier;
 
-public interface IteratorUnfoldH<I, O> {
-
-	Iterator<O> next( Hook hook, I input );
-
-	default Iterator<O> end( Hook hook ) {
-		return null;
-	}
+@FunctionalInterface
+public interface OptionalPurlHFactory<I, O> extends
+		Supplier<OptionalPurlH<I, O>> {
 }

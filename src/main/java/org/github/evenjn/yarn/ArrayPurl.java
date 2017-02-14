@@ -17,8 +17,9 @@
  */
 package org.github.evenjn.yarn;
 
-@FunctionalInterface
-public interface OptionFoldHFactory<I, O> {
+public interface ArrayPurl<I, O> {
 
-	OptionFoldH<I, O> create( );
+	O[] next( I input );
+
+	O[] end( );
 }

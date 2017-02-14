@@ -17,11 +17,11 @@
  */
 package org.github.evenjn.yarn;
 
-public interface CursorUnfoldH<I, O> {
+import java.util.Iterator;
 
-	Cursor<O> next( Hook hook, I input );
+public interface IteratorPurlH<I, O> {
 
-	default Cursor<O> end( Hook hook ) {
-		return null;
-	}
+	Iterator<O> next( Hook hook, I input );
+
+	Iterator<O> end( Hook hook );
 }
