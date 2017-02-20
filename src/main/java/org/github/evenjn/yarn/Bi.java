@@ -26,7 +26,7 @@ package org.github.evenjn.yarn;
  * any particular constraint.
  * </p>
  *
- * @param <A>
+ * @param <F>
  *          The type of the object in the <em>front</em> slot.
  * @param <B>
  *          The type of the object in the <em>back</em> slot.
