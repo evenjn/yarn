@@ -18,7 +18,19 @@
 package org.github.evenjn.yarn;
 
 @FunctionalInterface
-public interface Equivalencer<T> {
+public interface Equivalencer<T, Y> {
 
-	boolean equivalent( T a, Object b);
+	boolean equivalent( T a, Y b );
+
+	default Equivalencer<Y, T> transpose( ) {
+		final Equivalencer<T, Y> outer_this = this;
+		return new Equivalencer<Y, T>( ) {
+
+			@Override
+			public boolean equivalent( Y a, T b ) {
+				return outer_this.equivalent( b, a );
+			}
+
+		};
+	}
 }
