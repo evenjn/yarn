@@ -20,7 +20,7 @@ package org.github.evenjn.yarn;
 import java.util.Optional;
 
 @FunctionalInterface
-public interface OptionMapH<I, O> {
+public interface OptionalMap<I, O> {
 
-	Optional<O> get( Hook hook, I object );
+	Optional<O> get( I object );
 }

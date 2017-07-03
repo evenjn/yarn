@@ -20,6 +20,9 @@ package org.github.evenjn.yarn;
 /**
  * Similar to an iterable, except that returns cursors instead of iterators, and
  * requires cursors to be closed after use.
+ * 
+ * @param <I>
+ *          The type of elements in the cursor.
  */
 @FunctionalInterface
 public interface Cursable<I> {

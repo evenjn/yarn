@@ -20,9 +20,12 @@ package org.github.evenjn.yarn;
 /**
  * Similar to an iterator, except that after each invocation of next, the
  * references returned at previous invocations may or may not be valid.
+ * 
+ * @param <I>
+ *          The type of elements in the cursor.
  */
-public interface Cursor<T> {
+public interface Cursor<I> {
 
-	T next( )
+	I next( )
 			throws EndOfCursorException;
 }
