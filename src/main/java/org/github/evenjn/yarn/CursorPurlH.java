@@ -17,9 +17,138 @@
  */
 package org.github.evenjn.yarn;
 
+/**
+ * 
+ * <h1>Purl with resources</h1>
+ * 
+ * <p>
+ * To purl a sequence of elements means to transform it into another sequence of
+ * elements by means of a purl machine.
+ * </p>
+ * 
+ * <p>
+ * A purl machine is a system designed to receive input elements orderly, one by
+ * one, via invocations of {@link #next(Hook,I)}, and to produce zero, one or
+ * more output elements for each such input element.
+ * </p>
+ * 
+ * <p>
+ * Moreover, a purl machine is designed to be given the chance to finalize the
+ * transformation, via the invocation of {@link #end(Hook)} after it was fed
+ * with all the input elements. At this time the purl machine has one last
+ * chance to produce zero, one or more output elements.
+ * </p>
+ * 
+ * <p>
+ * When the purl machine must open {@linkplain java.lang.AutoCloseable
+ * closeable} resources (e.g. files) in order to produce output elements, the
+ * purl machine opens those resources and hooks them to a client-provided hook,
+ * which bears the responsibility of closing those resources.
+ * </p>
+ * 
+ * <p>
+ * The purl machine may (and typically will) be stateful: it may accumulate
+ * information while processing elements, and use such information to produce
+ * output elements.
+ * </p>
+ * 
+ * <p>
+ * A purl machine encapsulates state and behaviour necessary to carry out a
+ * single purl transformation. The same purl machine cannot be reused to carry
+ * out two or more purl transformations. Compliant implementations must throw
+ * exception accordingly.
+ * </p>
+ * 
+ * <h1>CursorPurlH</h1>
+ * 
+ * <p>
+ * A CursorPurlH implements a purl machine that aggregates output elements into
+ * {@link org.github.evenjn.yarn.Cursor Cursors}. It may need to open
+ * {@linkplain java.lang.AutoCloseable closeable} resources in order to produce
+ * output elements.
+ * </p>
+ * 
+ * @author Marco Trevisan
+ *
+ * @param <I>
+ *          The type of elements input to the purl transformation.
+ * @param <O>
+ *          The type of elements output of the purl transformation.
+ * @since 1.0
+ */
 public interface CursorPurlH<I, O> {
 
+	/**
+	 * <p>
+	 * Returns a cursor of output elements produced by taking into accout some of,
+	 * none of or all the input elements received in input so far (including the
+	 * argument {@code input}), possibily taking order into account.
+	 * </p>
+	 * 
+	 * <p>
+	 * The returned cursor and/or any objects it provides access to might be tied
+	 * to resources hooked to the argument {@code hook}. Closing those resources
+	 * might invalidate the returned cursor (and/or any objects it provide access
+	 * to). Closing those resources does not invalidate cursors returned in
+	 * previous invocations (and/or any objects it provide access to).
+	 * </p>
+	 * 
+	 * <p>
+	 * There is no guarantee that the returned cursor (and/or any objects it
+	 * provides access to) will survive subsequent invocations of
+	 * {@link #next(Hook,I)} and/or {@link #end(Hook)}.
+	 * </p>
+	 * 
+	 * <p>
+	 * Invoking this function might invalidate cursors (and/or any objects they
+	 * provide access to) returned in previous invocations of
+	 * {@link #next(Hook,I)}.
+	 * </p>
+	 * 
+	 * @param hook
+	 *          A hook.
+	 * @param input
+	 *          An input element.
+	 * @return A cursor of output elements produced by taking into accout some of,
+	 *         none of or all the input elements received in input so far
+	 *         (including the argument {@code input}), possibily taking order into
+	 *         account.
+	 * @throws IllegalStateException
+	 *           when {@link #end(Hook)} has already been invoked.
+	 * @since 1.0
+	 */
 	Cursor<O> next( Hook hook, I input );
 
+	/**
+	 * <p>
+	 * Returns a cursor of output elements produced by taking into accout some of,
+	 * none of or all the input elements received in input so far, possibily
+	 * taking order into account.
+	 * </p>
+	 * 
+	 * <p>
+	 * The returned cursor and/or any objects it provides access to might be tied
+	 * to resources hooked to the argument {@code hook}. Closing those resources
+	 * might invalidate the returned cursor (and/or any objects it provide access
+	 * to). Closing those resources does not invalidate cursors returned in
+	 * previous invocations (and/or any objects it provide access to).
+	 * </p>
+	 * 
+	 * <p>
+	 * Invoking this function might invalidate cursors (and/or any objects they
+	 * provide access to) returned in previous invocations of
+	 * {@link #next(Hook,I)}.
+	 * </p>
+	 * 
+	 * @param hook
+	 *          A hook.
+	 * @return A cursor of output elements produced by taking into accout some of,
+	 *         none of or all the input elements received in input so far
+	 *         (including the argument {@code input}), possibily taking order into
+	 *         account.
+	 * @throws IllegalStateException
+	 *           when {@link #end(Hook)} has already been invoked.
+	 * @since 1.0
+	 */
 	Cursor<O> end( Hook hook );
 }

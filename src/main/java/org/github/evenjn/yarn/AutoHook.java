@@ -20,6 +20,7 @@ package org.github.evenjn.yarn;
 /**
  * An auto-hook is an autocloseable hook.
  * 
+ * @since 1.0
  */
 public interface AutoHook extends
 		Hook,
