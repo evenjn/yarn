@@ -17,11 +17,8 @@
  */
 package org.github.evenjn.yarn;
 
-import java.util.Iterator;
+import java.util.function.Supplier;
 
-@FunctionalInterface
-public interface IteratorMapH<I, O> {
-
-	Iterator<O> get( Hook hook, I input );
-
+public interface CursorRookPurlFactory<I, O> extends
+		Supplier<CursorRookPurl<I, O>> {
 }

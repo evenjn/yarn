@@ -17,9 +17,8 @@
  */
 package org.github.evenjn.yarn;
 
-import java.util.stream.Stream;
+import java.util.function.Supplier;
 
-public interface StreamMapH<I, O> {
-
-	Stream<O> get( Hook hook, I input );
+public interface IterableRookPurlFactory<I, O> extends
+		Supplier<IterableRookPurl<I, O>> {
 }

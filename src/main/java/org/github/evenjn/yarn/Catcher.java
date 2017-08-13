@@ -40,7 +40,7 @@ public interface Catcher {
 	}
 
 	/**
-	 * Reports that an exception was caught, and the computation will continue.
+	 * Reports that an exception was caught and the computation will continue.
 	 * 
 	 * @param throwable
 	 *          any Throwable.

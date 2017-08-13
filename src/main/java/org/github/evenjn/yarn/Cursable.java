@@ -27,5 +27,5 @@ package org.github.evenjn.yarn;
 @FunctionalInterface
 public interface Cursable<I> {
 
-	Cursor<I> pull( Hook hook );
+	Cursor<I> pull( Rook rook );
 }

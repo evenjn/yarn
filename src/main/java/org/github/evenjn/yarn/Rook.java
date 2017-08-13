@@ -17,8 +17,25 @@
  */
 package org.github.evenjn.yarn;
 
-import java.util.function.Supplier;
+/**
+ * A rook represents a system that takes the responsability to close any
+ * autocloseable objects it receives.
+ * 
+ * Methods which take as argument a rook typically return objects that can no
+ * longer be used after the rooked objects are closed.
+ * 
+ */
+public interface Rook {
 
-public interface StreamPurlHFactory<I, O> extends
-		Supplier<StreamPurlH<I, O>> {
+	/**
+	 * Assigns to this rook the responsibility to close the argument object.
+	 * 
+	 * @param <T>
+	 *          the type of the object that needs to be closed.
+	 * @param auto_closeable
+	 *          the object that needs to be closed
+	 * @return the object that needs to be closed.
+	 */
+
+	<T extends java.lang.AutoCloseable> T hook( T auto_closeable );
 }

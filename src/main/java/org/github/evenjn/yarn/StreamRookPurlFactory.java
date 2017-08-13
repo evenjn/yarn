@@ -17,25 +17,8 @@
  */
 package org.github.evenjn.yarn;
 
-/**
- * A hook represents a system that takes the responsability to close any
- * autocloseable objects it receives.
- * 
- * Methods which take as argument a hook typically return objects that can no
- * longer be used after the hooked objects are closed.
- * 
- */
-public interface Hook {
+import java.util.function.Supplier;
 
-	/**
-	 * Assigns to this hook the responsibility to close the argument object.
-	 * 
-	 * @param <T>
-	 *          the type of the object that needs to be closed.
-	 * @param auto_closeable
-	 *          the object that needs to be closed
-	 * @return the object that needs to be closed.
-	 */
-
-	<T extends java.lang.AutoCloseable> T hook( T auto_closeable );
+public interface StreamRookPurlFactory<I, O> extends
+		Supplier<StreamRookPurl<I, O>> {
 }

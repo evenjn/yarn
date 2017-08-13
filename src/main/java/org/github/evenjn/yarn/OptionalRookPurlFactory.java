@@ -17,9 +17,9 @@
  */
 package org.github.evenjn.yarn;
 
-public interface CursablePurlH<I, O> {
+import java.util.function.Supplier;
 
-	Cursable<O> next( Hook hook, I input );
-
-	Cursable<O> end( Hook hook );
+@FunctionalInterface
+public interface OptionalRookPurlFactory<I, O> extends
+		Supplier<OptionalRookPurl<I, O>> {
 }

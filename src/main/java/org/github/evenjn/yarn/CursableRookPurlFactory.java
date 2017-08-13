@@ -17,12 +17,8 @@
  */
 package org.github.evenjn.yarn;
 
-import java.util.Optional;
+import java.util.function.Supplier;
 
-public interface OptionalPurlH<I, O> {
-
-	Optional<O> next( Hook hook, I input );
-
-	Optional<O> end( Hook hook );
-
+public interface CursableRookPurlFactory<I, O> extends
+		Supplier<CursableRookPurl<I, O>> {
 }

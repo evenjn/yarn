@@ -17,14 +17,11 @@
  */
 package org.github.evenjn.yarn;
 
-/**
- * An auto-hook is an autocloseable hook.
- * 
- * @since 1.0
- */
-public interface AutoHook extends
-		Hook,
-		AutoCloseable {
+import java.util.Iterator;
 
-	void close( );
+@FunctionalInterface
+public interface IteratorRookMap<I, O> {
+
+	Iterator<O> get( Rook rook, I input );
+
 }

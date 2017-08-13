@@ -28,13 +28,13 @@ package org.github.evenjn.yarn;
  * 
  * <p>
  * A purl machine is a system designed to receive input elements orderly, one by
- * one, via invocations of {@link #next(Hook,I)}, and to produce zero, one or
+ * one, via invocations of {@link #next(Rook,I)}, and to produce zero, one or
  * more output elements for each such input element.
  * </p>
  * 
  * <p>
  * Moreover, a purl machine is designed to be given the chance to finalize the
- * transformation, via the invocation of {@link #end(Hook)} after it was fed
+ * transformation, via the invocation of {@link #end(Rook)} after it was fed
  * with all the input elements. At this time the purl machine has one last
  * chance to produce zero, one or more output elements.
  * </p>
@@ -42,7 +42,7 @@ package org.github.evenjn.yarn;
  * <p>
  * When the purl machine must open {@linkplain java.lang.AutoCloseable
  * closeable} resources (e.g. files) in order to produce output elements, the
- * purl machine opens those resources and hooks them to a client-provided hook,
+ * purl machine opens those resources and hooks them to a client-provided rook,
  * which bears the responsibility of closing those resources.
  * </p>
  * 
@@ -59,10 +59,10 @@ package org.github.evenjn.yarn;
  * exception accordingly.
  * </p>
  * 
- * <h1>CursorPurlH</h1>
+ * <h1>CursorRookPurl</h1>
  * 
  * <p>
- * A CursorPurlH implements a purl machine that aggregates output elements into
+ * A CursorRookPurl implements a purl machine that aggregates output elements into
  * {@link org.github.evenjn.yarn.Cursor Cursors}. It may need to open
  * {@linkplain java.lang.AutoCloseable closeable} resources in order to produce
  * output elements.
@@ -76,7 +76,7 @@ package org.github.evenjn.yarn;
  *          The type of elements output of the purl transformation.
  * @since 1.0
  */
-public interface CursorPurlH<I, O> {
+public interface CursorRookPurl<I, O> {
 
 	/**
 	 * <p>
@@ -87,7 +87,7 @@ public interface CursorPurlH<I, O> {
 	 * 
 	 * <p>
 	 * The returned cursor and/or any objects it provides access to might be tied
-	 * to resources hooked to the argument {@code hook}. Closing those resources
+	 * to resources hooked to the argument {@code rook}. Closing those resources
 	 * might invalidate the returned cursor (and/or any objects it provide access
 	 * to). Closing those resources does not invalidate cursors returned in
 	 * previous invocations (and/or any objects it provide access to).
@@ -96,17 +96,17 @@ public interface CursorPurlH<I, O> {
 	 * <p>
 	 * There is no guarantee that the returned cursor (and/or any objects it
 	 * provides access to) will survive subsequent invocations of
-	 * {@link #next(Hook,I)} and/or {@link #end(Hook)}.
+	 * {@link #next(Rook,I)} and/or {@link #end(Rook)}.
 	 * </p>
 	 * 
 	 * <p>
 	 * Invoking this function might invalidate cursors (and/or any objects they
 	 * provide access to) returned in previous invocations of
-	 * {@link #next(Hook,I)}.
+	 * {@link #next(Rook,I)}.
 	 * </p>
 	 * 
-	 * @param hook
-	 *          A hook.
+	 * @param rook
+	 *          A rook.
 	 * @param input
 	 *          An input element.
 	 * @return A cursor of output elements produced by taking into accout some of,
@@ -114,10 +114,10 @@ public interface CursorPurlH<I, O> {
 	 *         (including the argument {@code input}), possibily taking order into
 	 *         account.
 	 * @throws IllegalStateException
-	 *           when {@link #end(Hook)} has already been invoked.
+	 *           when {@link #end(Rook)} has already been invoked.
 	 * @since 1.0
 	 */
-	Cursor<O> next( Hook hook, I input );
+	Cursor<O> next( Rook rook, I input );
 
 	/**
 	 * <p>
@@ -128,7 +128,7 @@ public interface CursorPurlH<I, O> {
 	 * 
 	 * <p>
 	 * The returned cursor and/or any objects it provides access to might be tied
-	 * to resources hooked to the argument {@code hook}. Closing those resources
+	 * to resources hooked to the argument {@code rook}. Closing those resources
 	 * might invalidate the returned cursor (and/or any objects it provide access
 	 * to). Closing those resources does not invalidate cursors returned in
 	 * previous invocations (and/or any objects it provide access to).
@@ -137,18 +137,18 @@ public interface CursorPurlH<I, O> {
 	 * <p>
 	 * Invoking this function might invalidate cursors (and/or any objects they
 	 * provide access to) returned in previous invocations of
-	 * {@link #next(Hook,I)}.
+	 * {@link #next(Rook,I)}.
 	 * </p>
 	 * 
-	 * @param hook
-	 *          A hook.
+	 * @param rook
+	 *          A rook.
 	 * @return A cursor of output elements produced by taking into accout some of,
 	 *         none of or all the input elements received in input so far
 	 *         (including the argument {@code input}), possibily taking order into
 	 *         account.
 	 * @throws IllegalStateException
-	 *           when {@link #end(Hook)} has already been invoked.
+	 *           when {@link #end(Rook)} has already been invoked.
 	 * @since 1.0
 	 */
-	Cursor<O> end( Hook hook );
+	Cursor<O> end( Rook rook );
 }

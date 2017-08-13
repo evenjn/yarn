@@ -17,9 +17,8 @@
  */
 package org.github.evenjn.yarn;
 
-public interface IterablePurlH<I, O> {
+@FunctionalInterface
+public interface CursorRookMap<I, O> {
 
-	Iterable<O> next( Hook hook, I input );
-
-	Iterable<O> end( Hook hook );
+	Cursor<O> get( Rook rook, I input );
 }

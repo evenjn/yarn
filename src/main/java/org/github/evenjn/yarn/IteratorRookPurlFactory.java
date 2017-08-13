@@ -19,6 +19,6 @@ package org.github.evenjn.yarn;
 
 import java.util.function.Supplier;
 
-public interface IterablePurlHFactory<I, O> extends
-		Supplier<IterablePurlH<I, O>> {
+public interface IteratorRookPurlFactory<I, O> extends
+		Supplier<IteratorRookPurl<I, O>> {
 }

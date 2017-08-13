@@ -17,11 +17,8 @@
  */
 package org.github.evenjn.yarn;
 
-import java.util.stream.Stream;
+@FunctionalInterface
+public interface RookFunction<I, O> {
 
-public interface StreamPurlH<I, O> {
-
-	Stream<O> next( Hook hook, I input );
-
-	Stream<O> end( Hook hook );
+	O get( Rook rook, I object );
 }

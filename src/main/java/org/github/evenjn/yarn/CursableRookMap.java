@@ -17,10 +17,8 @@
  */
 package org.github.evenjn.yarn;
 
-import java.util.Optional;
-
 @FunctionalInterface
-public interface OptionalMapH<I, O> {
+public interface CursableRookMap<I, O> {
 
-	Optional<O> get( Hook hook, I object );
+	Cursable<O> get( Rook rook, I input );
 }

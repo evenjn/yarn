@@ -17,8 +17,9 @@
  */
 package org.github.evenjn.yarn;
 
-@FunctionalInterface
-public interface FunctionH<I, O> {
+public interface IterableRookPurl<I, O> {
 
-	O get( Hook hook, I object );
+	Iterable<O> next( Rook rook, I input );
+
+	Iterable<O> end( Rook rook );
 }

@@ -17,8 +17,12 @@
  */
 package org.github.evenjn.yarn;
 
-@FunctionalInterface
-public interface IterableMapH<I, O> {
+import java.util.Optional;
 
-	Iterable<O> get( Hook hook, I input );
+public interface OptionalRookPurl<I, O> {
+
+	Optional<O> next( Rook rook, I input );
+
+	Optional<O> end( Rook rook );
+
 }

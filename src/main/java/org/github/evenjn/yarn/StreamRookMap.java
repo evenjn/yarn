@@ -17,8 +17,9 @@
  */
 package org.github.evenjn.yarn;
 
-@FunctionalInterface
-public interface CursorMapH<I, O> {
+import java.util.stream.Stream;
 
-	Cursor<O> get( Hook h, I input );
+public interface StreamRookMap<I, O> {
+
+	Stream<O> get( Rook rook, I input );
 }

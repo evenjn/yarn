@@ -17,11 +17,14 @@
  */
 package org.github.evenjn.yarn;
 
-import java.util.Iterator;
+/**
+ * An auto-rook is an autocloseable rook.
+ * 
+ * @since 1.0
+ */
+public interface AutoRook extends
+		Rook,
+		AutoCloseable {
 
-public interface IteratorPurlH<I, O> {
-
-	Iterator<O> next( Hook hook, I input );
-
-	Iterator<O> end( Hook hook );
+	void close( );
 }

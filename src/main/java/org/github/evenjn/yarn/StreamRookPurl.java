@@ -17,8 +17,11 @@
  */
 package org.github.evenjn.yarn;
 
-@FunctionalInterface
-public interface CursableMapH<I, O> {
+import java.util.stream.Stream;
 
-	Cursable<O> get( Hook h, I input );
+public interface StreamRookPurl<I, O> {
+
+	Stream<O> next( Rook rook, I input );
+
+	Stream<O> end( Rook rook );
 }

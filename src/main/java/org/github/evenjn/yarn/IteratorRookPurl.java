@@ -17,8 +17,11 @@
  */
 package org.github.evenjn.yarn;
 
-import java.util.function.Supplier;
+import java.util.Iterator;
 
-public interface IteratorPurlHFactory<I, O> extends
-		Supplier<IteratorPurlH<I, O>> {
+public interface IteratorRookPurl<I, O> {
+
+	Iterator<O> next( Rook rook, I input );
+
+	Iterator<O> end( Rook rook );
 }

@@ -17,8 +17,8 @@
  */
 package org.github.evenjn.yarn;
 
-import java.util.function.Supplier;
+@FunctionalInterface
+public interface IterableRookMap<I, O> {
 
-public interface CursorPurlHFactory<I, O> extends
-		Supplier<CursorPurlH<I, O>> {
+	Iterable<O> get( Rook rook, I input );
 }
