@@ -47,21 +47,21 @@ public interface BiOption<F, B> extends
 
 	/**
 	 * @return {@code true} when the <em>back</em> slot is not empty.
-	 *         {@false} Otherwise.
+	 *         {@code false} Otherwise.
 	 * @since 1.0
 	 */
 	boolean hasFront( );
 
 	/**
 	 * @return {@code true} when the <em>front</em> slot is not empty.
-	 *         {@false} Otherwise.
+	 *         {@code false} Otherwise.
 	 * @since 1.0
 	 */
 	boolean hasBack( );
 
 	/**
 	 * @return {@code true} when both the <em>front</em> slot and the
-	 *         <em>back</em> slot are not empty. {@false} Otherwise.
+	 *         <em>back</em> slot are not empty. {@code false} Otherwise.
 	 * @since 1.0
 	 */
 	boolean hasBoth( );

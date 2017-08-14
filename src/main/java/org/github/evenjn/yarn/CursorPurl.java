@@ -28,7 +28,7 @@ package org.github.evenjn.yarn;
  * 
  * <p>
  * A purl machine is a system designed to receive input elements orderly, one by
- * one, via invocations of {@link #next(I)}, and to produce zero, one or more
+ * one, via invocations of {@link #next(Object)}, and to produce zero, one or more
  * output elements for each such input element.
  * </p>
  * 
@@ -83,13 +83,13 @@ public interface CursorPurl<I, O> {
 	 * 
 	 * <p>
 	 * There is no guarantee that the returned cursor (and/or any objects it
-	 * provides access to) will survive subsequent invocations of {@link #next(I)}
+	 * provides access to) will survive subsequent invocations of {@link #next(Object)}
 	 * and/or {@link #end()}.
 	 * </p>
 	 * 
 	 * <p>
 	 * Invoking this function might invalidate cursors (and/or any objects they
-	 * provide access to) returned in previous invocations of {@link #next(I)}.
+	 * provide access to) returned in previous invocations of {@link #next(Object)}.
 	 * </p>
 	 * 
 	 * @param input
@@ -114,7 +114,7 @@ public interface CursorPurl<I, O> {
 	 * 
 	 * <p>
 	 * Invoking this function might invalidate cursors (and/or any objects they
-	 * provide access to) returned in previous invocations of {@link #next(I)}.
+	 * provide access to) returned in previous invocations of {@link #next(Object)}.
 	 * </p>
 	 * 
 	 * @return A cursor of output elements produced by taking into accout some of,
