@@ -19,26 +19,69 @@ package org.github.evenjn.yarn;
 
 /**
  * <p>
- * A Cursor provides access to a sequence of references to objects.
+ * A Cursor provides access to a sequence of elements, each element being (a
+ * reference to) an object.
+ * </p>
+ * 
+ * <h2>Service Contract</h2>
+ * 
+ * <p>
+ * An object implementing the {@code Cursor} interface fulfils the following
+ * contract.
  * </p>
  * 
  * <p>
- * References can only be accessed one by one, by invoking the {@link #next()}
- * method. In this respect Cursor is similar to {@link java.util.Iterator}.
+ * Elements can be accessed one by one, by invoking the {@link #next()} method.
+ * The first time the method is invoked, the first element in the sequence is
+ * returned. Subsequent invocations return successive elements. After all
+ * elements have been returned, subsequent invocations will throw a
+ * {@link EndOfCursorException}.
+ * </p>
+ * 
+ * <h2>Disclaimer</h2>
+ * 
+ * <p>
+ * An object implementing the {@code Cursor} interface does not provides
+ * implicit guarantees. In particular: there is no implicit guarantee that
+ * element references are not {@code null}; there is no implicit guarantee that
+ * any two element references refer to distinct objects; there is no implicit
+ * guarantee that, after an invocation of next, the element references returned
+ * at previous invocations are valid. There is no implicit guarantee of thread
+ * safety. This means that a system that receives a {@code Cursor} should not
+ * assume that it is safe to have multiple threads invoke {@link #next()} on the
+ * same object.
+ * </p>
+ * 
+ * <h2>Design rationale</h2>
+ * 
+ * <p>
+ * There are situations where we must develop a function that takes in input a
+ * sequence of elements, but it does not need those elements to be all in memory
+ * at the same time and it does not need to read that sequence more than once.
  * </p>
  * 
  * <p>
- * There are no restrictions on the references. In particular: there is no
- * guarantee that references are not {@code null}; there is no guarantee that
- * any two references refer to distinct objects; there is no guarantee that,
- * after an invocation of next, the references returned at previous invocations
- * are valid.
+ * In such a situation, perhaps we might declare our function to take in input a
+ * {@link java.util.List} or a {@link java.lang.Iterable}. These interfaces,
+ * however, require clients to fulfil all the obligations that come with those
+ * interfaces. With {@code List}, the clients must provide an object
+ * implementing random access and allow modifications. With {@code Iterable},
+ * the clients must provide an object that allows multiple parallel iterations.
+ * </p>
+ * 
+ * <p>
+ * Most of the times the clients invoking our function will have no problems in
+ * fulfilling those obligations. But this could be too much of a burden when
+ * dealing with a very large number of elements, or with systems that consume
+ * resources to carry out iterations. In cases where {@code List} and
+ * {@code Iterable} might place too much of a burdern on the clients, the
+ * {@code Cursor} interface can solve the issue.
  * </p>
  * 
  * @author Marco Trevisan
  *
  * @param <I>
- *          The type of elements in the cursor.
+ *          The type of objects in the sequence.
  * @since 1.0
  */
 public interface Cursor<I> {
