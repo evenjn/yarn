@@ -17,9 +17,10 @@
  */
 package org.github.evenjn.yarn;
 
-public interface Di<F, B> extends Bi<F, B> {
+import java.util.function.Consumer;
 
-	F front( );
+@FunctionalInterface
+public interface RookConsumer<O> {
 
-	B back( );
+	Consumer<O> get( Rook rook );
 }

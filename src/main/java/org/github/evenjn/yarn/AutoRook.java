@@ -18,7 +18,8 @@
 package org.github.evenjn.yarn;
 
 /**
- * An auto-rook is an autocloseable rook.
+ * An {@code AutoRook} is an {@linkplain java.lang.AutoCloseable autocloseable}
+ * {@linkplain org.github.evenjn.yarn.Rook rook}.
  * 
  * @since 1.0
  */

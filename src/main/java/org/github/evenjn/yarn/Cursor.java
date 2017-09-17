@@ -38,18 +38,41 @@ package org.github.evenjn.yarn;
  * {@link EndOfCursorException}.
  * </p>
  * 
+ * <p>
+ * There are no other constraints in the service contract.
+ * </p>
+ * 
+ * 
  * <h2>Disclaimer</h2>
  * 
  * <p>
- * An object implementing the {@code Cursor} interface does not provides
- * implicit guarantees. In particular: there is no implicit guarantee that
- * element references are not {@code null}; there is no implicit guarantee that
- * any two element references refer to distinct objects; there is no implicit
- * guarantee that, after an invocation of next, the element references returned
- * at previous invocations are valid. There is no implicit guarantee of thread
- * safety. This means that a system that receives a {@code Cursor} should not
- * assume that it is safe to have multiple threads invoke {@link #next()} on the
- * same object.
+ * An object implementing the {@code Cursor} interface does not provide implicit
+ * guarantees.
+ * </p>
+ * 
+ * <p>
+ * There is no implicit guarantee that element references are not {@code null}
+ * </p>
+ * 
+ * <p>
+ * There is no implicit guarantee that any two element references refer to
+ * distinct objects
+ * </p>
+ * 
+ * <p>
+ * There is no implicit guarantee that, after an invocation of next, the element
+ * references returned at previous invocations are valid.
+ * </p>
+ * 
+ * <p>
+ * There is no implicit guarantee of thread safety. This means that a system
+ * that receives a {@code Cursor} should not assume that it is safe to have
+ * multiple threads invoke {@link #next()} on the same object.
+ * </p>
+ * 
+ * <p>
+ * However, classes implementing Cursor or interfaces extending Cursor might
+ * provide explicit guarantees.
  * </p>
  * 
  * <h2>Design rationale</h2>
