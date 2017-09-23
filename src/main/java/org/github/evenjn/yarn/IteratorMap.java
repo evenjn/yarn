@@ -19,8 +19,32 @@ package org.github.evenjn.yarn;
 
 import java.util.Iterator;
 
+/**
+ * <h1>IteratorMap</h1>
+ * 
+ * <p>
+ * An {@code IteratorMap} is a {@linkplain org.github.evenjn.yarn.Map Map} that
+ * provides access to output objects via {@link java.util.Iterator Iterator}
+ * containers.
+ * </p>
+ *
+ * @param <I>
+ *          The type of input objects.
+ * @param <O>
+ *          The type of output objects.
+ */
 @FunctionalInterface
-public interface IteratorMap<I, O> {
+public interface IteratorMap<I, O> extends
+		Map<I, O> {
 
+	/**
+	 * Returns an {@link java.util.Iterator Iterator} with the output objects
+	 * associated to the argument input.
+	 * 
+	 * @param input
+	 *          An input object.
+	 * @return An {@link java.util.Iterator Iterator} of output objects.
+	 */
+	@Override
 	Iterator<O> get( I input );
 }

@@ -28,8 +28,8 @@ package org.github.evenjn.yarn;
  * 
  * <p>
  * A purl machine is a system designed to receive input elements orderly, one by
- * one, via invocations of {@link #next(Rook,Object)}, and to produce zero, one or
- * more output elements for each such input element.
+ * one, via invocations of {@link #next(Rook,Object)}, and to produce zero, one
+ * or more output elements for each such input element.
  * </p>
  * 
  * <p>
@@ -41,9 +41,11 @@ package org.github.evenjn.yarn;
  * 
  * <p>
  * When the purl machine must open {@linkplain java.lang.AutoCloseable
- * closeable} resources (e.g. files) in order to produce output elements, the
- * purl machine opens those resources and hooks them to a client-provided rook,
- * which bears the responsibility of closing those resources.
+ * closeable} resources (e.g. files) in order to produce output elements, and
+ * those resources must stay open for the output elements to work as intended,
+ * the purl machine opens those resources and hooks them to a client-provided
+ * {@link org.github.evenjn.yarn.Rook Rook}, which takes the responsibility of
+ * closing those resources.
  * </p>
  * 
  * <p>
@@ -62,8 +64,8 @@ package org.github.evenjn.yarn;
  * <h1>CursorRookPurl</h1>
  * 
  * <p>
- * A CursorRookPurl implements a purl machine that aggregates output elements into
- * {@link org.github.evenjn.yarn.Cursor Cursors}. It may need to open
+ * A CursorRookPurl implements a purl machine that aggregates output elements
+ * into {@link org.github.evenjn.yarn.Cursor Cursors}. It may need to open
  * {@linkplain java.lang.AutoCloseable closeable} resources in order to produce
  * output elements.
  * </p>

@@ -19,9 +19,37 @@ package org.github.evenjn.yarn;
 
 import java.util.Iterator;
 
+/**
+ * <h1>IteratorRookMap</h1>
+ * 
+ * <p>
+ * A {@code IteratorRookMap} is a {@linkplain org.github.evenjn.yarn.RookMap
+ * RookMap} that provides access to output objects via {@link java.util.Iterator
+ * Iterator} containers.
+ * </p>
+ * 
+ * @param <I>
+ *          The type of input objects.
+ * @param <O>
+ *          The type of output objects.
+ */
 @FunctionalInterface
-public interface IteratorRookMap<I, O> {
+public interface IteratorRookMap<I, O> extends
+		RookMap<I, O> {
 
+	/**
+	 * Returns a {@link java.util.Iterator Iterator} with output objects
+	 * associated to the argument input while transferring the responsiblity of
+	 * closing any associated resources to the argument
+	 * {@link org.github.evenjn.yarn.Rook Rook}.
+	 * 
+	 * @param rook
+	 *          A {@link org.github.evenjn.yarn.Rook Rook}.
+	 * @param input
+	 *          An input object.
+	 * @return A {@link java.util.Iterator Iterator} of output objects.
+	 */
+	@Override
 	Iterator<O> get( Rook rook, I input );
 
 }

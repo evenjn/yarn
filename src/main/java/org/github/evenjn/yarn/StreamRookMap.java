@@ -19,7 +19,35 @@ package org.github.evenjn.yarn;
 
 import java.util.stream.Stream;
 
-public interface StreamRookMap<I, O> {
+/**
+ * <h1>StreamRookMap</h1>
+ * 
+ * <p>
+ * A {@code StreamRookMap} is a {@linkplain org.github.evenjn.yarn.RookMap
+ * RookMap} that provides access to output objects via
+ * {@link java.util.stream.Stream Stream} containers.
+ * </p>
+ * 
+ * @param <I>
+ *          The type of input objects.
+ * @param <O>
+ *          The type of output objects.
+ */
+public interface StreamRookMap<I, O> extends
+		RookMap<I, O> {
 
+	/**
+	 * Returns a {@link java.util.stream.Stream Stream} with output objects
+	 * associated to the argument input after transferring the responsiblity of
+	 * closing any associated resources to the argument
+	 * {@link org.github.evenjn.yarn.Rook Rook}.
+	 * 
+	 * @param rook
+	 *          A {@link org.github.evenjn.yarn.Rook Rook}.
+	 * @param input
+	 *          An input object.
+	 * @return A {@link java.util.stream.Stream Stream} of output objects.
+	 */
+	@Override
 	Stream<O> get( Rook rook, I input );
 }

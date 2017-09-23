@@ -19,8 +19,32 @@ package org.github.evenjn.yarn;
 
 import java.util.Optional;
 
+/**
+ * <h1>OptionalMap</h1>
+ * 
+ * <p>
+ * An {@code OptionalMap} is a {@linkplain org.github.evenjn.yarn.Map Map} that
+ * provides access to objects via {@link java.util.Optional} containers.
+ * </p>
+ *
+ * @param <I>
+ *          The type of input objects.
+ * @param <O>
+ *          The type of output objects.
+ */
 @FunctionalInterface
-public interface OptionalMap<I, O> {
+public interface OptionalMap<I, O> extends
+		Map<I, O> {
 
+	/**
+	 * Returns an {@link java.util.Optional} with the output object associated to
+	 * the argument input..
+	 * 
+	 * @param input
+	 *          An input object.
+	 * @return An empty {@link java.util.Optional}, or an
+	 *         {@link java.util.Optional} with the output object.
+	 */
+	@Override
 	Optional<O> get( I object );
 }
