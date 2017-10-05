@@ -32,6 +32,7 @@ import java.util.Iterator;
  *          The type of input objects.
  * @param <O>
  *          The type of output objects.
+ * @since 1.0
  */
 @FunctionalInterface
 public interface IteratorRookMap<I, O> extends
@@ -48,6 +49,7 @@ public interface IteratorRookMap<I, O> extends
 	 * @param input
 	 *          An input object.
 	 * @return A {@link java.util.Iterator Iterator} of output objects.
+	 * @since 1.0
 	 */
 	@Override
 	Iterator<O> get( Rook rook, I input );

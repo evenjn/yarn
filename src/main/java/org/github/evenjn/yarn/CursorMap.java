@@ -30,6 +30,7 @@ package org.github.evenjn.yarn;
  *          The type of input objects.
  * @param <O>
  *          The type of output objects.
+ * @since 1.0
  */
 @FunctionalInterface
 public interface CursorMap<I, O> extends
@@ -37,11 +38,12 @@ public interface CursorMap<I, O> extends
 
 	/**
 	 * Returns a {@link org.github.evenjn.yarn.Cursor Cursor} with output objects
-	 * associated to the argument input.
+	 * associated to the argument {@code input}.
 	 * 
 	 * @param input
 	 *          An input object.
 	 * @return A {@link org.github.evenjn.yarn.Cursor Cursor} of output objects.
+	 * @since 1.0
 	 */
 	@Override
 	Cursor<O> get( I input );

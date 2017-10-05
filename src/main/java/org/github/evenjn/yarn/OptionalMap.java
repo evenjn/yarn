@@ -31,6 +31,7 @@ import java.util.Optional;
  *          The type of input objects.
  * @param <O>
  *          The type of output objects.
+ * @since 1.0
  */
 @FunctionalInterface
 public interface OptionalMap<I, O> extends
@@ -38,12 +39,13 @@ public interface OptionalMap<I, O> extends
 
 	/**
 	 * Returns an {@link java.util.Optional} with the output object associated to
-	 * the argument input..
+	 * the argument {@code input}.
 	 * 
 	 * @param input
 	 *          An input object.
 	 * @return An empty {@link java.util.Optional}, or an
 	 *         {@link java.util.Optional} with the output object.
+	 * @since 1.0
 	 */
 	@Override
 	Optional<O> get( I object );

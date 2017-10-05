@@ -103,6 +103,7 @@ package org.github.evenjn.yarn;
  *          The type of input objects.
  * @param <O>
  *          The type of output objects.
+ * @since 1.0
  */
 @FunctionalInterface
 public interface RookMap<I, O> {
@@ -117,6 +118,7 @@ public interface RookMap<I, O> {
 	 * @param input
 	 *          An input object.
 	 * @return A container of output objects.
+	 * @since 1.0
 	 */
 	Object get( Rook rook, I input );
 }

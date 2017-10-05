@@ -32,6 +32,7 @@ import java.util.stream.Stream;
  *          The type of input objects.
  * @param <O>
  *          The type of output objects.
+ * @since 1.0
  */
 public interface StreamRookMap<I, O> extends
 		RookMap<I, O> {
@@ -47,6 +48,7 @@ public interface StreamRookMap<I, O> extends
 	 * @param input
 	 *          An input object.
 	 * @return A {@link java.util.stream.Stream Stream} of output objects.
+	 * @since 1.0
 	 */
 	@Override
 	Stream<O> get( Rook rook, I input );

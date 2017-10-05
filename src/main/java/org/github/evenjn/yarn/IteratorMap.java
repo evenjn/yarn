@@ -32,6 +32,7 @@ import java.util.Iterator;
  *          The type of input objects.
  * @param <O>
  *          The type of output objects.
+ * @since 1.0
  */
 @FunctionalInterface
 public interface IteratorMap<I, O> extends
@@ -39,11 +40,12 @@ public interface IteratorMap<I, O> extends
 
 	/**
 	 * Returns an {@link java.util.Iterator Iterator} with the output objects
-	 * associated to the argument input.
+	 * associated to the argument {@code input}.
 	 * 
 	 * @param input
 	 *          An input object.
 	 * @return An {@link java.util.Iterator Iterator} of output objects.
+	 * @since 1.0
 	 */
 	@Override
 	Iterator<O> get( I input );

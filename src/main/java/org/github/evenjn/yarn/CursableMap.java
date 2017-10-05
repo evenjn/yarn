@@ -30,6 +30,7 @@ package org.github.evenjn.yarn;
  *          The type of input objects.
  * @param <O>
  *          The type of output objects.
+ * @since 1.0
  */
 @FunctionalInterface
 public interface CursableMap<I, O> extends
@@ -37,12 +38,13 @@ public interface CursableMap<I, O> extends
 
 	/**
 	 * Returns a {@link org.github.evenjn.yarn.Cursable Cursable} with output
-	 * objects associated to the argument input.
+	 * objects associated to the argument {@code input}.
 	 * 
 	 * @param input
 	 *          An input object.
 	 * @return A {@link org.github.evenjn.yarn.Cursable Cursable} of output
 	 *         objects.
+	 * @since 1.0
 	 */
 	@Override
 	Cursable<O> get( I input );

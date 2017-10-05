@@ -18,13 +18,63 @@
 package org.github.evenjn.yarn;
 
 /**
- * <h1>CursorPurl</h1>
+ * 
+ * <h1>Purl</h1>
  * 
  * <p>
- * A CursorPurl implements a purl machine that aggregates output elements into
- * {@link org.github.evenjn.yarn.Cursor Cursors}.
+ * A {@code Purl} provides methods to transform ( <em>purl</em> ) a sequence of
+ * elements into another sequence of elements.
+ * <p>
+ * 
+ * <h2>Protocol</h2>
+ * 
+ * <p>
+ * An object implementing the {@code Purl} interface is designed to receive
+ * input elements orderly, one by one, via invocations of {@link #next(Object)},
+ * and to produce zero, one or more output elements for each such input element.
  * </p>
  * 
+ * <p>
+ * Moreover, a purl machine is designed to be given the chance to finalize the
+ * transformation, via the invocation of {@link #end()}, after it received all
+ * the input elements. At this time the purl machine has one last chance to
+ * produce zero, one or more output elements.
+ * </p>
+ * 
+ * <p>
+ * The result of the transformation is the sequence obtained by concatenating
+ * all sequences of output elements produced by the purl machine.
+ * </p>
+ * 
+ * <h2>Service Contract</h2>
+ * 
+ * <p>
+ * An object implementing the {@code Purl} interface fulfils the following
+ * contract.
+ * </p>
+ * 
+ * <p>
+ * The {@link #next(Object)} method never returns {@code null}.
+ * </p>
+ * 
+ * 
+ * <p>
+ * The {@link #end()} method never returns {@code null}.
+ * </p>
+ * 
+ * 
+ * <p>
+ * The purl machine may (and typically will) be stateful: it may accumulate
+ * information while processing elements, and use such information to produce
+ * output elements.
+ * </p>
+ * 
+ * <p>
+ * A purl machine encapsulates state and behaviour necessary to carry out a
+ * single purl transformation. The same purl machine cannot be reused to carry
+ * out two or more purl transformations. Compliant implementations must throw
+ * exception accordingly.
+ * </p>
  * 
  * 
  * 
@@ -36,8 +86,7 @@ package org.github.evenjn.yarn;
  *          The type of elements output of the purl transformation.
  * @since 1.0
  */
-public interface CursorPurl<I, O> extends
-		Purl<I, O> {
+public interface Purl<I, O> {
 
 	/**
 	 * <p>
@@ -59,17 +108,13 @@ public interface CursorPurl<I, O> extends
 	 * </p>
 	 * 
 	 * @param input
-	 *          An input element.
-	 * @return A cursor of output elements produced by taking into accout some of,
-	 *         none of or all the input elements received in input so far
-	 *         (including the argument {@code input}), possibily taking order into
-	 *         account.
+	 *          An input object.
+	 * @return A container of output objects.
 	 * @throws IllegalStateException
 	 *           when {@link #end()} has already been invoked.
 	 * @since 1.0
 	 */
-	@Override
-	Cursor<O> next( I input )
+	Object next( I input )
 			throws IllegalStateException;
 
 	/**
@@ -85,14 +130,11 @@ public interface CursorPurl<I, O> extends
 	 * {@link #next(Object)}.
 	 * </p>
 	 * 
-	 * @return A cursor of output elements produced by taking into accout some of,
-	 *         none of or all the input elements received in input so far,
-	 *         possibily taking order into account.
+	 * @return A container of output objects.
 	 * @throws IllegalStateException
 	 *           when {@link #end()} has already been invoked.
 	 * @since 1.0
 	 */
-	@Override
-	Cursor<O> end( )
+	Object end( )
 			throws IllegalStateException;
 }

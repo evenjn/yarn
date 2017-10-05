@@ -17,9 +17,12 @@
  */
 package org.github.evenjn.yarn;
 
-public interface IterablePurl<I, O> {
+public interface IterablePurl<I, O> extends
+		Purl<I, O> {
 
+	@Override
 	Iterable<O> next( I input );
 
+	@Override
 	Iterable<O> end( );
 }

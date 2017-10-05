@@ -30,6 +30,7 @@ package org.github.evenjn.yarn;
  *          The type of input objects.
  * @param <O>
  *          The type of output objects.
+ * @since 1.0
  */
 @FunctionalInterface
 public interface IterableMap<I, O> extends
@@ -37,11 +38,12 @@ public interface IterableMap<I, O> extends
 
 	/**
 	 * Returns an {@link java.lang.Iterable Iterable} with the output objects
-	 * associated to the argument input.
+	 * associated to the argument {@code input}.
 	 * 
 	 * @param input
 	 *          An input object.
 	 * @return An {@link java.lang.Iterable Iterable} of output objects.
+	 * @since 1.0
 	 */
 	@Override
 	Iterable<O> get( I input );

@@ -32,6 +32,7 @@ import java.util.Optional;
  *          The type of input objects.
  * @param <O>
  *          The type of output objects.
+ * @since 1.0
  */
 @FunctionalInterface
 public interface OptionalRookMap<I, O> extends
@@ -49,6 +50,7 @@ public interface OptionalRookMap<I, O> extends
 	 *          An input object.
 	 * @return An empty {@link java.util.Optional}, or an
 	 *         {@link java.util.Optional} with the output object.
+	 * @since 1.0
 	 */
 	@Override
 	Optional<O> get( Rook rook, I object );

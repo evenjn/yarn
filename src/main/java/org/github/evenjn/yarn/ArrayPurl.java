@@ -17,9 +17,50 @@
  */
 package org.github.evenjn.yarn;
 
-public interface ArrayPurl<I, O> {
+/**
+ * <h1>ArrayPurl</h1>
+ * 
+ * <p>
+ * An {@code ArrayPurl} is a {@link org.github.evenjn.yarn.Purl Purl} that
+ * provides access to output objects via arrays.
+ * </p>
+ *
+ * @param <I>
+ *          The type of input objects.
+ * @param <O>
+ *          The type of output objects.
+ * @since 1.0
+ */
+public interface ArrayPurl<I, O> extends
+		Purl<I, O> {
 
+	/**
+	 * Returns an array with the output objects produced by taking into accout
+	 * some of, none of, or all the elements received in input so far (including
+	 * the argument {@code input}), possibily taking order into account.
+	 * 
+	 * @param input
+	 *          An input object.
+	 * @return An array of output elements.
+	 * @throws IllegalStateException
+	 *           when {@link #end()} has already been invoked.
+	 * @since 1.0
+	 */
+	@Override
 	O[] next( I input );
 
+	/**
+	 * <p>
+	 * Returns an array of output elements produced by taking into accout some of,
+	 * none of, or all the input elements received in input so far, possibily
+	 * taking order into account.
+	 * </p>
+	 * 
+	 * @return An array of output elements.
+	 * @throws IllegalStateException
+	 *           when {@link #end()} has already been invoked.
+	 * @since 1.0
+	 */
+	@Override
 	O[] end( );
 }

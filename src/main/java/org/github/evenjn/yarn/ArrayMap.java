@@ -29,17 +29,20 @@ package org.github.evenjn.yarn;
  *          The type of input objects.
  * @param <O>
  *          The type of output objects.
+ * @since 1.0
  */
 @FunctionalInterface
 public interface ArrayMap<I, O> extends
 		Map<I, O> {
 
 	/**
-	 * Returns an array with the output objects associated to the argument input.
+	 * Returns an array with the output objects associated to the argument
+	 * {@code input}.
 	 * 
 	 * @param input
 	 *          An input object.
 	 * @return An array of output objects.
+	 * @since 1.0
 	 */
 	@Override
 	O[] get( I input );

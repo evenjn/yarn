@@ -84,23 +84,26 @@ package org.github.evenjn.yarn;
  * </p>
  * 
  * <p>
- * However, classes implementing Map or interfaces extending Map might provide
- * explicit guarantees.
+ * However, classes implementing {@code Map} or interfaces extending {@code Map}
+ * might provide explicit guarantees.
  * </p>
  *
  * @param <I>
  *          The type of input objects.
  * @param <O>
  *          The type of output objects.
+ * @since 1.0
  */
 public interface Map<I, O> {
 
 	/**
-	 * Returns a container with output objects associated to the argument input.
+	 * Returns a container with output objects associated to the argument
+	 * {@code input}.
 	 * 
 	 * @param input
 	 *          An input object.
 	 * @return A container of output objects.
+	 * @since 1.0
 	 */
 	Object get( I input );
 }

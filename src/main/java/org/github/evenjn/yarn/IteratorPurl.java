@@ -19,9 +19,12 @@ package org.github.evenjn.yarn;
 
 import java.util.Iterator;
 
-public interface IteratorPurl<I, O> {
+public interface IteratorPurl<I, O> extends
+		Purl<I, O> {
 
+	@Override
 	Iterator<O> next( I input );
 
+	@Override
 	Iterator<O> end( );
 }

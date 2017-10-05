@@ -19,10 +19,13 @@ package org.github.evenjn.yarn;
 
 import java.util.Optional;
 
-public interface OptionalPurl<I, O> {
+public interface OptionalPurl<I, O> extends
+		Purl<I, O> {
 
+	@Override
 	Optional<O> next( I input );
 
+	@Override
 	Optional<O> end( );
 
 }
