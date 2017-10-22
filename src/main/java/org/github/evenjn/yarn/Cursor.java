@@ -60,8 +60,8 @@ package org.github.evenjn.yarn;
  * </p>
  * 
  * <p>
- * There is no implicit guarantee that, after an invocation of next, the element
- * references returned at previous invocations are valid.
+ * There is no implicit guarantee that, after an invocation of {@link #next()},
+ * the element references returned at previous invocations are valid.
  * </p>
  * 
  * <p>
@@ -71,8 +71,8 @@ package org.github.evenjn.yarn;
  * </p>
  * 
  * <p>
- * However, classes implementing Cursor or interfaces extending Cursor might
- * provide explicit guarantees.
+ * However, classes implementing {@code Cursor} or interfaces extending
+ * {@code Cursor} might provide explicit guarantees.
  * </p>
  * 
  * <h2>Design rationale</h2>
@@ -100,12 +100,12 @@ package org.github.evenjn.yarn;
  * {@code Iterable} might place too much of a burdern on the clients, the
  * {@code Cursor} interface can solve the issue.
  * </p>
- * 
- * @author Marco Trevisan
  *
  * @param <I>
  *          The type of objects in the sequence.
  * @since 1.0
+ * 
+ * @author Marco Trevisan
  */
 public interface Cursor<I> {
 

@@ -21,19 +21,15 @@ package org.github.evenjn.yarn;
  * <h1>CursorPurl</h1>
  * 
  * <p>
- * A CursorPurl implements a purl machine that aggregates output elements into
- * {@link org.github.evenjn.yarn.Cursor Cursors}.
+ * A {@code CursorPurl} is a {@link org.github.evenjn.yarn.Purl Purl} that
+ * provides access to output objects via {@link org.github.evenjn.yarn.Cursor
+ * Cursor} containers.
  * </p>
- * 
- * 
- * 
- * 
- * @author Marco Trevisan
  *
  * @param <I>
- *          The type of elements input to the purl transformation.
+ *          The type of input objects.
  * @param <O>
- *          The type of elements output of the purl transformation.
+ *          The type of output objects.
  * @since 1.0
  */
 public interface CursorPurl<I, O> extends
@@ -41,29 +37,14 @@ public interface CursorPurl<I, O> extends
 
 	/**
 	 * <p>
-	 * Returns a cursor of output elements produced by taking into accout some of,
-	 * none of or all the input elements received in input so far (including the
-	 * argument {@code input}), possibily taking order into account.
-	 * </p>
-	 * 
-	 * <p>
-	 * There is no guarantee that the returned cursor (and/or any objects it
-	 * provides access to) will survive subsequent invocations of
-	 * {@link #next(Object)} and/or {@link #end()}.
-	 * </p>
-	 * 
-	 * <p>
-	 * Invoking this function might invalidate cursors (and/or any objects they
-	 * provide access to) returned in previous invocations of
-	 * {@link #next(Object)}.
+	 * Returns a {@link org.github.evenjn.yarn.Cursor Cursor} with none of, some
+	 * of, or all the output objects associated to the sequence of elements
+	 * received in input so far (including the argument {@code input}).
 	 * </p>
 	 * 
 	 * @param input
-	 *          An input element.
-	 * @return A cursor of output elements produced by taking into accout some of,
-	 *         none of or all the input elements received in input so far
-	 *         (including the argument {@code input}), possibily taking order into
-	 *         account.
+	 *          An input object.
+	 * @return A {@link org.github.evenjn.yarn.Cursor Cursor} of output objects.
 	 * @throws IllegalStateException
 	 *           when {@link #end()} has already been invoked.
 	 * @since 1.0
@@ -74,20 +55,12 @@ public interface CursorPurl<I, O> extends
 
 	/**
 	 * <p>
-	 * Returns a cursor of output elements produced by taking into accout some of,
-	 * none of or all the input elements received in input so far, possibily
-	 * taking order into account.
+	 * Returns a {@link org.github.evenjn.yarn.Cursor Cursor} with none of, some
+	 * of, or all the output objects associated to the sequence of elements
+	 * received in input so far.
 	 * </p>
 	 * 
-	 * <p>
-	 * Invoking this function might invalidate cursors (and/or any objects they
-	 * provide access to) returned in previous invocations of
-	 * {@link #next(Object)}.
-	 * </p>
-	 * 
-	 * @return A cursor of output elements produced by taking into accout some of,
-	 *         none of or all the input elements received in input so far,
-	 *         possibily taking order into account.
+	 * @return A {@link org.github.evenjn.yarn.Cursor Cursor} of output objects.
 	 * @throws IllegalStateException
 	 *           when {@link #end()} has already been invoked.
 	 * @since 1.0

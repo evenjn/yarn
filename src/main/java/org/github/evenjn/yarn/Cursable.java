@@ -37,11 +37,12 @@ package org.github.evenjn.yarn;
  * </p>
  * 
  * <p>
- * Whenever it is necessary to acquire resources (such as opening files or
- * connections) in order to access those elements, the cursable acquires those
- * resources autonomously and delegates the release of those resources via the
- * argument {@link org.github.yarn.Rook Rook}. (The actor that created the
- * {@code Rook} takes the responsibility of closing them as soon as the returned
+ * Whenever it is necessary to acquire {@linkplain java.lang.AutoCloseable
+ * auto-closeable} resources (such as files or connections) in order to access
+ * those elements, the cursable acquires those resources autonomously and
+ * delegates the release of those resources via the argument
+ * {@link org.github.yarn.Rook Rook}. (The actor that created the {@code Rook}
+ * takes the responsibility of closing them as soon as the returned
  * {@code Cursor} is not needed).
  * </p>
  * 
@@ -51,7 +52,7 @@ package org.github.evenjn.yarn;
  * </p>
  * 
  * <p>
- * Let {@code Foobar} be any function that and combines information obtained
+ * Let {@code Foobar} be any function that combines information obtained
  * exclusively from the argument {@code Cursable} and its elements. As long as
  * {@code Foobar} never changes the state of the objects accessbile via the
  * argument {@code Cursable}, the results of mutiple invocations of
@@ -102,8 +103,6 @@ package org.github.evenjn.yarn;
  * There is no need to reach the end of a cursor before obtaining another one.
  * </p>
  * 
- * @author Marco Trevisan
- *
  * @param <I>
  *          The type of objects in the sequence.
  * @since 1.0

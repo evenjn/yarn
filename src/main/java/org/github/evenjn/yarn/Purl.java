@@ -22,28 +22,38 @@ package org.github.evenjn.yarn;
  * <h1>Purl</h1>
  * 
  * <p>
- * A {@code Purl} provides methods to transform ( <em>purl</em> ) a sequence of
- * elements into another sequence of elements.
+ * A {@code Purl} provides methods to obtain a sequence of output elements
+ * associated to a sequence of input elements, building the resulting sequence
+ * incrementally. We refer to this operation as <em>purl</em>, and to the
+ * resulting sequence as the <em>result of the purl</em>
  * <p>
+ * </p>
+ * <p>
+ * The <em>result of a purl</em> is the sequence obtained by concatenating all
+ * sequences of output elements returned by all invocations of
+ * {@link #next(Object)} and {@link #end()}, in the same order they were
+ * returned.
+ * </p>
  * 
  * <h2>Protocol</h2>
  * 
  * <p>
- * An object implementing the {@code Purl} interface is designed to receive
- * input elements orderly, one by one, via invocations of {@link #next(Object)},
- * and to produce zero, one or more output elements for each such input element.
+ * An object implementing the {@code Purl} interface requires that the client
+ * invokes {@link #next(Object)} once for each element of the input sequence,
+ * each time providing as argument an element of the input sequence, in the same
+ * order they appear in the input sequence.
  * </p>
  * 
  * <p>
- * Moreover, a purl machine is designed to be given the chance to finalize the
- * transformation, via the invocation of {@link #end()}, after it received all
- * the input elements. At this time the purl machine has one last chance to
- * produce zero, one or more output elements.
+ * An object implementing the {@code Purl} interface requires that, after the
+ * client has invoked {@link #next(Object)} once for each element in the input
+ * sequence, the client invokes {@link #end()}.
  * </p>
  * 
  * <p>
- * The result of the transformation is the sequence obtained by concatenating
- * all sequences of output elements produced by the purl machine.
+ * An object implementing the {@code Purl} interface requires that, once the
+ * client has invoked {@link #end()}, the client does not invoke {@link #end()}
+ * or {@link #next(Object)} any more.
  * </p>
  * 
  * <h2>Service Contract</h2>
@@ -57,54 +67,91 @@ package org.github.evenjn.yarn;
  * The {@link #next(Object)} method never returns {@code null}.
  * </p>
  * 
- * 
  * <p>
  * The {@link #end()} method never returns {@code null}.
  * </p>
  * 
+ * <p>
+ * The results of all purls of the same sequence of elements are sequences with
+ * equal contents.
+ * </p>
+ * 
+ * <h2>Disclaimer</h2>
  * 
  * <p>
- * The purl machine may (and typically will) be stateful: it may accumulate
+ * An object implementing the {@code Purl} interface does not provide implicit
+ * guarantees.
+ * </p>
+ * 
+ * <p>
+ * There is no implicit guarantee that all elements in the containers returned
+ * by {@link #next(Object)} or {@link #end()} are not {@code null}. There is no
+ * implicit guarantee that the containers returned by {@link #next(Object)} or
+ * {@link #end()} are never empty.
+ * </p>
+ * 
+ * <p>
+ * There is no implicit guarantee that the {@link #next(Object)} works with any
+ * input. In particular, it might or it might not work with {@code null} input.
+ * We recommend that implementations throw an
+ * {@link java.lang.IllegalArgumentException IllegalArgumentException} when
+ * {@link #next(Object)} is invoked with an argument that is not supported.
+ * </p>
+ * 
+ * <p>
+ * There is no implicit guarantee of thread safety. This means that a system
+ * that receives a {@code Purl} should not assume that it is safe to have
+ * multiple threads invoke {@link #next(Object)} or {@link #end()} on the same
+ * object.
+ * </p>
+ * 
+ * <p>
+ * There is no implicit guarantee that containers returned by invocations of
+ * {@link #next(Object)} or {@link #end()}, and the object they provide access
+ * to, are not affected by subsequent invocations of {@link #next(Object)} or
+ * {@link #end()}.
+ * </p>
+ * 
+ * <p>
+ * However, classes implementing {@code Purl} or interfaces extending
+ * {@code Purl} might provide explicit guarantees.
+ * </p>
+ * 
+ * <h2>Design Notes</h2>
+ * 
+ * <p>
+ * A {@code Purl} object may (and typically will) be stateful: it may accumulate
  * information while processing elements, and use such information to produce
  * output elements.
  * </p>
  * 
  * <p>
- * A purl machine encapsulates state and behaviour necessary to carry out a
- * single purl transformation. The same purl machine cannot be reused to carry
- * out two or more purl transformations. Compliant implementations must throw
+ * A {@code Purl} object encapsulates state and behaviour necessary to carry out
+ * a single operaion. The same {@code Purl} object cannot be reused to carry out
+ * two or more purl transformations. Compliant implementations must throw
  * exception accordingly.
  * </p>
  * 
+ * <p>
+ * {@code Purl} is similar to {@link org.github.evenjn.yarn.RookPurl RookPurl}.
+ * Unlike {@code RookPurl}, {@code Purl} does not provide support for
+ * {@linkplain java.lang.AutoCloseable auto-closeable} resources.
+ * </p>
  * 
- * 
- * @author Marco Trevisan
- *
  * @param <I>
- *          The type of elements input to the purl transformation.
+ *          The type of input elements.
  * @param <O>
- *          The type of elements output of the purl transformation.
+ *          The type of output elements.
  * @since 1.0
+ *
  */
 public interface Purl<I, O> {
 
 	/**
 	 * <p>
-	 * Returns a cursor of output elements produced by taking into accout some of,
-	 * none of or all the input elements received in input so far (including the
-	 * argument {@code input}), possibily taking order into account.
-	 * </p>
-	 * 
-	 * <p>
-	 * There is no guarantee that the returned cursor (and/or any objects it
-	 * provides access to) will survive subsequent invocations of
-	 * {@link #next(Object)} and/or {@link #end()}.
-	 * </p>
-	 * 
-	 * <p>
-	 * Invoking this function might invalidate cursors (and/or any objects they
-	 * provide access to) returned in previous invocations of
-	 * {@link #next(Object)}.
+	 * Returns a container with none of, some of, or all the output objects
+	 * associated to the sequence of elements received in input so far (including
+	 * the argument {@code input}).
 	 * </p>
 	 * 
 	 * @param input
@@ -119,15 +166,8 @@ public interface Purl<I, O> {
 
 	/**
 	 * <p>
-	 * Returns a cursor of output elements produced by taking into accout some of,
-	 * none of or all the input elements received in input so far, possibily
-	 * taking order into account.
-	 * </p>
-	 * 
-	 * <p>
-	 * Invoking this function might invalidate cursors (and/or any objects they
-	 * provide access to) returned in previous invocations of
-	 * {@link #next(Object)}.
+	 * Returns a container with none of, some of, or all the output objects
+	 * associated to the sequence of elements received in input so far.
 	 * </p>
 	 * 
 	 * @return A container of output objects.

@@ -37,31 +37,33 @@ public interface BiOption<F, B> extends
 	 * @return the object in the <em>front</em> slot.
 	 * @since 1.0
 	 */
+	@Override
 	F front( );
 
 	/**
 	 * @return the object in the <em>back</em> slot.
 	 * @since 1.0
 	 */
+	@Override
 	B back( );
 
 	/**
 	 * @return {@code true} when the <em>back</em> slot is not empty.
-	 *         {@code false} Otherwise.
+	 *         {@code false} otherwise.
 	 * @since 1.0
 	 */
 	boolean hasFront( );
 
 	/**
 	 * @return {@code true} when the <em>front</em> slot is not empty.
-	 *         {@code false} Otherwise.
+	 *         {@code false} otherwise.
 	 * @since 1.0
 	 */
 	boolean hasBack( );
 
 	/**
 	 * @return {@code true} when both the <em>front</em> slot and the
-	 *         <em>back</em> slot are not empty. {@code false} Otherwise.
+	 *         <em>back</em> slot are not empty. {@code false} otherwise.
 	 * @since 1.0
 	 */
 	boolean hasBoth( );

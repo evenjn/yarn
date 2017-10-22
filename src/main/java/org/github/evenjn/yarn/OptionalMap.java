@@ -24,7 +24,8 @@ import java.util.Optional;
  * 
  * <p>
  * An {@code OptionalMap} is a {@linkplain org.github.evenjn.yarn.Map Map} that
- * provides access to objects via {@link java.util.Optional} containers.
+ * provides access to objects via {@link java.util.Optional Optional}
+ * containers.
  * </p>
  *
  * @param <I>
@@ -38,13 +39,13 @@ public interface OptionalMap<I, O> extends
 		Map<I, O> {
 
 	/**
-	 * Returns an {@link java.util.Optional} with the output object associated to
-	 * the argument {@code input}.
+	 * Returns an {@link java.util.Optional Optional} with the output object
+	 * associated to the argument {@code input}.
 	 * 
 	 * @param input
 	 *          An input object.
-	 * @return An empty {@link java.util.Optional}, or an
-	 *         {@link java.util.Optional} with the output object.
+	 * @return An empty {@link java.util.Optional Optional}, or an
+	 *         {@link java.util.Optional Optional} with an output object.
 	 * @since 1.0
 	 */
 	@Override

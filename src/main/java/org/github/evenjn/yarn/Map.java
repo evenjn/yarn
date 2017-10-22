@@ -22,8 +22,8 @@ package org.github.evenjn.yarn;
  * <h1>Map</h1>
  * 
  * <p>
- * A {@code Map} provides a {@link #get(Object)} method to retrieve the output
- * object(s), if any, associated to a given input object.
+ * A {@code Map} provides a {@link #get(Object)} method to obtain the output
+ * objects, if any, associated to a given input object.
  * </p>
  * 
  * <h2>Service Contract</h2>
@@ -40,12 +40,6 @@ package org.github.evenjn.yarn;
  * <p>
  * Multiple invocations of {@link #get(Object)} with the same argument return
  * containers with equal content.
- * </p>
- * 
- * <p>
- * Containers returned by invocations of {@link #get(Object)}, and the objects
- * they provide access to, are not affected by subsequent invocations of
- * {@link #get(Object)}.
  * </p>
  * 
  * 
@@ -81,6 +75,12 @@ package org.github.evenjn.yarn;
  * There is no implicit guarantee of thread safety. This means that a system
  * that receives a {@code Map} should not assume that it is safe to have
  * multiple threads invoke {@link #get(Object)} on the same object.
+ * </p>
+ * 
+ * <p>
+ * There is no implicit guarantee that containers returned by invocations of
+ * {@link #get(Object)}, and the object they provide access to, are not affected
+ * by subsequent invocations of {@link #get(Object)}.
  * </p>
  * 
  * <p>

@@ -19,9 +19,61 @@ package org.github.evenjn.yarn;
 
 import java.util.stream.Stream;
 
-public interface StreamRookPurl<I, O> {
+/**
+ * <h1>StreamRookPurl</h1>
+ * 
+ * <p>
+ * A {@code StreamRookPurl} is a {@link org.github.evenjn.yarn.RookPurl
+ * RookPurl} that provides access to output objects via
+ * {@link java.util.stream.Stream Stream} containers.
+ * </p>
+ *
+ * @param <I>
+ *          The type of input objects.
+ * @param <O>
+ *          The type of output objects.
+ * @since 1.0
+ */
+public interface StreamRookPurl<I, O> extends
+		RookPurl<I, O> {
 
+	/**
+	 * <p>
+	 * Returns a {@link java.util.stream.Stream Stream} with none of, some of, or
+	 * all the output objects associated to the sequence of elements received in
+	 * input so far (including the argument {@code input}), while transferring the
+	 * responsiblity of closing any associated resources to the argument
+	 * {@link org.github.evenjn.yarn.Rook Rook}.
+	 * </p>
+	 * 
+	 * @param rook
+	 *          A {@link org.github.evenjn.yarn.Rook Rook}.
+	 * @param input
+	 *          An input object.
+	 * @return A {@link java.util.stream.Stream Stream} of output objects.
+	 * @throws IllegalStateException
+	 *           when {@link #end(Rook)} has already been invoked.
+	 * @since 1.0
+	 */
+	@Override
 	Stream<O> next( Rook rook, I input );
 
+	/**
+	 * <p>
+	 * Returns a {@link java.util.stream.Stream Stream} with none of, some of, or
+	 * all the output objects associated to the sequence of elements received in
+	 * input so far, while transferring the responsiblity of closing any
+	 * associated resources to the argument {@link org.github.evenjn.yarn.Rook
+	 * Rook}.
+	 * </p>
+	 * 
+	 * @param rook
+	 *          A {@link org.github.evenjn.yarn.Rook Rook}.
+	 * @return A {@link java.util.stream.Stream Stream} of output objects.
+	 * @throws IllegalStateException
+	 *           when {@link #end(Rook)} has already been invoked.
+	 * @since 1.0
+	 */
+	@Override
 	Stream<O> end( Rook rook );
 }

@@ -21,9 +21,9 @@ package org.github.evenjn.yarn;
  * <p>
  * A {@code Bi} object holds two references to objects, referred to as the
  * <em>front</em> and the <em>back</em>. There are no restrictions on the
- * references. One or both references may be null, and both references may point
- * to the same object. The referred objects need not be immutable or satisfy
- * any particular constraint.
+ * references. One or both references may be {@code null}, and both references
+ * may point to the same object. The referred objects need not be immutable or
+ * satisfy any particular constraint.
  * </p>
  *
  * @param <F>

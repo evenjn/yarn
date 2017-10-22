@@ -22,9 +22,10 @@ package org.github.evenjn.yarn;
  * 
  * <p>
  * A {@code RookMap} provides a {@link #get(Rook,Object)} method to retrieve the
- * output object(s), if any, associated to a given input object while
- * transferring the responsiblity of closing any resources to the input
- * {@link org.github.evenjn.yarn.Rook Rook}.
+ * output object(s), if any, associated to given input objects while
+ * transferring the responsiblity of closing any associated
+ * {@linkplain java.lang.AutoCloseable auto-closeable} resources to
+ * {@link org.github.evenjn.yarn.Rook Rook} objects.
  * </p>
  * 
  * <h2>Service Contract</h2>
@@ -41,12 +42,6 @@ package org.github.evenjn.yarn;
  * <p>
  * Multiple invocations of {@link #get(Rook,Object)} with the same argument
  * return containers with equal content.
- * </p>
- * 
- * <p>
- * Containers returned by invocations of {@link #get(Rook,Object)}, and the
- * object they provide access to, are not affected by subsequent invocations of
- * {@link #get(Rook,Object)}.
  * </p>
  * 
  * <p>
@@ -67,8 +62,8 @@ package org.github.evenjn.yarn;
  * </p>
  * 
  * <p>
- * There is no implicit guarantee that all elements in the cursor returned by
- * {@link #get(Rook,Object)} are not {@code null}. There is no implicit
+ * There is no implicit guarantee that all elements in the containers returned
+ * by {@link #get(Rook,Object)} are not {@code null}. There is no implicit
  * guarantee that the containers returned by {@link #get(Rook,Object)} are never
  * empty.
  * </p>
@@ -92,6 +87,12 @@ package org.github.evenjn.yarn;
  * There is no implicit guarantee of thread safety. This means that a system
  * that receives a {@code RookMap} should not assume that it is safe to have
  * multiple threads invoke {@link #get(Rook,Object)} on the same object.
+ * </p>
+ * 
+ * <p>
+ * There is no implicit guarantee that containers returned by invocations of
+ * {@link #get(Rook,Object)}, and the object they provide access to, are not
+ * affected by subsequent invocations of {@link #get(Rook,Object)}.
  * </p>
  * 
  * <p>

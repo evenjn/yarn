@@ -24,8 +24,8 @@ import java.util.Optional;
  * 
  * <p>
  * An {@code OptionalRookMap} is a {@linkplain org.github.evenjn.yarn.RookMap
- * RookMap} that provides access to output objects via
- * {@link java.util.Optional} containers.
+ * RookMap} that provides access to output objects via {@link java.util.Optional
+ * Optional} containers.
  * </p>
  *
  * @param <I>
@@ -39,17 +39,17 @@ public interface OptionalRookMap<I, O> extends
 		RookMap<I, O> {
 
 	/**
-	 * Returns an {@link java.util.Optional} with an output object associated to
-	 * the argument input after transferring the responsiblity of closing any
-	 * associated resources to the argument {@link org.github.evenjn.yarn.Rook
-	 * Rook}.
+	 * Returns an {@link java.util.Optional Optional} with an output object
+	 * associated to the argument input after transferring the responsiblity of
+	 * closing any associated resources to the argument
+	 * {@link org.github.evenjn.yarn.Rook Rook}.
 	 * 
 	 * @param rook
 	 *          A {@link org.github.evenjn.yarn.Rook Rook}.
 	 * @param input
 	 *          An input object.
-	 * @return An empty {@link java.util.Optional}, or an
-	 *         {@link java.util.Optional} with the output object.
+	 * @return An empty {@link java.util.Optional Optional}, or an
+	 *         {@link java.util.Optional Optional} with an output object.
 	 * @since 1.0
 	 */
 	@Override

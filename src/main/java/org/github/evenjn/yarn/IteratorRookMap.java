@@ -23,7 +23,7 @@ import java.util.Iterator;
  * <h1>IteratorRookMap</h1>
  * 
  * <p>
- * A {@code IteratorRookMap} is a {@linkplain org.github.evenjn.yarn.RookMap
+ * An {@code IteratorRookMap} is a {@linkplain org.github.evenjn.yarn.RookMap
  * RookMap} that provides access to output objects via {@link java.util.Iterator
  * Iterator} containers.
  * </p>

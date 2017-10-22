@@ -19,12 +19,53 @@ package org.github.evenjn.yarn;
 
 import java.util.Iterator;
 
+/**
+ * <h1>IteratorPurl</h1>
+ * 
+ * <p>
+ * An {@code IteratorPurl} is a {@link org.github.evenjn.yarn.Purl Purl} that
+ * provides access to output objects via {@link java.util.Iterator Iterator}
+ * containers.
+ * </p>
+ *
+ * @param <I>
+ *          The type of input objects.
+ * @param <O>
+ *          The type of output objects.
+ * @since 1.0
+ */
 public interface IteratorPurl<I, O> extends
 		Purl<I, O> {
 
+	/**
+	 * <p>
+	 * Returns an {@link java.util.Iterator Iterator} with none of, some of, or
+	 * all the output objects associated to the sequence of elements received in
+	 * input so far (including the argument {@code input}).
+	 * </p>
+	 * 
+	 * @param input
+	 *          An input object.
+	 * @return An {@link java.util.Iterator Iterator} of output objects.
+	 * @throws IllegalStateException
+	 *           when {@link #end()} has already been invoked.
+	 * @since 1.0
+	 */
 	@Override
 	Iterator<O> next( I input );
 
+	/**
+	 * <p>
+	 * Returns an {@link java.util.Iterator Iterator} with none of, some of, or
+	 * all the output objects associated to the sequence of elements received in
+	 * input so far.
+	 * </p>
+	 * 
+	 * @return An {@link java.util.Iterator Iterator} of output objects.
+	 * @throws IllegalStateException
+	 *           when {@link #end()} has already been invoked.
+	 * @since 1.0
+	 */
 	@Override
 	Iterator<O> end( );
 }

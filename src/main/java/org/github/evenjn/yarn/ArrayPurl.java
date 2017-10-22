@@ -35,13 +35,15 @@ public interface ArrayPurl<I, O> extends
 		Purl<I, O> {
 
 	/**
-	 * Returns an array with the output objects produced by taking into accout
-	 * some of, none of, or all the elements received in input so far (including
-	 * the argument {@code input}), possibily taking order into account.
+	 * <p>
+	 * Returns an array with none of, some of, or all the output objects
+	 * associated to the sequence of elements received in input so far (including
+	 * the argument {@code input}).
+	 * </p>
 	 * 
 	 * @param input
 	 *          An input object.
-	 * @return An array of output elements.
+	 * @return An array of output objects.
 	 * @throws IllegalStateException
 	 *           when {@link #end()} has already been invoked.
 	 * @since 1.0
@@ -51,12 +53,11 @@ public interface ArrayPurl<I, O> extends
 
 	/**
 	 * <p>
-	 * Returns an array of output elements produced by taking into accout some of,
-	 * none of, or all the input elements received in input so far, possibily
-	 * taking order into account.
+	 * Returns an array with none of, some of, or all the output objects
+	 * associated to the sequence of elements received in input so far.
 	 * </p>
 	 * 
-	 * @return An array of output elements.
+	 * @return An array of output objects.
 	 * @throws IllegalStateException
 	 *           when {@link #end()} has already been invoked.
 	 * @since 1.0

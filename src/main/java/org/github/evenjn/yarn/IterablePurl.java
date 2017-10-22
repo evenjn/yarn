@@ -17,12 +17,53 @@
  */
 package org.github.evenjn.yarn;
 
+/**
+ * <h1>IterablePurl</h1>
+ * 
+ * <p>
+ * An {@code IterablePurl} is a {@link org.github.evenjn.yarn.Purl Purl} that
+ * provides access to output objects via {@link java.lang.Iterable Iterable}
+ * containers.
+ * </p>
+ *
+ * @param <I>
+ *          The type of input objects.
+ * @param <O>
+ *          The type of output objects.
+ * @since 1.0
+ */
 public interface IterablePurl<I, O> extends
 		Purl<I, O> {
 
+	/**
+	 * <p>
+	 * Returns an {@link java.lang.Iterable Iterable} with none of, some of, or
+	 * all the output objects associated to the sequence of elements received in
+	 * input so far (including the argument {@code input}).
+	 * </p>
+	 * 
+	 * @param input
+	 *          An input object.
+	 * @return An {@link java.lang.Iterable Iterable} of output objects.
+	 * @throws IllegalStateException
+	 *           when {@link #end()} has already been invoked.
+	 * @since 1.0
+	 */
 	@Override
 	Iterable<O> next( I input );
 
+	/**
+	 * <p>
+	 * Returns an {@link java.lang.Iterable Iterable} with none of, some of, or
+	 * all the output objects associated to the sequence of elements received in
+	 * input so far.
+	 * </p>
+	 * 
+	 * @return An {@link java.lang.Iterable Iterable} of output objects.
+	 * @throws IllegalStateException
+	 *           when {@link #end()} has already been invoked.
+	 * @since 1.0
+	 */
 	@Override
 	Iterable<O> end( );
 }

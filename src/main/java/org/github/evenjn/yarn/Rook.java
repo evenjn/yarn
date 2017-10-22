@@ -18,17 +18,18 @@
 package org.github.evenjn.yarn;
 
 /**
- * A rook represents a system that takes the responsability to close any
- * {@link java.lang.AutoCloseable AutoCloseable} objects it receives.
+ * A {@code Rook} is a system that takes the responsability to close any
+ * {@link java.lang.AutoCloseable auto-closeable} objects it receives.
  * 
- * Methods which take as argument a rook typically return objects that can no
- * longer be used after the autocloseable objects are closed.
+ * Methods that take as argument a {@code Rook} typically return objects that
+ * can no longer be used after the autocloseable objects are closed.
  * 
  */
 public interface Rook {
 
 	/**
-	 * Assigns to this rook the responsibility to close the argument object.
+	 * Assigns to this {@code Rook} the responsibility to close the argument
+	 * object.
 	 * 
 	 * @param <T>
 	 *          the type of the object that needs to be closed.

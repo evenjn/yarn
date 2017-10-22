@@ -35,9 +35,37 @@ package org.github.evenjn.yarn;
 public interface CursablePurl<I, O> extends
 		Purl<I, O> {
 
+	/**
+	 * <p>
+	 * Returns a {@link org.github.evenjn.yarn.Cursable Cursable} with none of,
+	 * some of, or all the output objects associated to the sequence of elements
+	 * received in input so far (including the argument {@code input}).
+	 * </p>
+	 * 
+	 * @param input
+	 *          An input object.
+	 * @return A {@link org.github.evenjn.yarn.Cursable Cursable} of output
+	 *         objects.
+	 * @throws IllegalStateException
+	 *           when {@link #end()} has already been invoked.
+	 * @since 1.0
+	 */
 	@Override
 	Cursable<O> next( I input );
 
+	/**
+	 * <p>
+	 * Returns a {@link org.github.evenjn.yarn.Cursable Cursable} with none of,
+	 * some of, or all the output objects associated to the sequence of elements
+	 * received in input so far.
+	 * </p>
+	 * 
+	 * @return A {@link org.github.evenjn.yarn.Cursable Cursable} of output
+	 *         objects.
+	 * @throws IllegalStateException
+	 *           when {@link #end()} has already been invoked.
+	 * @since 1.0
+	 */
 	@Override
 	Cursable<O> end( );
 }
