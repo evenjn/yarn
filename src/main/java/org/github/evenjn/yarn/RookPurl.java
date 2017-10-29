@@ -18,7 +18,6 @@
 package org.github.evenjn.yarn;
 
 /**
- * 
  * <h1>RookPurl</h1>
  * 
  * <p>
@@ -30,6 +29,7 @@ package org.github.evenjn.yarn;
  * as <em>purl</em>, and to the resulting sequence as the <em>result of the
  * purl</em>
  * </p>
+ * 
  * <p>
  * The <em>result of a purl</em> is the sequence obtained by concatenating all
  * sequences of output elements returned by all invocations of
@@ -81,11 +81,6 @@ package org.github.evenjn.yarn;
  * intended, the {@code RookPurl} opens those resources and hooks them to the
  * argument {@link org.github.evenjn.yarn.Rook Rook}, which takes the
  * responsibility of closing those resources.
- * </p>
- * 
- * <p>
- * The results of all purls of the same sequence of elements are sequences with
- * equal contents.
  * </p>
  * 
  * <h2>Disclaimer</h2>

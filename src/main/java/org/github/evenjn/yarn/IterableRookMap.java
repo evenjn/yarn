@@ -37,10 +37,12 @@ public interface IterableRookMap<I, O> extends
 		RookMap<I, O> {
 
 	/**
+	 * <p>
 	 * Returns an {@link java.lang.Iterable Iterable} with output objects
 	 * associated to the argument input while transferring the responsiblity of
 	 * closing any associated resources to the argument
 	 * {@link org.github.evenjn.yarn.Rook Rook}.
+	 * </p>
 	 * 
 	 * @param rook
 	 *          A {@link org.github.evenjn.yarn.Rook Rook}.

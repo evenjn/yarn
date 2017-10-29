@@ -18,7 +18,6 @@
 package org.github.evenjn.yarn;
 
 /**
- * 
  * <h1>Map</h1>
  * 
  * <p>
@@ -36,12 +35,6 @@ package org.github.evenjn.yarn;
  * <p>
  * The {@link #get(Object)} method never returns {@code null}.
  * </p>
- * 
- * <p>
- * Multiple invocations of {@link #get(Object)} with the same argument return
- * containers with equal content.
- * </p>
- * 
  * 
  * <h2>Disclaimer</h2>
  * 
@@ -97,8 +90,10 @@ package org.github.evenjn.yarn;
 public interface Map<I, O> {
 
 	/**
+	 * <p>
 	 * Returns a container with output objects associated to the argument
 	 * {@code input}.
+	 * </p>
 	 * 
 	 * @param input
 	 *          An input object.

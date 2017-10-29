@@ -18,7 +18,6 @@
 package org.github.evenjn.yarn;
 
 /**
- * 
  * <h1>Purl</h1>
  * 
  * <p>
@@ -26,13 +25,6 @@ package org.github.evenjn.yarn;
  * associated to a sequence of input elements, building the resulting sequence
  * incrementally. We refer to this operation as <em>purl</em>, and to the
  * resulting sequence as the <em>result of the purl</em>
- * <p>
- * </p>
- * <p>
- * The <em>result of a purl</em> is the sequence obtained by concatenating all
- * sequences of output elements returned by all invocations of
- * {@link #next(Object)} and {@link #end()}, in the same order they were
- * returned.
  * </p>
  * 
  * <h2>Protocol</h2>
@@ -69,11 +61,6 @@ package org.github.evenjn.yarn;
  * 
  * <p>
  * The {@link #end()} method never returns {@code null}.
- * </p>
- * 
- * <p>
- * The results of all purls of the same sequence of elements are sequences with
- * equal contents.
  * </p>
  * 
  * <h2>Disclaimer</h2>

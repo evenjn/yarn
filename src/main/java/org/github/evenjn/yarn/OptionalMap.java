@@ -39,8 +39,10 @@ public interface OptionalMap<I, O> extends
 		Map<I, O> {
 
 	/**
+	 * <p>
 	 * Returns an {@link java.util.Optional Optional} with the output object
 	 * associated to the argument {@code input}.
+	 * </p>
 	 * 
 	 * @param input
 	 *          An input object.

@@ -40,11 +40,6 @@ package org.github.evenjn.yarn;
  * </p>
  * 
  * <p>
- * Multiple invocations of {@link #get(Rook,Object)} with the same argument
- * return containers with equal content.
- * </p>
- * 
- * <p>
  * When processing an invocation of {@link #get(Rook,Object)} requires opening
  * {@linkplain java.lang.AutoCloseable closeable} resources (e.g. files) in
  * order to produce output objects, and those resources must stay open for the
@@ -52,7 +47,6 @@ package org.github.evenjn.yarn;
  * and hooks them to the argument {@link org.github.evenjn.yarn.Rook Rook},
  * which takes the responsibility of closing those resources.
  * </p>
- * 
  * 
  * <h2>Disclaimer</h2>
  * 
@@ -110,9 +104,11 @@ package org.github.evenjn.yarn;
 public interface RookMap<I, O> {
 
 	/**
+	 * <p>
 	 * Returns a container with output objects associated to the argument input
 	 * while transferring the responsiblity of closing any associated resources to
 	 * the argument {@link org.github.evenjn.yarn.Rook Rook}.
+	 * </p>
 	 * 
 	 * @param rook
 	 *          A {@link org.github.evenjn.yarn.Rook Rook}.

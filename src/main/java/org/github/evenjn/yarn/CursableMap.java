@@ -37,8 +37,10 @@ public interface CursableMap<I, O> extends
 		Map<I, O> {
 
 	/**
+	 * <p>
 	 * Returns a {@link org.github.evenjn.yarn.Cursable Cursable} with output
 	 * objects associated to the argument {@code input}.
+	 * </p>
 	 * 
 	 * @param input
 	 *          An input object.
