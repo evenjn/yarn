@@ -19,6 +19,23 @@ package org.github.evenjn.yarn;
 
 import java.util.function.Supplier;
 
-public interface CursorPurlFactory<I, O> extends
+/**
+ * <p>
+ * A {@code CursorPurler} is a {@link Supplier} of {@link CursorPurl}. Each
+ * invocation of {@link #get()} returns a new object.
+ * </p>
+ * 
+ * <p>
+ * This class is part of package {@link org.github.evenjn.yarn Yarn}.
+ * </p>
+ * 
+ * @param <I>
+ *          The type of input objects.
+ * @param <O>
+ *          The type of output objects.
+ * @since 1.0
+ */
+@FunctionalInterface
+public interface CursorPurler<I, O> extends
 		Supplier<CursorPurl<I, O>> {
 }

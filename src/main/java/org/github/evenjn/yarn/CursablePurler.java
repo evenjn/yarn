@@ -19,7 +19,23 @@ package org.github.evenjn.yarn;
 
 import java.util.function.Supplier;
 
+/**
+ * <p>
+ * A {@code CursablePurler} is a {@link Supplier} of {@link CursablePurl}. Each
+ * invocation of {@link #get()} returns a new object.
+ * </p>
+ * 
+ * <p>
+ * This class is part of package {@link org.github.evenjn.yarn Yarn}.
+ * </p>
+ * 
+ * @param <I>
+ *          The type of input objects.
+ * @param <O>
+ *          The type of output objects.
+ * @since 1.0
+ */
 @FunctionalInterface
-public interface OptionalRookPurlFactory<I, O> extends
-		Supplier<OptionalRookPurl<I, O>> {
+public interface CursablePurler<I, O> extends
+		Supplier<CursablePurl<I, O>> {
 }
