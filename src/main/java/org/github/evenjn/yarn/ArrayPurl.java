@@ -21,8 +21,12 @@ package org.github.evenjn.yarn;
  * <h1>ArrayPurl</h1>
  * 
  * <p>
- * An {@code ArrayPurl} is a {@link org.github.evenjn.yarn.Purl Purl} that
+ * An {@code ArrayPurl} is a {@link org.github.evenjn.yarn.YarnPurl YarnPurl} that
  * provides access to output objects via arrays.
+ * </p>
+ * 
+ * <p>
+ * This class is part of package {@link org.github.evenjn.yarn Yarn}.
  * </p>
  *
  * @param <I>
@@ -32,7 +36,7 @@ package org.github.evenjn.yarn;
  * @since 1.0
  */
 public interface ArrayPurl<I, O> extends
-		Purl<I, O> {
+		YarnPurl<I, O[]> {
 
 	/**
 	 * <p>

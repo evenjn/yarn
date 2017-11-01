@@ -21,9 +21,13 @@ package org.github.evenjn.yarn;
  * <h1>IterablePurl</h1>
  * 
  * <p>
- * An {@code IterablePurl} is a {@link org.github.evenjn.yarn.Purl Purl} that
- * provides access to output objects via {@link java.lang.Iterable Iterable}
- * containers.
+ * An {@code IterablePurl} is a {@link org.github.evenjn.yarn.YarnPurl YarnPurl}
+ * that provides access to output objects via {@link java.lang.Iterable
+ * Iterable} containers.
+ * </p>
+ * 
+ * <p>
+ * This class is part of package {@link org.github.evenjn.yarn Yarn}.
  * </p>
  *
  * @param <I>
@@ -33,7 +37,7 @@ package org.github.evenjn.yarn;
  * @since 1.0
  */
 public interface IterablePurl<I, O> extends
-		Purl<I, O> {
+		YarnPurl<I, Iterable<O>> {
 
 	/**
 	 * <p>

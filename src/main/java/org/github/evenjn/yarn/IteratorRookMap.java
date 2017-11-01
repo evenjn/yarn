@@ -23,9 +23,13 @@ import java.util.Iterator;
  * <h1>IteratorRookMap</h1>
  * 
  * <p>
- * An {@code IteratorRookMap} is a {@linkplain org.github.evenjn.yarn.RookMap
- * RookMap} that provides access to output objects via {@link java.util.Iterator
- * Iterator} containers.
+ * An {@code IteratorRookMap} is a
+ * {@linkplain org.github.evenjn.yarn.YarnRookMap YarnRookMap} that provides
+ * access to output objects via {@link java.util.Iterator Iterator} containers.
+ * </p>
+ * 
+ * <p>
+ * This class is part of package {@link org.github.evenjn.yarn Yarn}.
  * </p>
  * 
  * @param <I>
@@ -36,7 +40,7 @@ import java.util.Iterator;
  */
 @FunctionalInterface
 public interface IteratorRookMap<I, O> extends
-		RookMap<I, O> {
+		YarnRookMap<I, Iterator<O>> {
 
 	/**
 	 * <p>

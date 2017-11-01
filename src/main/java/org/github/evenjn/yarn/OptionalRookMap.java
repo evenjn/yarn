@@ -23,9 +23,13 @@ import java.util.Optional;
  * <h1>OptionalRookMap</h1>
  * 
  * <p>
- * An {@code OptionalRookMap} is a {@linkplain org.github.evenjn.yarn.RookMap
- * RookMap} that provides access to output objects via {@link java.util.Optional
- * Optional} containers.
+ * An {@code OptionalRookMap} is a
+ * {@linkplain org.github.evenjn.yarn.YarnRookMap YarnRookMap} that provides
+ * access to output objects via {@link java.util.Optional Optional} containers.
+ * </p>
+ * 
+ * <p>
+ * This class is part of package {@link org.github.evenjn.yarn Yarn}.
  * </p>
  *
  * @param <I>
@@ -36,7 +40,7 @@ import java.util.Optional;
  */
 @FunctionalInterface
 public interface OptionalRookMap<I, O> extends
-		RookMap<I, O> {
+		YarnRookMap<I, Optional<O>> {
 
 	/**
 	 * <p>

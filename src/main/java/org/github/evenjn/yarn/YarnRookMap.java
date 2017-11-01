@@ -18,11 +18,11 @@
 package org.github.evenjn.yarn;
 
 /**
- * <h1>RookMap</h1>
+ * <h1>YarnRookMap</h1>
  * 
  * <p>
- * A {@code RookMap} provides a {@link #get(Rook,Object)} method to retrieve the
- * output object(s), if any, associated to given input objects while
+ * A {@code YarnRookMap} provides a {@link #get(Rook,Object)} method to retrieve
+ * the output object(s), if any, associated to given input objects while
  * transferring the responsiblity of closing any associated
  * {@linkplain java.lang.AutoCloseable auto-closeable} resources to
  * {@link org.github.evenjn.yarn.Rook Rook} objects.
@@ -31,8 +31,8 @@ package org.github.evenjn.yarn;
  * <h2>Service Contract</h2>
  * 
  * <p>
- * An object implementing the {@code RookMap} interface fulfils the following
- * contract.
+ * An object implementing the {@code YarnRookMap} interface fulfils the
+ * following contract.
  * </p>
  * 
  * <p>
@@ -43,15 +43,15 @@ package org.github.evenjn.yarn;
  * When processing an invocation of {@link #get(Rook,Object)} requires opening
  * {@linkplain java.lang.AutoCloseable closeable} resources (e.g. files) in
  * order to produce output objects, and those resources must stay open for the
- * output objects to work as intended, the {@code RookMap} opens those resources
- * and hooks them to the argument {@link org.github.evenjn.yarn.Rook Rook},
- * which takes the responsibility of closing those resources.
+ * output objects to work as intended, the {@code YarnRookMap} opens those
+ * resources and hooks them to the argument {@link org.github.evenjn.yarn.Rook
+ * Rook}, which takes the responsibility of closing those resources.
  * </p>
  * 
  * <h2>Disclaimer</h2>
  * 
  * <p>
- * An object implementing the {@code RookMap} interface does not provide
+ * An object implementing the {@code YarnRookMap} interface does not provide
  * implicit guarantees.
  * </p>
  * 
@@ -79,7 +79,7 @@ package org.github.evenjn.yarn;
  * 
  * <p>
  * There is no implicit guarantee of thread safety. This means that a system
- * that receives a {@code RookMap} should not assume that it is safe to have
+ * that receives a {@code YarnRookMap} should not assume that it is safe to have
  * multiple threads invoke {@link #get(Rook,Object)} on the same object.
  * </p>
  * 
@@ -90,18 +90,22 @@ package org.github.evenjn.yarn;
  * </p>
  * 
  * <p>
- * However, classes implementing {@code RookMap} or interfaces extending
- * {@code RookMap} might provide explicit guarantees.
+ * However, classes implementing {@code YarnRookMap} or interfaces extending
+ * {@code YarnRookMap} might provide explicit guarantees.
+ * </p>
+ * 
+ * <p>
+ * This class is part of package {@link org.github.evenjn.yarn Yarn}.
  * </p>
  *
  * @param <I>
  *          The type of input objects.
  * @param <O>
- *          The type of output objects.
+ *          The type of output element containers.
  * @since 1.0
  */
 @FunctionalInterface
-public interface RookMap<I, O> {
+public interface YarnRookMap<I, O> {
 
 	/**
 	 * <p>
@@ -117,5 +121,5 @@ public interface RookMap<I, O> {
 	 * @return A container of output objects.
 	 * @since 1.0
 	 */
-	Object get( Rook rook, I input );
+	O get( Rook rook, I input );
 }

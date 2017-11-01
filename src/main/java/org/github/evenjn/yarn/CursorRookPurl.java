@@ -21,9 +21,13 @@ package org.github.evenjn.yarn;
  * <h1>CursorRookPurl</h1>
  * 
  * <p>
- * A {@code CursorRookPurl} is a {@link org.github.evenjn.yarn.RookPurl
- * RookPurl} that provides access to output objects via
+ * A {@code CursorRookPurl} is a {@link org.github.evenjn.yarn.YarnRookPurl
+ * YarnRookPurl} that provides access to output objects via
  * {@link org.github.evenjn.yarn.Cursor Cursor} containers.
+ * </p>
+ * 
+ * <p>
+ * This class is part of package {@link org.github.evenjn.yarn Yarn}.
  * </p>
  *
  * @param <I>
@@ -33,7 +37,7 @@ package org.github.evenjn.yarn;
  * @since 1.0
  */
 public interface CursorRookPurl<I, O> extends
-		RookPurl<I, O> {
+		YarnRookPurl<I, Cursor<O>> {
 
 	/**
 	 * <p>

@@ -23,9 +23,13 @@ import java.util.Iterator;
  * <h1>IteratorRookPurl</h1>
  * 
  * <p>
- * An {@code IteratorRookPurl} is a {@link org.github.evenjn.yarn.RookPurl
- * RookPurl} that provides access to output objects via
+ * An {@code IteratorRookPurl} is a {@link org.github.evenjn.yarn.YarnRookPurl
+ * YarnRookPurl} that provides access to output objects via
  * {@link java.util.Iterator Iterator} containers.
+ * </p>
+ * 
+ * <p>
+ * This class is part of package {@link org.github.evenjn.yarn Yarn}.
  * </p>
  *
  * @param <I>
@@ -35,7 +39,7 @@ import java.util.Iterator;
  * @since 1.0
  */
 public interface IteratorRookPurl<I, O> extends
-		RookPurl<I, O> {
+		YarnRookPurl<I, Iterator<O>> {
 
 	/**
 	 * <p>

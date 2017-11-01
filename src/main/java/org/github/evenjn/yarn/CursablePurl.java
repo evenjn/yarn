@@ -21,9 +21,13 @@ package org.github.evenjn.yarn;
  * <h1>CursablePurl</h1>
  * 
  * <p>
- * A {@code CursablePurl} is a {@link org.github.evenjn.yarn.Purl Purl} that
- * provides access to output objects via {@link org.github.evenjn.yarn.Cursable
- * Cursable} containers.
+ * A {@code CursablePurl} is a {@link org.github.evenjn.yarn.YarnPurl YarnPurl}
+ * that provides access to output objects via
+ * {@link org.github.evenjn.yarn.Cursable Cursable} containers.
+ * </p>
+ * 
+ * <p>
+ * This class is part of package {@link org.github.evenjn.yarn Yarn}.
  * </p>
  *
  * @param <I>
@@ -33,7 +37,7 @@ package org.github.evenjn.yarn;
  * @since 1.0
  */
 public interface CursablePurl<I, O> extends
-		Purl<I, O> {
+		YarnPurl<I, Cursable<O>> {
 
 	/**
 	 * <p>

@@ -23,9 +23,13 @@ import java.util.stream.Stream;
  * <h1>StreamRookMap</h1>
  * 
  * <p>
- * A {@code StreamRookMap} is a {@linkplain org.github.evenjn.yarn.RookMap
- * RookMap} that provides access to output objects via
+ * A {@code StreamRookMap} is a {@linkplain org.github.evenjn.yarn.YarnRookMap
+ * YarnRookMap} that provides access to output objects via
  * {@link java.util.stream.Stream Stream} containers.
+ * </p>
+ * 
+ * <p>
+ * This class is part of package {@link org.github.evenjn.yarn Yarn}.
  * </p>
  * 
  * @param <I>
@@ -35,7 +39,7 @@ import java.util.stream.Stream;
  * @since 1.0
  */
 public interface StreamRookMap<I, O> extends
-		RookMap<I, O> {
+		YarnRookMap<I, Stream<O>> {
 
 	/**
 	 * <p>

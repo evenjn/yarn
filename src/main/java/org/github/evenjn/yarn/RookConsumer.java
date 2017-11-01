@@ -19,8 +19,32 @@ package org.github.evenjn.yarn;
 
 import java.util.function.Consumer;
 
+/**
+ * <p>
+ * A {@code RookConsumer} is a system that returns a
+ * {@link java.util.function.Consumer Consumer} after passing the responsibility
+ * to close associated resources to an argument
+ * {@link org.github.evenjn.yarn.Rook Rook}.
+ * </p>
+ * 
+ * <p>
+ * This class is part of package {@link org.github.evenjn.yarn Yarn}.
+ * </p>
+ * 
+ * @since 1.0
+ */
 @FunctionalInterface
 public interface RookConsumer<O> {
 
+	/**
+	 * Returns a {@link java.util.function.Consumer Consumer} after passing the
+	 * responsibility to close associated resources to the argument
+	 * {@link org.github.evenjn.yarn.Rook Rook}.
+	 * 
+	 * @param rook
+	 *          a {@link org.github.evenjn.yarn.Rook Rook}.
+	 * @return A {@link java.util.function.Consumer Consumer}.
+	 * @since 1.0
+	 */
 	Consumer<O> get( Rook rook );
 }

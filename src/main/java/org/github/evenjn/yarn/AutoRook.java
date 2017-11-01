@@ -23,6 +23,10 @@ package org.github.evenjn.yarn;
  * {@linkplain org.github.evenjn.yarn.Rook rook}.
  * </p>
  * 
+ * <p>
+ * This class is part of package {@link org.github.evenjn.yarn Yarn}.
+ * </p>
+ * 
  * @since 1.0
  */
 public interface AutoRook extends

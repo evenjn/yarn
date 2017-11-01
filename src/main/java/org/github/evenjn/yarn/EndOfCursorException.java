@@ -18,7 +18,21 @@
 package org.github.evenjn.yarn;
 
 /**
- * Signals an attempt to read past the end of a cursor.
+ * <p>
+ * An {@code EndOfCursorException} signals an attempt to read past the end of a
+ * {@link org.github.evenjn.yarn.Cursor Cursor}.
+ * </p>
+ * 
+ * <p>
+ * A reference to the singleton {@code EndOfCursorException} object may be
+ * obtained using static method {@link #neo()}.
+ * </p>
+ * 
+ * <p>
+ * This class is part of package {@link org.github.evenjn.yarn Yarn}.
+ * </p>
+ * 
+ * @since 1.0
  */
 public final class EndOfCursorException
 		extends Exception {
@@ -31,6 +45,15 @@ public final class EndOfCursorException
 	private static final EndOfCursorException neo =
 			new EndOfCursorException( );
 
+	/**
+	 * <p>
+	 * Returns a reference to the singleton {@code EndOfCursorException} object.
+	 * </p>
+	 * 
+	 * @return a reference to the singleton {@code EndOfCursorException} object.
+	 * 
+	 * @since 1.0
+	 */
 	public static final EndOfCursorException neo( ) {
 		return neo;
 	}

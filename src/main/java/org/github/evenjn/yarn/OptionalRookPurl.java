@@ -23,9 +23,13 @@ import java.util.Optional;
  * <h1>OptionalRookPurl</h1>
  * 
  * <p>
- * An {@code OptionalRookPurl} is a {@link org.github.evenjn.yarn.RookPurl
- * RookPurl} that provides access to output objects via
+ * An {@code OptionalRookPurl} is a {@link org.github.evenjn.yarn.YarnRookPurl
+ * YarnRookPurl} that provides access to output objects via
  * {@link java.util.Optional Optional} containers.
+ * </p>
+ * 
+ * <p>
+ * This class is part of package {@link org.github.evenjn.yarn Yarn}.
  * </p>
  *
  * @param <I>
@@ -35,7 +39,7 @@ import java.util.Optional;
  * @since 1.0
  */
 public interface OptionalRookPurl<I, O> extends
-		RookPurl<I, O> {
+		YarnRookPurl<I, Optional<O>> {
 
 	/**
 	 * <p>

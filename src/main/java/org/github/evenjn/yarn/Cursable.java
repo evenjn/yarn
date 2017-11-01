@@ -23,17 +23,12 @@ package org.github.evenjn.yarn;
  * being (a reference to) an object.
  * </p>
  * 
- * <h2>Service Contract</h2>
+ * <h2>Protocol</h2>
  * 
  * <p>
- * An object implementing the {@code Cursable} interface fulfils the following
- * contract.
- * </p>
- * 
- * <p>
- * Elements in the sequence can be accessed through a {@link Cursor} obtained by
- * invoking {@link #pull(Rook)}. The function {@link #pull(Rook)} never returns
- * {@code null}.
+ * Elements in the sequence can be accessed through a
+ * {@link org.github.evenjn.yarn.Cursor Cursor} obtained by invoking
+ * {@link #pull(Rook)}.
  * </p>
  * 
  * <p>
@@ -46,23 +41,22 @@ package org.github.evenjn.yarn;
  * {@code Cursor} is not needed).
  * </p>
  * 
+ * <h2>Service Contract</h2>
+ * 
+ * <p>
+ * An object implementing the {@code Cursable} interface fulfils the following
+ * contract.
+ * </p>
+ * 
+ * <p>
+ * The function {@link #pull(Rook)} never returns {@code null}.
+ * </p>
+ * 
  * <p>
  * Multiple cursors may be used in parallel, as long as there are enough
- * computational resources to do so.
+ * computational resources to do so. There is no need to reach the end of a
+ * cursor before obtaining another one.
  * </p>
- * 
- * <p>
- * Let {@code Foobar} be any function that combines information obtained
- * exclusively from the argument {@code Cursable} and its elements. As long as
- * {@code Foobar} never changes the state of the objects accessbile via the
- * argument {@code Cursable}, the results of mutiple invocations of
- * {@code Foobar} on the same argument are all equal to each other.
- * </p>
- * 
- * <p>
- * There are no other constraints in the service contract.
- * </p>
- * 
  * 
  * <h2>Disclaimer</h2>
  * 
@@ -72,23 +66,14 @@ package org.github.evenjn.yarn;
  * </p>
  * 
  * <p>
- * There is no implicit guarantee that element references are not {@code null}.
- * </p>
- * 
- * <p>
- * There is no implicit guarantee that any two element references refer to
- * distinct objects.
- * </p>
- * 
- * <p>
  * There is no implicit guarantee of thread safety. This means that a system
  * that receives a {@code Cursable} should not assume that it is safe to have
  * multiple threads invoke {@link #pull(Rook)} on the same object.
  * </p>
  * 
  * <p>
- * However, classes implementing Cursor or interfaces extending Cursor might
- * provide explicit guarantees.
+ * However, classes implementing {@code Cursable} or interfaces extending
+ * {@code Cursable} might provide explicit guarantees.
  * </p>
  * 
  * <h2>Design rationale</h2>
@@ -100,25 +85,26 @@ package org.github.evenjn.yarn;
  * </p>
  * 
  * <p>
- * There is no need to reach the end of a cursor before obtaining another one.
+ * This class is part of package {@link org.github.evenjn.yarn Yarn}.
  * </p>
  * 
  * @param <I>
  *          The type of objects in the sequence.
  * @since 1.0
- * 
  */
 @FunctionalInterface
 public interface Cursable<I> {
 
 	/**
-	 * Returns a cursor iterating over the elements in this sequence.
+	 * Returns a {@link org.github.evenjn.yarn.Cursor Cursor} providing access to
+	 * the elements in this sequence.
 	 * 
 	 * @param rook
 	 *          An object that takes the responsibility to close the resources
 	 *          that have been opened to obtain access to the elements in this
 	 *          sequence.
-	 * @return A cursor iterating over the elements in this sequence.
+	 * @return A {@link org.github.evenjn.yarn.Cursor Cursor} providing access to
+	 *         the elements in this sequence.
 	 * @since 1.0
 	 */
 	Cursor<I> pull( Rook rook );

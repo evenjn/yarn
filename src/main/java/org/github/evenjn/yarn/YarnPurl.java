@@ -18,10 +18,10 @@
 package org.github.evenjn.yarn;
 
 /**
- * <h1>Purl</h1>
+ * <h1>YarnPurl</h1>
  * 
  * <p>
- * A {@code Purl} provides methods to obtain a sequence of output elements
+ * A {@code YarnPurl} provides methods to obtain a sequence of output elements
  * associated to a sequence of input elements, building the resulting sequence
  * incrementally. We refer to this operation as <em>purl</em>, and to the
  * resulting sequence as the <em>result of the purl</em>
@@ -30,20 +30,20 @@ package org.github.evenjn.yarn;
  * <h2>Protocol</h2>
  * 
  * <p>
- * An object implementing the {@code Purl} interface requires that the client
- * invokes {@link #next(Object)} once for each element of the input sequence,
- * each time providing as argument an element of the input sequence, in the same
- * order they appear in the input sequence.
+ * An object implementing the {@code YarnPurl} interface requires that the
+ * client invokes {@link #next(Object)} once for each element of the input
+ * sequence, each time providing as argument an element of the input sequence,
+ * in the same order they appear in the input sequence.
  * </p>
  * 
  * <p>
- * An object implementing the {@code Purl} interface requires that, after the
- * client has invoked {@link #next(Object)} once for each element in the input
- * sequence, the client invokes {@link #end()}.
+ * An object implementing the {@code YarnPurl} interface requires that, after
+ * the client has invoked {@link #next(Object)} once for each element in the
+ * input sequence, the client invokes {@link #end()}.
  * </p>
  * 
  * <p>
- * An object implementing the {@code Purl} interface requires that, once the
+ * An object implementing the {@code YarnPurl} interface requires that, once the
  * client has invoked {@link #end()}, the client does not invoke {@link #end()}
  * or {@link #next(Object)} any more.
  * </p>
@@ -51,7 +51,7 @@ package org.github.evenjn.yarn;
  * <h2>Service Contract</h2>
  * 
  * <p>
- * An object implementing the {@code Purl} interface fulfils the following
+ * An object implementing the {@code YarnPurl} interface fulfils the following
  * contract.
  * </p>
  * 
@@ -66,8 +66,8 @@ package org.github.evenjn.yarn;
  * <h2>Disclaimer</h2>
  * 
  * <p>
- * An object implementing the {@code Purl} interface does not provide implicit
- * guarantees.
+ * An object implementing the {@code YarnPurl} interface does not provide
+ * implicit guarantees.
  * </p>
  * 
  * <p>
@@ -87,7 +87,7 @@ package org.github.evenjn.yarn;
  * 
  * <p>
  * There is no implicit guarantee of thread safety. This means that a system
- * that receives a {@code Purl} should not assume that it is safe to have
+ * that receives a {@code YarnPurl} should not assume that it is safe to have
  * multiple threads invoke {@link #next(Object)} or {@link #end()} on the same
  * object.
  * </p>
@@ -100,39 +100,43 @@ package org.github.evenjn.yarn;
  * </p>
  * 
  * <p>
- * However, classes implementing {@code Purl} or interfaces extending
- * {@code Purl} might provide explicit guarantees.
+ * However, classes implementing {@code YarnPurl} or interfaces extending
+ * {@code YarnPurl} might provide explicit guarantees.
  * </p>
  * 
  * <h2>Design Notes</h2>
  * 
  * <p>
- * A {@code Purl} object may (and typically will) be stateful: it may accumulate
- * information while processing elements, and use such information to produce
- * output elements.
+ * A {@code YarnPurl} object may (and typically will) be stateful: it may
+ * accumulate information while processing elements, and use such information to
+ * produce output elements.
  * </p>
  * 
  * <p>
- * A {@code Purl} object encapsulates state and behaviour necessary to carry out
- * a single operaion. The same {@code Purl} object cannot be reused to carry out
- * two or more purl transformations. Compliant implementations must throw
- * exception accordingly.
+ * A {@code YarnPurl} object encapsulates state and behaviour necessary to carry
+ * out a single operaion. The same {@code YarnPurl} object cannot be reused to
+ * carry out two or more purl transformations. Compliant implementations must
+ * throw exception accordingly.
  * </p>
  * 
  * <p>
- * {@code Purl} is similar to {@link org.github.evenjn.yarn.RookPurl RookPurl}.
- * Unlike {@code RookPurl}, {@code Purl} does not provide support for
- * {@linkplain java.lang.AutoCloseable auto-closeable} resources.
+ * {@code YarnPurl} is similar to {@link org.github.evenjn.yarn.YarnRookPurl
+ * YarnRookPurl}. Unlike {@code YarnRookPurl}, {@code YarnPurl} does not provide
+ * support for {@linkplain java.lang.AutoCloseable auto-closeable} resources.
+ * </p>
+ * 
+ * <p>
+ * This class is part of package {@link org.github.evenjn.yarn Yarn}.
  * </p>
  * 
  * @param <I>
  *          The type of input elements.
  * @param <O>
- *          The type of output elements.
+ *          The type of output element containers.
  * @since 1.0
  *
  */
-public interface Purl<I, O> {
+public interface YarnPurl<I, O> {
 
 	/**
 	 * <p>
@@ -148,7 +152,7 @@ public interface Purl<I, O> {
 	 *           when {@link #end()} has already been invoked.
 	 * @since 1.0
 	 */
-	Object next( I input )
+	O next( I input )
 			throws IllegalStateException;
 
 	/**
@@ -162,6 +166,6 @@ public interface Purl<I, O> {
 	 *           when {@link #end()} has already been invoked.
 	 * @since 1.0
 	 */
-	Object end( )
+	O end( )
 			throws IllegalStateException;
 }

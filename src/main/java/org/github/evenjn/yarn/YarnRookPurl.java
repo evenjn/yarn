@@ -18,13 +18,13 @@
 package org.github.evenjn.yarn;
 
 /**
- * <h1>RookPurl</h1>
+ * <h1>YarnRookPurl</h1>
  * 
  * <p>
- * A {@code RookPurl} provides methods to obtain a sequence of output elements
- * associated to a sequence of input elements, building the resulting sequence
- * incrementally, while transferring the responsiblity of closing any associated
- * {@linkplain java.lang.AutoCloseable auto-closeable} resources to
+ * A {@code YarnRookPurl} provides methods to obtain a sequence of output
+ * elements associated to a sequence of input elements, building the resulting
+ * sequence incrementally, while transferring the responsiblity of closing any
+ * associated {@linkplain java.lang.AutoCloseable auto-closeable} resources to
  * {@link org.github.evenjn.yarn.Rook Rook} objects. We refer to this operation
  * as <em>purl</em>, and to the resulting sequence as the <em>result of the
  * purl</em>
@@ -40,29 +40,29 @@ package org.github.evenjn.yarn;
  * <h2>Protocol</h2>
  * 
  * <p>
- * An object implementing the {@code RookPurl} interface requires that the
+ * An object implementing the {@code YarnRookPurl} interface requires that the
  * client invokes {@link #next(Rook,Object)} once for each element of the input
  * sequence, each time providing as argument an element of the input sequence,
  * in the same order they appear in the input sequence.
  * </p>
  * 
  * <p>
- * An object implementing the {@code RookPurl} interface requires that, after
- * the client has invoked {@link #next(Rook,Object)} once for each element in
- * the input sequence, the client invokes {@link #end(Rook)}.
+ * An object implementing the {@code YarnRookPurl} interface requires that,
+ * after the client has invoked {@link #next(Rook,Object)} once for each element
+ * in the input sequence, the client invokes {@link #end(Rook)}.
  * </p>
  * 
  * <p>
- * An object implementing the {@code RookPurl} interface requires that, once the
- * client has invoked {@link #end(Rook)}, the client does not invoke
+ * An object implementing the {@code YarnRookPurl} interface requires that, once
+ * the client has invoked {@link #end(Rook)}, the client does not invoke
  * {@link #end(Rook)} or {@link #next(Rook,Object)} any more.
  * </p>
  * 
  * <h2>Service Contract</h2>
  * 
  * <p>
- * An object implementing the {@code RookPurl} interface fulfils the following
- * contract.
+ * An object implementing the {@code YarnRookPurl} interface fulfils the
+ * following contract.
  * </p>
  * 
  * <p>
@@ -78,15 +78,15 @@ package org.github.evenjn.yarn;
  * {@link #end(Rook)} requires opening {@linkplain java.lang.AutoCloseable
  * auto-closeable} resources (e.g. files) in order to produce output objects,
  * and those resources must stay open for the output objects to work as
- * intended, the {@code RookPurl} opens those resources and hooks them to the
- * argument {@link org.github.evenjn.yarn.Rook Rook}, which takes the
+ * intended, the {@code YarnRookPurl} opens those resources and hooks them to
+ * the argument {@link org.github.evenjn.yarn.Rook Rook}, which takes the
  * responsibility of closing those resources.
  * </p>
  * 
  * <h2>Disclaimer</h2>
  * 
  * <p>
- * An object implementing the {@code RookPurl} interface does not provide
+ * An object implementing the {@code YarnRookPurl} interface does not provide
  * implicit guarantees.
  * </p>
  * 
@@ -107,9 +107,9 @@ package org.github.evenjn.yarn;
  * 
  * <p>
  * There is no implicit guarantee of thread safety. This means that a system
- * that receives a {@code RookPurl} should not assume that it is safe to have
- * multiple threads invoke {@link #next(Rook,Object)} or {@link #end(Rook)} on
- * the same object.
+ * that receives a {@code YarnRookPurl} should not assume that it is safe to
+ * have multiple threads invoke {@link #next(Rook,Object)} or {@link #end(Rook)}
+ * on the same object.
  * </p>
  * 
  * <p>
@@ -120,39 +120,43 @@ package org.github.evenjn.yarn;
  * </p>
  * 
  * <p>
- * However, classes implementing {@code RookPurl} or interfaces extending
- * {@code RookPurl} might provide explicit guarantees.
+ * However, classes implementing {@code YarnRookPurl} or interfaces extending
+ * {@code YarnRookPurl} might provide explicit guarantees.
  * </p>
  * 
  * <h2>Design Notes</h2>
  * 
  * <p>
- * A {@code RookPurl} object may (and typically will) be stateful: it may
+ * A {@code YarnRookPurl} object may (and typically will) be stateful: it may
  * accumulate information while processing elements, and use such information to
  * produce output elements.
  * </p>
  * 
  * <p>
- * A {@code RookPurl} object encapsulates state and behaviour necessary to carry
- * out a single operation. The same {@code RookPurl} object cannot be reused to
- * carry out two or more purl transformations. Compliant implementations must
- * throw exception accordingly.
+ * A {@code YarnRookPurl} object encapsulates state and behaviour necessary to
+ * carry out a single operation. The same {@code YarnRookPurl} object cannot be
+ * reused to carry out two or more purl transformations. Compliant
+ * implementations must throw exception accordingly.
  * </p>
  * 
  * <p>
- * {@code RookPurl} is similar to {@link org.github.evenjn.yarn.Purl Purl}.
- * Unlike {@code RookPurl}, {@code Purl} does not provide support for
- * {@linkplain java.lang.AutoCloseable auto-closeable} resources.
+ * {@code YarnRookPurl} is similar to {@link org.github.evenjn.yarn.YarnPurl
+ * YarnPurl}. Unlike {@code YarnRookPurl}, {@code YarnPurl} does not provide
+ * support for {@linkplain java.lang.AutoCloseable auto-closeable} resources.
+ * </p>
+ * 
+ * <p>
+ * This class is part of package {@link org.github.evenjn.yarn Yarn}.
  * </p>
  * 
  * @param <I>
  *          The type of input elements.
  * @param <O>
- *          The type of output elements.
+ *          The type of output element containers.
  * @since 1.0
  *
  */
-public interface RookPurl<I, O> {
+public interface YarnRookPurl<I, O> {
 
 	/**
 	 * <p>
@@ -172,7 +176,7 @@ public interface RookPurl<I, O> {
 	 *           when {@link #end(Rook)} has already been invoked.
 	 * @since 1.0
 	 */
-	Object next( Rook rook, I input )
+	O next( Rook rook, I input )
 			throws IllegalStateException;
 
 	/**
@@ -190,6 +194,6 @@ public interface RookPurl<I, O> {
 	 *           when {@link #end(Rook)} has already been invoked.
 	 * @since 1.0
 	 */
-	Object end( Rook rook )
+	O end( Rook rook )
 			throws IllegalStateException;
 }

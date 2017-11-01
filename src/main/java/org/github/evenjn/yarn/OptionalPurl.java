@@ -23,8 +23,13 @@ import java.util.Optional;
  * <h1>OptionalPurl</h1>
  * 
  * <p>
- * An {@code OptionalPurl} is a {@link org.github.evenjn.yarn.Purl Purl} that
- * provides access to output objects via {@link java.util.Optional} containers.
+ * An {@code OptionalPurl} is a {@link org.github.evenjn.yarn.YarnPurl YarnPurl}
+ * that provides access to output objects via {@link java.util.Optional}
+ * containers.
+ * </p>
+ * 
+ * <p>
+ * This class is part of package {@link org.github.evenjn.yarn Yarn}.
  * </p>
  *
  * @param <I>
@@ -34,7 +39,7 @@ import java.util.Optional;
  * @since 1.0
  */
 public interface OptionalPurl<I, O> extends
-		Purl<I, O> {
+		YarnPurl<I, Optional<O>> {
 
 	/**
 	 * <p>

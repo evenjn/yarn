@@ -23,9 +23,13 @@ import java.util.stream.Stream;
  * <h1>StreamRookPurl</h1>
  * 
  * <p>
- * A {@code StreamRookPurl} is a {@link org.github.evenjn.yarn.RookPurl
- * RookPurl} that provides access to output objects via
+ * A {@code StreamRookPurl} is a {@link org.github.evenjn.yarn.YarnRookPurl
+ * YarnRookPurl} that provides access to output objects via
  * {@link java.util.stream.Stream Stream} containers.
+ * </p>
+ * 
+ * <p>
+ * This class is part of package {@link org.github.evenjn.yarn Yarn}.
  * </p>
  *
  * @param <I>
@@ -35,7 +39,7 @@ import java.util.stream.Stream;
  * @since 1.0
  */
 public interface StreamRookPurl<I, O> extends
-		RookPurl<I, O> {
+		YarnRookPurl<I, Stream<O>> {
 
 	/**
 	 * <p>

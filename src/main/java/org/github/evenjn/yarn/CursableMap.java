@@ -21,9 +21,13 @@ package org.github.evenjn.yarn;
  * <h1>CursableMap</h1>
  * 
  * <p>
- * A {@code CursableMap} is a {@link org.github.evenjn.yarn.Map Map} that
- * provides access to output objects via {@link org.github.evenjn.yarn.Cursable
- * Cursable} containers.
+ * A {@code CursableMap} is a {@link org.github.evenjn.yarn.YarnMap YarnMap}
+ * that provides access to output objects via
+ * {@link org.github.evenjn.yarn.Cursable Cursable} containers.
+ * </p>
+ * 
+ * <p>
+ * This class is part of package {@link org.github.evenjn.yarn Yarn}.
  * </p>
  *
  * @param <I>
@@ -34,7 +38,7 @@ package org.github.evenjn.yarn;
  */
 @FunctionalInterface
 public interface CursableMap<I, O> extends
-		Map<I, O> {
+		YarnMap<I, Cursable<O>> {
 
 	/**
 	 * <p>

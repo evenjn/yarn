@@ -21,9 +21,13 @@ package org.github.evenjn.yarn;
  * <h1>IterableMap</h1>
  * 
  * <p>
- * An {@code IterableMap} is a {@linkplain org.github.evenjn.yarn.Map Map} that
- * provides access to output objects via {@link java.lang.Iterable Iterable}
- * containers.
+ * An {@code IterableMap} is a {@linkplain org.github.evenjn.yarn.YarnMap
+ * YarnMap} that provides access to output objects via {@link java.lang.Iterable
+ * Iterable} containers.
+ * </p>
+ * 
+ * <p>
+ * This class is part of package {@link org.github.evenjn.yarn Yarn}.
  * </p>
  *
  * @param <I>
@@ -34,7 +38,7 @@ package org.github.evenjn.yarn;
  */
 @FunctionalInterface
 public interface IterableMap<I, O> extends
-		Map<I, O> {
+		YarnMap<I, Iterable<O>> {
 
 	/**
 	 * <p>

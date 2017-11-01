@@ -17,8 +17,37 @@
  */
 package org.github.evenjn.yarn;
 
+/**
+ * <p>
+ * Returns an object associated to the argument object after passing the
+ * responsibility to close associated resources to the argument
+ * {@link org.github.evenjn.yarn.Rook Rook}.
+ * </p>
+ * 
+ * <p>
+ * This class is part of package {@link org.github.evenjn.yarn Yarn}.
+ * </p>
+ * 
+ * @param <I>
+ *          The type of input objects.
+ * @param <O>
+ *          The type of output objects.
+ * @since 1.0
+ */
 @FunctionalInterface
 public interface RookFunction<I, O> {
 
+	/**
+	 * Returns an object associated to the argument object after passing the
+	 * responsibility to close associated resources to the argument
+	 * {@link org.github.evenjn.yarn.Rook Rook}.
+	 * 
+	 * @param rook
+	 *          a {@link org.github.evenjn.yarn.Rook Rook}.
+	 * @param An
+	 *          input object
+	 * @return An output object.
+	 * @since 1.0
+	 */
 	O get( Rook rook, I object );
 }

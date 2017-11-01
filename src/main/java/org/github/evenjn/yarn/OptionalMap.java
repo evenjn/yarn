@@ -23,9 +23,13 @@ import java.util.Optional;
  * <h1>OptionalMap</h1>
  * 
  * <p>
- * An {@code OptionalMap} is a {@linkplain org.github.evenjn.yarn.Map Map} that
- * provides access to objects via {@link java.util.Optional Optional}
- * containers.
+ * An {@code OptionalMap} is a {@linkplain org.github.evenjn.yarn.YarnMap
+ * YarnMap} that provides access to objects via {@link java.util.Optional
+ * Optional} containers.
+ * </p>
+ * 
+ * <p>
+ * This class is part of package {@link org.github.evenjn.yarn Yarn}.
  * </p>
  *
  * @param <I>
@@ -36,7 +40,7 @@ import java.util.Optional;
  */
 @FunctionalInterface
 public interface OptionalMap<I, O> extends
-		Map<I, O> {
+		YarnMap<I, Optional<O>> {
 
 	/**
 	 * <p>

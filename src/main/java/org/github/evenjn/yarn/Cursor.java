@@ -38,11 +38,6 @@ package org.github.evenjn.yarn;
  * {@link EndOfCursorException}.
  * </p>
  * 
- * <p>
- * There are no other constraints in the service contract.
- * </p>
- * 
- * 
  * <h2>Disclaimer</h2>
  * 
  * <p>
@@ -51,7 +46,7 @@ package org.github.evenjn.yarn;
  * </p>
  * 
  * <p>
- * There is no implicit guarantee that element references are not {@code null}
+ * There is no implicit guarantee that element references are not {@code null}.
  * </p>
  * 
  * <p>
@@ -62,6 +57,12 @@ package org.github.evenjn.yarn;
  * <p>
  * There is no implicit guarantee that, after an invocation of {@link #next()},
  * the element references returned at previous invocations are valid.
+ * </p>
+ * 
+ * <p>
+ * There is no implicit guarantee that objects returned by invocations of
+ * {@link #next()} are not affected by subsequent invocations of
+ * {@link #next()}.
  * </p>
  * 
  * <p>
@@ -79,8 +80,9 @@ package org.github.evenjn.yarn;
  * 
  * <p>
  * There are situations where we must develop a function that takes in input a
- * sequence of elements, but it does not need those elements to be all in memory
- * at the same time and it does not need to read that sequence more than once.
+ * sequence of elements, but the function does not need those elements to be all
+ * in memory at the same time and it does not need to read that sequence more
+ * than once.
  * </p>
  * 
  * <p>
@@ -100,13 +102,16 @@ package org.github.evenjn.yarn;
  * {@code Iterable} might place too much of a burdern on the clients, the
  * {@code Cursor} interface can solve the issue.
  * </p>
+ * 
+ * <p>
+ * This class is part of package {@link org.github.evenjn.yarn Yarn}.
+ * </p>
  *
  * @param <I>
  *          The type of objects in the sequence.
  * @since 1.0
- * 
- * @author Marco Trevisan
  */
+@FunctionalInterface
 public interface Cursor<I> {
 
 	/**

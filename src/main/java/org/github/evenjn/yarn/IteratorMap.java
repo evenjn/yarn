@@ -23,9 +23,13 @@ import java.util.Iterator;
  * <h1>IteratorMap</h1>
  * 
  * <p>
- * An {@code IteratorMap} is a {@linkplain org.github.evenjn.yarn.Map Map} that
- * provides access to output objects via {@link java.util.Iterator Iterator}
- * containers.
+ * An {@code IteratorMap} is a {@linkplain org.github.evenjn.yarn.YarnMap
+ * YarnMap} that provides access to output objects via {@link java.util.Iterator
+ * Iterator} containers.
+ * </p>
+ * 
+ * <p>
+ * This class is part of package {@link org.github.evenjn.yarn Yarn}.
  * </p>
  *
  * @param <I>
@@ -36,7 +40,7 @@ import java.util.Iterator;
  */
 @FunctionalInterface
 public interface IteratorMap<I, O> extends
-		Map<I, O> {
+		YarnMap<I, Iterator<O>> {
 
 	/**
 	 * <p>

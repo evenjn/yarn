@@ -18,17 +18,17 @@
 package org.github.evenjn.yarn;
 
 /**
- * <h1>Map</h1>
+ * <h1>YarnMap</h1>
  * 
  * <p>
- * A {@code Map} provides a {@link #get(Object)} method to obtain the output
+ * A {@code YarnMap} provides a {@link #get(Object)} method to obtain the output
  * objects, if any, associated to a given input object.
  * </p>
  * 
  * <h2>Service Contract</h2>
  * 
  * <p>
- * An object implementing the {@code Map} interface fulfils the following
+ * An object implementing the {@code YarnMap} interface fulfils the following
  * contract.
  * </p>
  * 
@@ -39,8 +39,8 @@ package org.github.evenjn.yarn;
  * <h2>Disclaimer</h2>
  * 
  * <p>
- * An object implementing the {@code Map} interface does not provide implicit
- * guarantees.
+ * An object implementing the {@code YarnMap} interface does not provide
+ * implicit guarantees.
  * </p>
  * 
  * <p>
@@ -80,6 +80,10 @@ package org.github.evenjn.yarn;
  * However, classes implementing {@code Map} or interfaces extending {@code Map}
  * might provide explicit guarantees.
  * </p>
+ * 
+ * <p>
+ * This class is part of package {@link org.github.evenjn.yarn Yarn}.
+ * </p>
  *
  * @param <I>
  *          The type of input objects.
@@ -87,7 +91,7 @@ package org.github.evenjn.yarn;
  *          The type of output objects.
  * @since 1.0
  */
-public interface Map<I, O> {
+public interface YarnMap<I, O> {
 
 	/**
 	 * <p>
@@ -97,8 +101,8 @@ public interface Map<I, O> {
 	 * 
 	 * @param input
 	 *          An input object.
-	 * @return A container of output objects.
+	 * @return A container of output element containers.
 	 * @since 1.0
 	 */
-	Object get( I input );
+	O get( I input );
 }
