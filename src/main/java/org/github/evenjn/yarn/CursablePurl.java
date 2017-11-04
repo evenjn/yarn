@@ -37,7 +37,7 @@ package org.github.evenjn.yarn;
  * @since 1.0
  */
 public interface CursablePurl<I, O> extends
-		YarnPurl<I, Cursable<O>> {
+		YarnPurl<I, O, Cursable<O>> {
 
 	/**
 	 * <p>

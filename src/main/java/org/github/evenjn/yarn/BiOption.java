@@ -19,29 +19,28 @@ package org.github.evenjn.yarn;
 
 /**
  * <p>
- * A {@code BiOption} object is a {@link Bi} object that allows to mark its
- * slots as empty. The content of an empty slot is {@code null}.
+ * A {@code BiOption} object is a {@link Bi} object that may have empty slots.
+ * The content of an empty slot is {@code null}.
  * </p>
  *
  * @param <F>
  *          The type of the object in the <em>front</em> slot.
  * @param <B>
  *          The type of the object in the <em>back</em> slot.
- * 
  * @since 1.0
  */
 public interface BiOption<F, B> extends
 		Bi<F, B> {
 
 	/**
-	 * @return the object in the <em>front</em> slot.
+	 * @return The object in the <em>front</em> slot.
 	 * @since 1.0
 	 */
 	@Override
 	F front( );
 
 	/**
-	 * @return the object in the <em>back</em> slot.
+	 * @return The object in the <em>back</em> slot.
 	 * @since 1.0
 	 */
 	@Override

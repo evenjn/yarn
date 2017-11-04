@@ -38,7 +38,7 @@ package org.github.evenjn.yarn;
  */
 @FunctionalInterface
 public interface IterableMap<I, O> extends
-		YarnMap<I, Iterable<O>> {
+		YarnMap<I, O, Iterable<O>> {
 
 	/**
 	 * <p>

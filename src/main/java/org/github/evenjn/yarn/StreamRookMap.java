@@ -39,7 +39,7 @@ import java.util.stream.Stream;
  * @since 1.0
  */
 public interface StreamRookMap<I, O> extends
-		YarnRookMap<I, Stream<O>> {
+		YarnRookMap<I, O, Stream<O>> {
 
 	/**
 	 * <p>

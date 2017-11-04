@@ -37,7 +37,7 @@ package org.github.evenjn.yarn;
  * @since 1.0
  */
 public interface IterablePurl<I, O> extends
-		YarnPurl<I, Iterable<O>> {
+		YarnPurl<I, O, Iterable<O>> {
 
 	/**
 	 * <p>

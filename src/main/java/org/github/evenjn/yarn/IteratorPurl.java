@@ -39,7 +39,7 @@ import java.util.Iterator;
  * @since 1.0
  */
 public interface IteratorPurl<I, O> extends
-		YarnPurl<I, Iterator<O>> {
+		YarnPurl<I, O, Iterator<O>> {
 
 	/**
 	 * <p>

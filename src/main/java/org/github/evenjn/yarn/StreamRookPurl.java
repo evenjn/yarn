@@ -39,7 +39,7 @@ import java.util.stream.Stream;
  * @since 1.0
  */
 public interface StreamRookPurl<I, O> extends
-		YarnRookPurl<I, Stream<O>> {
+		YarnRookPurl<I, O, Stream<O>> {
 
 	/**
 	 * <p>

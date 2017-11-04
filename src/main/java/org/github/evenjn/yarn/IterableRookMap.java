@@ -38,7 +38,7 @@ package org.github.evenjn.yarn;
  */
 @FunctionalInterface
 public interface IterableRookMap<I, O> extends
-		YarnRookMap<I, Iterable<O>> {
+		YarnRookMap<I, O, Iterable<O>> {
 
 	/**
 	 * <p>

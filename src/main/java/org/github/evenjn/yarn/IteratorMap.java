@@ -40,7 +40,7 @@ import java.util.Iterator;
  */
 @FunctionalInterface
 public interface IteratorMap<I, O> extends
-		YarnMap<I, Iterator<O>> {
+		YarnMap<I, O, Iterator<O>> {
 
 	/**
 	 * <p>

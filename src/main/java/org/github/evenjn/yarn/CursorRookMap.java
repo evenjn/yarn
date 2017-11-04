@@ -38,7 +38,7 @@ package org.github.evenjn.yarn;
  */
 @FunctionalInterface
 public interface CursorRookMap<I, O> extends
-		YarnRookMap<I, Cursor<O>> {
+		YarnRookMap<I, O, Cursor<O>> {
 
 	/**
 	 * <p>

@@ -37,7 +37,7 @@ package org.github.evenjn.yarn;
  * @since 1.0
  */
 public interface CursorRookPurl<I, O> extends
-		YarnRookPurl<I, Cursor<O>> {
+		YarnRookPurl<I, O, Cursor<O>> {
 
 	/**
 	 * <p>

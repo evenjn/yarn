@@ -30,19 +30,18 @@ package org.github.evenjn.yarn;
  *          The type of the object in the <em>front</em> slot.
  * @param <B>
  *          The type of the object in the <em>back</em> slot.
- * 
  * @since 1.0
  */
 public interface Bi<F, B> {
 
 	/**
-	 * @return the object in the <em>front</em> slot.
+	 * @return The object in the <em>front</em> slot.
 	 * @since 1.0
 	 */
 	F front( );
 
 	/**
-	 * @return the object in the <em>back</em> slot.
+	 * @return The object in the <em>back</em> slot.
 	 * @since 1.0
 	 */
 	B back( );

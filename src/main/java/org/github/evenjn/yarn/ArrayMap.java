@@ -37,7 +37,7 @@ package org.github.evenjn.yarn;
  */
 @FunctionalInterface
 public interface ArrayMap<I, O> extends
-		YarnMap<I, O[]> {
+		YarnMap<I, O, O[]> {
 
 	/**
 	 * <p>

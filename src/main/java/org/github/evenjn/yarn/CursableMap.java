@@ -38,7 +38,7 @@ package org.github.evenjn.yarn;
  */
 @FunctionalInterface
 public interface CursableMap<I, O> extends
-		YarnMap<I, Cursable<O>> {
+		YarnMap<I, O, Cursable<O>> {
 
 	/**
 	 * <p>

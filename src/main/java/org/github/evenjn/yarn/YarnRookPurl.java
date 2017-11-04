@@ -152,11 +152,13 @@ package org.github.evenjn.yarn;
  * @param <I>
  *          The type of input elements.
  * @param <O>
- *          The type of output element containers.
+ *          The type of output objects.
+ * @param <C>
+ *          The type of output object containers.
  * @since 1.0
  *
  */
-public interface YarnRookPurl<I, O> {
+public interface YarnRookPurl<I, O, C> {
 
 	/**
 	 * <p>
@@ -176,7 +178,7 @@ public interface YarnRookPurl<I, O> {
 	 *           when {@link #end(Rook)} has already been invoked.
 	 * @since 1.0
 	 */
-	O next( Rook rook, I input )
+	C next( Rook rook, I input )
 			throws IllegalStateException;
 
 	/**
@@ -194,6 +196,6 @@ public interface YarnRookPurl<I, O> {
 	 *           when {@link #end(Rook)} has already been invoked.
 	 * @since 1.0
 	 */
-	O end( Rook rook )
+	C end( Rook rook )
 			throws IllegalStateException;
 }

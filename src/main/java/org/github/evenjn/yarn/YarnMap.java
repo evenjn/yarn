@@ -66,8 +66,9 @@ package org.github.evenjn.yarn;
  * 
  * <p>
  * There is no implicit guarantee of thread safety. This means that a system
- * that receives a {@code Map} should not assume that it is safe to have
- * multiple threads invoke {@link #get(Object)} on the same object.
+ * that receives a {@code YarnMap} should not assume that it is safe to have
+ * multiple threads invoke {@link #get(Object)} on the same {@code YarnMap}
+ * object.
  * </p>
  * 
  * <p>
@@ -77,8 +78,8 @@ package org.github.evenjn.yarn;
  * </p>
  * 
  * <p>
- * However, classes implementing {@code Map} or interfaces extending {@code Map}
- * might provide explicit guarantees.
+ * However, classes implementing {@code YarnMap} or interfaces extending
+ * {@code YarnMap} might provide explicit guarantees.
  * </p>
  * 
  * <p>
@@ -89,9 +90,11 @@ package org.github.evenjn.yarn;
  *          The type of input objects.
  * @param <O>
  *          The type of output objects.
+ * @param <C>
+ *          The type of output object containers.
  * @since 1.0
  */
-public interface YarnMap<I, O> {
+public interface YarnMap<I, O, C> {
 
 	/**
 	 * <p>
@@ -101,8 +104,8 @@ public interface YarnMap<I, O> {
 	 * 
 	 * @param input
 	 *          An input object.
-	 * @return A container of output element containers.
+	 * @return A container of output elements.
 	 * @since 1.0
 	 */
-	O get( I input );
+	C get( I input );
 }

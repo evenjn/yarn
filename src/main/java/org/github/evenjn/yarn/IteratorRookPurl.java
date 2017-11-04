@@ -39,7 +39,7 @@ import java.util.Iterator;
  * @since 1.0
  */
 public interface IteratorRookPurl<I, O> extends
-		YarnRookPurl<I, Iterator<O>> {
+		YarnRookPurl<I, O, Iterator<O>> {
 
 	/**
 	 * <p>

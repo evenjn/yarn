@@ -22,7 +22,7 @@ package org.github.evenjn.yarn;
  * 
  * <p>
  * A {@code YarnRookMap} provides a {@link #get(Rook,Object)} method to retrieve
- * the output object(s), if any, associated to given input objects while
+ * the output objects, if any, associated to given input objects while
  * transferring the responsiblity of closing any associated
  * {@linkplain java.lang.AutoCloseable auto-closeable} resources to
  * {@link org.github.evenjn.yarn.Rook Rook} objects.
@@ -80,7 +80,8 @@ package org.github.evenjn.yarn;
  * <p>
  * There is no implicit guarantee of thread safety. This means that a system
  * that receives a {@code YarnRookMap} should not assume that it is safe to have
- * multiple threads invoke {@link #get(Rook,Object)} on the same object.
+ * multiple threads invoke {@link #get(Rook,Object)} on the same
+ * {@code YarnRookMap} object.
  * </p>
  * 
  * <p>
@@ -101,11 +102,13 @@ package org.github.evenjn.yarn;
  * @param <I>
  *          The type of input objects.
  * @param <O>
- *          The type of output element containers.
+ *          The type of output object.
+ * @param <C>
+ *          The type of output object containers.
  * @since 1.0
  */
 @FunctionalInterface
-public interface YarnRookMap<I, O> {
+public interface YarnRookMap<I, O, C> {
 
 	/**
 	 * <p>
@@ -121,5 +124,5 @@ public interface YarnRookMap<I, O> {
 	 * @return A container of output objects.
 	 * @since 1.0
 	 */
-	O get( Rook rook, I input );
+	C get( Rook rook, I input );
 }

@@ -40,7 +40,7 @@ import java.util.Optional;
  */
 @FunctionalInterface
 public interface OptionalRookMap<I, O> extends
-		YarnRookMap<I, Optional<O>> {
+		YarnRookMap<I, O, Optional<O>> {
 
 	/**
 	 * <p>

@@ -39,7 +39,7 @@ import java.util.Optional;
  * @since 1.0
  */
 public interface OptionalRookPurl<I, O> extends
-		YarnRookPurl<I, Optional<O>> {
+		YarnRookPurl<I, O, Optional<O>> {
 
 	/**
 	 * <p>
