@@ -18,12 +18,75 @@
 package org.github.evenjn.yarn;
 
 /**
- * Read-only random-access to a finite-length sequence.
+ * <p>
+ * A {@code Tuple} provides indexed access to a finite sequence of objects.
+ * </p>
+ * 
+ * <h2>Disclaimer</h2>
+ * 
+ * <p>
+ * An object implementing the {@code Tuple} interface does not provide implicit
+ * guarantees.
+ * </p>
+ * 
+ * <p>
+ * There is no implicit guarantee that element references are not {@code null}.
+ * </p>
+ * 
+ * <p>
+ * There is no implicit guarantee that any two element references refer to
+ * distinct objects
+ * </p>
+ * 
+ * <p>
+ * There is no implicit guarantee that, after an invocation of
+ * {@link #get(int)}, the element references returned at previous invocations
+ * are valid.
+ * </p>
+ * 
+ * <p>
+ * There is no implicit guarantee that objects returned by invocations of
+ * {@link #get(int)} are not affected by subsequent invocations of
+ * {@link #get(int)}.
+ * </p>
+ * 
+ * <p>
+ * There is no implicit guarantee of thread safety. This means that a system
+ * that receives a {@code Tuple} should not assume that it is safe to have
+ * multiple threads invoke {@link #get(int)} on the same object.
+ * </p>
+ * 
+ * <p>
+ * However, classes implementing {@code Tuple} or interfaces extending
+ * {@code Tuple} might provide explicit guarantees.
+ * </p>
+ * 
+ * <p>
+ * This class is part of package {@link org.github.evenjn.yarn Yarn}.
+ * </p>
+ * 
+ * @param <I>
+ *          The type of objects in the sequence.
+ * @since 1.0
  */
 public interface Tuple<T> {
 
+	/**
+	 * Returns the object at position {@code index} in the sequence.
+	 * 
+	 * @param index
+	 *          The position of the object to retrieve.
+	 * @return The object at position {@code index} in the sequence.
+	 * @since 1.0
+	 */
 	T get( int index );
 
+	/**
+	 * Returns the size of the sequence.
+	 * 
+	 * @return The size of the sequence.
+	 * @since 1.0
+	 */
 	int size( );
 
 }

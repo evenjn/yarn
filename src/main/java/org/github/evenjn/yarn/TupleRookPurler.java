@@ -17,19 +17,18 @@
  */
 package org.github.evenjn.yarn;
 
+import java.util.function.Supplier;
+
 /**
- * <h1>CursorMap</h1>
- * 
  * <p>
- * A {@code CursorMap} is a {@linkplain org.github.evenjn.yarn.YarnMap YarnMap}
- * that provides access to output objects via
- * {@link org.github.evenjn.yarn.Cursor Cursor} containers.
+ * A {@code TupleRookPurler} is a {@link Supplier} of {@link TupleRookPurl}.
+ * Each invocation of {@link #get()} returns a new object.
  * </p>
  * 
  * <p>
  * This class is part of package {@link org.github.evenjn.yarn Yarn}.
  * </p>
- *
+ * 
  * @param <I>
  *          The type of input objects.
  * @param <O>
@@ -37,20 +36,6 @@ package org.github.evenjn.yarn;
  * @since 1.0
  */
 @FunctionalInterface
-public interface CursorMap<I, O> extends
-		YarnMap<I, O, Cursor<O>> {
-
-	/**
-	 * <p>
-	 * Returns a {@link org.github.evenjn.yarn.Cursor Cursor} with output objects
-	 * associated to the argument {@code input}.
-	 * </p>
-	 * 
-	 * @param input
-	 *          An input object.
-	 * @return A {@link org.github.evenjn.yarn.Cursor Cursor} of output objects.
-	 * @since 1.0
-	 */
-	@Override
-	Cursor<O> get( I input );
+public interface TupleRookPurler<I, O> extends
+		Supplier<TupleRookPurl<I, O>> {
 }

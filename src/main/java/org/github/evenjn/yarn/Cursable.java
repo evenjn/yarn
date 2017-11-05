@@ -19,8 +19,8 @@ package org.github.evenjn.yarn;
 
 /**
  * <p>
- * A Cursable provides repeatable access to a sequence of elements, each element
- * being (a reference to) an object.
+ * A Cursable provides repeatable iterative access to a sequence of elements,
+ * each element being (a reference to) an object.
  * </p>
  * 
  * <h2>Protocol</h2>

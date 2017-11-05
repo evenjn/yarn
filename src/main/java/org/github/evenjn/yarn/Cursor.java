@@ -19,8 +19,8 @@ package org.github.evenjn.yarn;
 
 /**
  * <p>
- * A Cursor provides access to a sequence of elements, each element being (a
- * reference to) an object.
+ * A Cursor provides iterative access to a finite sequence of elements, each
+ * element being (a reference to) an object.
  * </p>
  * 
  * <h2>Service Contract</h2>
@@ -33,9 +33,18 @@ package org.github.evenjn.yarn;
  * <p>
  * Elements can be accessed one by one, by invoking the {@link #next()} method.
  * The first time the method is invoked, the first element in the sequence is
- * returned. Subsequent invocations return successive elements. After all
- * elements have been returned, subsequent invocations will throw a
- * {@link EndOfCursorException}.
+ * returned. Subsequent invocations return successive elements.
+ * </p>
+ * 
+ * <p>
+ * After all elements have been returned, subsequent invocations of
+ * {@link #next()} throw a {@link EndOfCursorException}.
+ * </p>
+ * 
+ * <p>
+ * The sequence is finite: there always is a number {@code N} such that after
+ * {@code N} invocations of {@link #next()}, all subsequent invocations of
+ * {@link #next()} throw a {@link EndOfCursorException}.
  * </p>
  * 
  * <h2>Disclaimer</h2>

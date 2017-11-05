@@ -18,18 +18,18 @@
 package org.github.evenjn.yarn;
 
 /**
- * <h1>CursorMap</h1>
+ * <h1>TupleRookMap</h1>
  * 
  * <p>
- * A {@code CursorMap} is a {@linkplain org.github.evenjn.yarn.YarnMap YarnMap}
- * that provides access to output objects via
- * {@link org.github.evenjn.yarn.Cursor Cursor} containers.
+ * A {@code TupleRookMap} is a {@linkplain org.github.evenjn.yarn.YarnRookMap
+ * YarnRookMap} that provides access to output objects via
+ * {@link org.github.evenjn.yarn.Tuple Tuple} containers.
  * </p>
  * 
  * <p>
  * This class is part of package {@link org.github.evenjn.yarn Yarn}.
  * </p>
- *
+ * 
  * @param <I>
  *          The type of input objects.
  * @param <O>
@@ -37,20 +37,24 @@ package org.github.evenjn.yarn;
  * @since 1.0
  */
 @FunctionalInterface
-public interface CursorMap<I, O> extends
-		YarnMap<I, O, Cursor<O>> {
+public interface TupleRookMap<I, O> extends
+		YarnRookMap<I, O, Tuple<O>> {
 
 	/**
 	 * <p>
-	 * Returns a {@link org.github.evenjn.yarn.Cursor Cursor} with output objects
-	 * associated to the argument {@code input}.
+	 * Returns a {@link org.github.evenjn.yarn.Tuple Tuple} with output objects
+	 * associated to the argument input after transferring the responsiblity of
+	 * closing any associated resources to the argument
+	 * {@link org.github.evenjn.yarn.Rook Rook}.
 	 * </p>
 	 * 
+	 * @param rook
+	 *          A {@link org.github.evenjn.yarn.Rook Rook}.
 	 * @param input
 	 *          An input object.
-	 * @return A {@link org.github.evenjn.yarn.Cursor Cursor} of output objects.
+	 * @return A {@link org.github.evenjn.yarn.Tuple Tuple} of output objects.
 	 * @since 1.0
 	 */
 	@Override
-	Cursor<O> get( I input );
+	Tuple<O> get( Rook rook, I input );
 }

@@ -17,6 +17,11 @@
  * </ul>
  * 
  * <p>
+ * The equivalence interface: {@link org.github.evenjn.yarn.Equivalencer
+ * Equivalencer}.
+ * </p>
+ * 
+ * <p>
  * Sequence access interfaces: {@link org.github.evenjn.yarn.Tuple Tuple},
  * {@link org.github.evenjn.yarn.Cursable Cursable} and
  * {@link org.github.evenjn.yarn.Cursor Cursor}, and the related exception
@@ -35,6 +40,7 @@
  * <li>{@link org.github.evenjn.yarn.IteratorMap IteratorMap}</li>
  * <li>{@link org.github.evenjn.yarn.IterableMap IterableMap}</li>
  * <li>{@link org.github.evenjn.yarn.OptionalMap OptionalMap}</li>
+ * <li>{@link org.github.evenjn.yarn.TupleMap TupleMap}</li>
  * </ul>
  * 
  * <p>
@@ -55,6 +61,8 @@
  * <li>{@link org.github.evenjn.yarn.IterablePurler IterablePurler}</li>
  * <li>{@link org.github.evenjn.yarn.OptionalPurl OptionalPurl}</li>
  * <li>{@link org.github.evenjn.yarn.OptionalPurler OptionalPurler}</li>
+ * <li>{@link org.github.evenjn.yarn.TuplePurl TuplePurl}</li>
+ * <li>{@link org.github.evenjn.yarn.TuplePurler TuplePurler}</li>
  * </ul>
  * 
  * <p>
@@ -69,6 +77,7 @@
  * <li>{@link org.github.evenjn.yarn.IterableRookMap IterableRookMap}</li>
  * <li>{@link org.github.evenjn.yarn.OptionalRookMap OptionaRookMap}</li>
  * <li>{@link org.github.evenjn.yarn.StreamRookMap StreamRookMap}</li>
+ * <li>{@link org.github.evenjn.yarn.TupleRookMap TupleRookMap}</li>
  * </ul>
  * 
  * <p>
@@ -89,10 +98,12 @@
  * <li>{@link org.github.evenjn.yarn.OptionalRookPurler OptionaRookPurler}</li>
  * <li>{@link org.github.evenjn.yarn.StreamRookPurl StreamRookPurl}</li>
  * <li>{@link org.github.evenjn.yarn.StreamRookPurler StreamRookPurler}</li>
+ * <li>{@link org.github.evenjn.yarn.TupleRookPurl TupleRookPurl}</li>
+ * <li>{@link org.github.evenjn.yarn.TupleRookPurler TupleRookPurler}</li>
  * </ul>
  * 
  * <p>
- * Bi, BiOption, Equivalencer.
+ * Bi, BiOption.
  * </p>
  * 
  * @since 1.0

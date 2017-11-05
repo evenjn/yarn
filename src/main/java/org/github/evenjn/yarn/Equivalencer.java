@@ -17,18 +17,50 @@
  */
 package org.github.evenjn.yarn;
 
+/**
+ * <p>
+ * An {@code Equivalencer} object compares two objects and computes whether they
+ * are equivalent or not.
+ * </p>
+ * 
+ * <p>
+ * This class is part of package {@link org.github.evenjn.yarn Yarn}.
+ * </p>
+ *
+ * @param <X>
+ *          The type of the first object of the comparison.
+ * @param <Y>
+ *          The type of the second object of the comparison.
+ * @since 1.0
+ */
 @FunctionalInterface
-public interface Equivalencer<T, Y> {
+public interface Equivalencer<X, Y> {
 
-	boolean equivalent( T a, Y b );
+	/**
+	 * Compares two objects and tells whether they are equivalent or not.
+	 * 
+	 * @param x
+	 *          The first object of the comparison.
+	 * @param y
+	 *          The second object of the comparison.
+	 * @return {@code true} when the arguments are equivalent. {@code false}
+	 *         otherwise.
+	 * @since 1.0
+	 */
+	boolean equivalent( X x, Y y );
 
-	default Equivalencer<Y, T> transpose( ) {
-		final Equivalencer<T, Y> outer_this = this;
-		return new Equivalencer<Y, T>( ) {
+	/**
+	 * 
+	 * @return An {@code Equivalencer} that carries out the same computation as
+	 *         {@code this}, but takes its arguments in swapped order.
+	 */
+	default Equivalencer<Y, X> swap( ) {
+		Equivalencer<X, Y> e = this;
+		return new Equivalencer<Y, X>( ) {
 
 			@Override
-			public boolean equivalent( Y a, T b ) {
-				return outer_this.equivalent( b, a );
+			public boolean equivalent( Y y, X x ) {
+				return e.equivalent( x, y );
 			}
 
 		};
