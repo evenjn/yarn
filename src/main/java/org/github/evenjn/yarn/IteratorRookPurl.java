@@ -19,6 +19,8 @@ package org.github.evenjn.yarn;
 
 import java.util.Iterator;
 
+import org.github.evenjn.lang.Rook;
+
 /**
  * <h1>IteratorRookPurl</h1>
  * 

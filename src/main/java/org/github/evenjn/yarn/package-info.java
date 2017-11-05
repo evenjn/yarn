@@ -6,22 +6,6 @@
  * </p>
  * 
  * <p>
- * Resource management interfaces:
- * </p>
- * 
- * <ul>
- * <li>{@link org.github.evenjn.yarn.Rook Rook}</li>
- * <li>{@link org.github.evenjn.yarn.AutoRook AutoRook}</li>
- * <li>{@link org.github.evenjn.yarn.RookFunction RookFunction}</li>
- * <li>{@link org.github.evenjn.yarn.RookConsumer RookConsumer}</li>
- * </ul>
- * 
- * <p>
- * The equivalence interface: {@link org.github.evenjn.yarn.Equivalencer
- * Equivalencer}.
- * </p>
- * 
- * <p>
  * Sequence access interfaces: {@link org.github.evenjn.yarn.Tuple Tuple},
  * {@link org.github.evenjn.yarn.Cursable Cursable} and
  * {@link org.github.evenjn.yarn.Cursor Cursor}, and the related exception
@@ -101,10 +85,6 @@
  * <li>{@link org.github.evenjn.yarn.TupleRookPurl TupleRookPurl}</li>
  * <li>{@link org.github.evenjn.yarn.TupleRookPurler TupleRookPurler}</li>
  * </ul>
- * 
- * <p>
- * Bi, BiOption.
- * </p>
  * 
  * @since 1.0
  */

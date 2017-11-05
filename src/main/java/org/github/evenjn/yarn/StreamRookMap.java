@@ -19,6 +19,8 @@ package org.github.evenjn.yarn;
 
 import java.util.stream.Stream;
 
+import org.github.evenjn.lang.Rook;
+
 /**
  * <h1>StreamRookMap</h1>
  * 

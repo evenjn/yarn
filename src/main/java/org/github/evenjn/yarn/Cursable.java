@@ -17,6 +17,8 @@
  */
 package org.github.evenjn.yarn;
 
+import org.github.evenjn.lang.Rook;
+
 /**
  * <p>
  * A Cursable provides repeatable iterative access to a sequence of elements,

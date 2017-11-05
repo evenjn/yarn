@@ -21,8 +21,8 @@ package org.github.evenjn.yarn;
  * <h1>ArrayPurl</h1>
  * 
  * <p>
- * An {@code ArrayPurl} is a {@link org.github.evenjn.yarn.YarnPurl YarnPurl} that
- * provides access to output objects via arrays.
+ * An {@code ArrayPurl} is a {@link org.github.evenjn.yarn.YarnPurl YarnPurl}
+ * that provides access to output objects via arrays.
  * </p>
  * 
  * <p>

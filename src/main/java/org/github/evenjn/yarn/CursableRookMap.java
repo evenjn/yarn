@@ -17,6 +17,8 @@
  */
 package org.github.evenjn.yarn;
 
+import org.github.evenjn.lang.Rook;
+
 /**
  * <h1>CursableRookMap</h1>
  * 
