@@ -17,17 +17,15 @@
  */
 package org.github.evenjn.yarn;
 
-import java.util.stream.Stream;
-
 import org.github.evenjn.lang.Rook;
 
 /**
- * <h1>StreamRookMap</h1>
+ * <h1>CursorRingMap</h1>
  * 
  * <p>
- * A {@code StreamRookMap} is a {@linkplain org.github.evenjn.yarn.YarnRookMap
- * YarnRookMap} that provides access to output objects via
- * {@link java.util.stream.Stream Stream} containers.
+ * A {@code CursorRingMap} is a {@linkplain org.github.evenjn.yarn.YarnRingMap
+ * YarnRingMap} that provides access to output objects via
+ * {@link org.github.evenjn.yarn.Cursor Cursor} containers.
  * </p>
  * 
  * <p>
@@ -40,12 +38,13 @@ import org.github.evenjn.lang.Rook;
  *          The type of output objects.
  * @since 1.0
  */
-public interface StreamRookMap<I, O> extends
-		YarnRookMap<I, O, Stream<O>> {
+@FunctionalInterface
+public interface CursorRingMap<I, O> extends
+		YarnRingMap<I, O, Cursor<O>> {
 
 	/**
 	 * <p>
-	 * Returns a {@link java.util.stream.Stream Stream} with output objects
+	 * Returns a {@link org.github.evenjn.yarn.Cursor Cursor} with output objects
 	 * associated to the argument input after transferring the responsiblity of
 	 * closing any associated resources to the argument
 	 * {@link org.github.evenjn.yarn.Rook Rook}.
@@ -55,9 +54,9 @@ public interface StreamRookMap<I, O> extends
 	 *          A {@link org.github.evenjn.yarn.Rook Rook}.
 	 * @param input
 	 *          An input object.
-	 * @return A {@link java.util.stream.Stream Stream} of output objects.
+	 * @return A {@link org.github.evenjn.yarn.Cursor Cursor} of output objects.
 	 * @since 1.0
 	 */
 	@Override
-	Stream<O> get( Rook rook, I input );
+	Cursor<O> get( Rook rook, I input );
 }

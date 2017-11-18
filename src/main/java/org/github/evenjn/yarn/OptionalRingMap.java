@@ -17,21 +17,23 @@
  */
 package org.github.evenjn.yarn;
 
+import java.util.Optional;
+
 import org.github.evenjn.lang.Rook;
 
 /**
- * <h1>CursorRookMap</h1>
+ * <h1>OptionalRingMap</h1>
  * 
  * <p>
- * A {@code CursorRookMap} is a {@linkplain org.github.evenjn.yarn.YarnRookMap
- * YarnRookMap} that provides access to output objects via
- * {@link org.github.evenjn.yarn.Cursor Cursor} containers.
+ * An {@code OptionalRingMap} is a
+ * {@linkplain org.github.evenjn.yarn.YarnRingMap YarnRingMap} that provides
+ * access to output objects via {@link java.util.Optional Optional} containers.
  * </p>
  * 
  * <p>
  * This class is part of package {@link org.github.evenjn.yarn Yarn}.
  * </p>
- * 
+ *
  * @param <I>
  *          The type of input objects.
  * @param <O>
@@ -39,12 +41,12 @@ import org.github.evenjn.lang.Rook;
  * @since 1.0
  */
 @FunctionalInterface
-public interface CursorRookMap<I, O> extends
-		YarnRookMap<I, O, Cursor<O>> {
+public interface OptionalRingMap<I, O> extends
+		YarnRingMap<I, O, Optional<O>> {
 
 	/**
 	 * <p>
-	 * Returns a {@link org.github.evenjn.yarn.Cursor Cursor} with output objects
+	 * Returns an {@link java.util.Optional Optional} with an output object
 	 * associated to the argument input after transferring the responsiblity of
 	 * closing any associated resources to the argument
 	 * {@link org.github.evenjn.yarn.Rook Rook}.
@@ -54,9 +56,10 @@ public interface CursorRookMap<I, O> extends
 	 *          A {@link org.github.evenjn.yarn.Rook Rook}.
 	 * @param input
 	 *          An input object.
-	 * @return A {@link org.github.evenjn.yarn.Cursor Cursor} of output objects.
+	 * @return An empty {@link java.util.Optional Optional}, or an
+	 *         {@link java.util.Optional Optional} with an output object.
 	 * @since 1.0
 	 */
 	@Override
-	Cursor<O> get( Rook rook, I input );
+	Optional<O> get( Rook rook, I object );
 }

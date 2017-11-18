@@ -6,15 +6,19 @@
  * </p>
  * 
  * <p>
- * Sequence access interfaces: {@link org.github.evenjn.yarn.Tuple Tuple},
- * {@link org.github.evenjn.yarn.Cursable Cursable} and
- * {@link org.github.evenjn.yarn.Cursor Cursor}, and the related exception
- * {@link org.github.evenjn.yarn.EndOfCursorException EndOfCursorException}.
+ * Lazy sequence access interfaces: {@link org.github.evenjn.yarn.Cursable
+ * Cursable} and {@link org.github.evenjn.yarn.Cursor Cursor}, and the related
+ * exception {@link org.github.evenjn.yarn.EndOfCursorException
+ * EndOfCursorException}.
  * </p>
  * 
  * <p>
- * Sequence transformation interfaces extending
- * {@link org.github.evenjn.yarn.YarnMap YarnMap}:
+ * The {@link org.github.evenjn.yarn.RingFunction RingFunction} interface.
+ * </p>
+ * 
+ * <p>
+ * Transformation interfaces extending {@link org.github.evenjn.yarn.YarnMap
+ * YarnMap}:
  * </p>
  * 
  * <ul>
@@ -28,8 +32,8 @@
  * </ul>
  * 
  * <p>
- * Sequence transformation interfaces extending
- * {@link org.github.evenjn.yarn.YarnPurl YarnPurl}:
+ * Transformation interfaces extending {@link org.github.evenjn.yarn.YarnPurl
+ * YarnPurl}:
  * </p>
  * 
  * <ul>
@@ -50,40 +54,40 @@
  * </ul>
  * 
  * <p>
- * Sequence transformation interfaces extending
- * {@link org.github.evenjn.yarn.YarnRookMap YarnRookMap}:
+ * Transformation interfaces extending {@link org.github.evenjn.yarn.YarnRingMap
+ * YarnRingMap}:
  * </p>
  * 
  * <ul>
- * <li>{@link org.github.evenjn.yarn.CursableRookMap CursableRookMap}</li>
- * <li>{@link org.github.evenjn.yarn.CursorRookMap CursorRookMap}</li>
- * <li>{@link org.github.evenjn.yarn.IteratorRookMap IteratorRookMap}</li>
- * <li>{@link org.github.evenjn.yarn.IterableRookMap IterableRookMap}</li>
- * <li>{@link org.github.evenjn.yarn.OptionalRookMap OptionaRookMap}</li>
- * <li>{@link org.github.evenjn.yarn.StreamRookMap StreamRookMap}</li>
- * <li>{@link org.github.evenjn.yarn.TupleRookMap TupleRookMap}</li>
+ * <li>{@link org.github.evenjn.yarn.CursableRingMap CursableRingMap}</li>
+ * <li>{@link org.github.evenjn.yarn.CursorRingMap CursorRingMap}</li>
+ * <li>{@link org.github.evenjn.yarn.IteratorRingMap IteratorRingMap}</li>
+ * <li>{@link org.github.evenjn.yarn.IterableRingMap IterableRingMap}</li>
+ * <li>{@link org.github.evenjn.yarn.OptionalRingMap OptionaRingMap}</li>
+ * <li>{@link org.github.evenjn.yarn.StreamRingMap StreamRingMap}</li>
+ * <li>{@link org.github.evenjn.yarn.TupleRingMap TupleRingMap}</li>
  * </ul>
  * 
  * <p>
- * Sequence transformation interfaces extending
- * {@link org.github.evenjn.yarn.YarnRookPurl YarnRookPurl}:
+ * Transformation interfaces extending
+ * {@link org.github.evenjn.yarn.YarnRingPurl YarnRingPurl}:
  * </p>
  * 
  * <ul>
- * <li>{@link org.github.evenjn.yarn.CursableRookPurl CursableRookPurl}</li>
- * <li>{@link org.github.evenjn.yarn.CursableRookPurler CursableRookPurler}</li>
- * <li>{@link org.github.evenjn.yarn.CursorRookPurl CursorRookPurl}</li>
- * <li>{@link org.github.evenjn.yarn.CursorRookPurler CursorRookPurler}</li>
- * <li>{@link org.github.evenjn.yarn.IteratorRookPurl IteratorRookPurl}</li>
- * <li>{@link org.github.evenjn.yarn.IteratorRookPurler IteratorRookPurler}</li>
- * <li>{@link org.github.evenjn.yarn.IterableRookPurl IterableRookPurl}</li>
- * <li>{@link org.github.evenjn.yarn.IterableRookPurler IterableRookPurler}</li>
- * <li>{@link org.github.evenjn.yarn.OptionalRookPurl OptionaRookPurl}</li>
- * <li>{@link org.github.evenjn.yarn.OptionalRookPurler OptionaRookPurler}</li>
- * <li>{@link org.github.evenjn.yarn.StreamRookPurl StreamRookPurl}</li>
- * <li>{@link org.github.evenjn.yarn.StreamRookPurler StreamRookPurler}</li>
- * <li>{@link org.github.evenjn.yarn.TupleRookPurl TupleRookPurl}</li>
- * <li>{@link org.github.evenjn.yarn.TupleRookPurler TupleRookPurler}</li>
+ * <li>{@link org.github.evenjn.yarn.CursableRingPurl CursableRingPurl}</li>
+ * <li>{@link org.github.evenjn.yarn.CursableRingPurler CursableRingPurler}</li>
+ * <li>{@link org.github.evenjn.yarn.CursorRingPurl CursorRingPurl}</li>
+ * <li>{@link org.github.evenjn.yarn.CursorRingPurler CursorRingPurler}</li>
+ * <li>{@link org.github.evenjn.yarn.IteratorRingPurl IteratorRingPurl}</li>
+ * <li>{@link org.github.evenjn.yarn.IteratorRingPurler IteratorRingPurler}</li>
+ * <li>{@link org.github.evenjn.yarn.IterableRingPurl IterableRingPurl}</li>
+ * <li>{@link org.github.evenjn.yarn.IterableRingPurler IterableRingPurler}</li>
+ * <li>{@link org.github.evenjn.yarn.OptionalRingPurl OptionaRingPurl}</li>
+ * <li>{@link org.github.evenjn.yarn.OptionalRingPurler OptionaRingPurler}</li>
+ * <li>{@link org.github.evenjn.yarn.StreamRingPurl StreamRingPurl}</li>
+ * <li>{@link org.github.evenjn.yarn.StreamRingPurler StreamRingPurler}</li>
+ * <li>{@link org.github.evenjn.yarn.TupleRingPurl TupleRingPurl}</li>
+ * <li>{@link org.github.evenjn.yarn.TupleRingPurler TupleRingPurler}</li>
  * </ul>
  * 
  * @since 1.0

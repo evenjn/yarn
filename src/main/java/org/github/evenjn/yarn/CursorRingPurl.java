@@ -20,12 +20,12 @@ package org.github.evenjn.yarn;
 import org.github.evenjn.lang.Rook;
 
 /**
- * <h1>CursableRookPurl</h1>
+ * <h1>CursorRingPurl</h1>
  * 
  * <p>
- * A {@code CursableRookPurl} is a {@link org.github.evenjn.yarn.YarnRookPurl
- * YarnRookPurl} that provides access to output objects via
- * {@link org.github.evenjn.yarn.Cursable Cursable} containers.
+ * A {@code CursorRingPurl} is a {@link org.github.evenjn.yarn.YarnRingPurl
+ * YarnRingPurl} that provides access to output objects via
+ * {@link org.github.evenjn.yarn.Cursor Cursor} containers.
  * </p>
  * 
  * <p>
@@ -38,13 +38,13 @@ import org.github.evenjn.lang.Rook;
  *          The type of output objects.
  * @since 1.0
  */
-public interface CursableRookPurl<I, O> extends
-		YarnRookPurl<I, O, Cursable<O>> {
+public interface CursorRingPurl<I, O> extends
+		YarnRingPurl<I, O, Cursor<O>> {
 
 	/**
 	 * <p>
-	 * Returns a {@link org.github.evenjn.yarn.Cursable Cursable} with none of,
-	 * some of, or all the output objects associated to the sequence of elements
+	 * Returns a {@link org.github.evenjn.yarn.Cursor Cursor} with none of, some
+	 * of, or all the output objects associated to the sequence of elements
 	 * received in input so far (including the argument {@code input}), while
 	 * transferring the responsiblity of closing any associated resources to the
 	 * argument {@link org.github.evenjn.yarn.Rook Rook}.
@@ -54,19 +54,18 @@ public interface CursableRookPurl<I, O> extends
 	 *          A {@link org.github.evenjn.yarn.Rook Rook}.
 	 * @param input
 	 *          An input object.
-	 * @return A {@link org.github.evenjn.yarn.Cursable Cursable} of output
-	 *         objects.
+	 * @return A {@link org.github.evenjn.yarn.Cursor Cursor} of output objects.
 	 * @throws IllegalStateException
 	 *           when {@link #end(Rook)} has already been invoked.
 	 * @since 1.0
 	 */
 	@Override
-	Cursable<O> next( Rook rook, I input );
+	Cursor<O> next( Rook rook, I input );
 
 	/**
 	 * <p>
-	 * Returns a {@link org.github.evenjn.yarn.Cursable Cursable} with none of,
-	 * some of, or all the output objects associated to the sequence of elements
+	 * Returns a {@link org.github.evenjn.yarn.Cursor Cursor} with none of, some
+	 * of, or all the output objects associated to the sequence of elements
 	 * received in input so far, while transferring the responsiblity of closing
 	 * any associated resources to the argument {@link org.github.evenjn.yarn.Rook
 	 * Rook}.
@@ -74,12 +73,11 @@ public interface CursableRookPurl<I, O> extends
 	 * 
 	 * @param rook
 	 *          A {@link org.github.evenjn.yarn.Rook Rook}.
-	 * @return A {@link org.github.evenjn.yarn.Cursable Cursable} of output
-	 *         objects.
+	 * @return A {@link org.github.evenjn.yarn.Cursor Cursor} of output objects.
 	 * @throws IllegalStateException
 	 *           when {@link #end(Rook)} has already been invoked.
 	 * @since 1.0
 	 */
 	@Override
-	Cursable<O> end( Rook rook );
+	Cursor<O> end( Rook rook );
 }

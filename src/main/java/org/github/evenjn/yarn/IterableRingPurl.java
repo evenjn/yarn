@@ -20,11 +20,11 @@ package org.github.evenjn.yarn;
 import org.github.evenjn.lang.Rook;
 
 /**
- * <h1>IterableRookPurl</h1>
+ * <h1>IterableRingPurl</h1>
  * 
  * <p>
- * An {@code IterableRookPurl} is a {@link org.github.evenjn.yarn.YarnRookPurl
- * YarnRookPurl} that provides access to output objects via
+ * An {@code IterableRingPurl} is a {@link org.github.evenjn.yarn.YarnRingPurl
+ * YarnRingPurl} that provides access to output objects via
  * {@link java.lang.Iterable Iterable} containers.
  * </p>
  * 
@@ -38,8 +38,8 @@ import org.github.evenjn.lang.Rook;
  *          The type of output objects.
  * @since 1.0
  */
-public interface IterableRookPurl<I, O> extends
-		YarnRookPurl<I, O, Iterable<O>> {
+public interface IterableRingPurl<I, O> extends
+		YarnRingPurl<I, O, Iterable<O>> {
 
 	/**
 	 * <p>

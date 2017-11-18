@@ -17,6 +17,8 @@
  */
 package org.github.evenjn.yarn;
 
+import org.github.evenjn.lang.Tuple;
+
 /**
  * <h1>TuplePurl</h1>
  * 

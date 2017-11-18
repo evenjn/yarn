@@ -17,15 +17,13 @@
  */
 package org.github.evenjn.yarn;
 
-import org.github.evenjn.lang.Rook;
+import java.util.function.Supplier;
 
 /**
- * <h1>TupleRookMap</h1>
- * 
  * <p>
- * A {@code TupleRookMap} is a {@linkplain org.github.evenjn.yarn.YarnRookMap
- * YarnRookMap} that provides access to output objects via
- * {@link org.github.evenjn.yarn.Tuple Tuple} containers.
+ * A {@code OptionalRingPurler} is a {@link Supplier} of
+ * {@link OptionalRingPurl}. Each invocation of {@link #get()} returns a new
+ * object.
  * </p>
  * 
  * <p>
@@ -39,24 +37,6 @@ import org.github.evenjn.lang.Rook;
  * @since 1.0
  */
 @FunctionalInterface
-public interface TupleRookMap<I, O> extends
-		YarnRookMap<I, O, Tuple<O>> {
-
-	/**
-	 * <p>
-	 * Returns a {@link org.github.evenjn.yarn.Tuple Tuple} with output objects
-	 * associated to the argument input after transferring the responsiblity of
-	 * closing any associated resources to the argument
-	 * {@link org.github.evenjn.yarn.Rook Rook}.
-	 * </p>
-	 * 
-	 * @param rook
-	 *          A {@link org.github.evenjn.yarn.Rook Rook}.
-	 * @param input
-	 *          An input object.
-	 * @return A {@link org.github.evenjn.yarn.Tuple Tuple} of output objects.
-	 * @since 1.0
-	 */
-	@Override
-	Tuple<O> get( Rook rook, I input );
+public interface OptionalRingPurler<I, O> extends
+		Supplier<OptionalRingPurl<I, O>> {
 }

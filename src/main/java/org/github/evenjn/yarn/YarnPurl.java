@@ -120,8 +120,8 @@ package org.github.evenjn.yarn;
  * </p>
  * 
  * <p>
- * {@code YarnPurl} is similar to {@link org.github.evenjn.yarn.YarnRookPurl
- * YarnRookPurl}. Unlike {@code YarnRookPurl}, {@code YarnPurl} does not provide
+ * {@code YarnPurl} is similar to {@link org.github.evenjn.yarn.YarnRingPurl
+ * YarnRingPurl}. Unlike {@code YarnRingPurl}, {@code YarnPurl} does not provide
  * support for {@linkplain java.lang.AutoCloseable auto-closeable} resources.
  * </p>
  * 

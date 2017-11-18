@@ -22,11 +22,11 @@ import java.util.Optional;
 import org.github.evenjn.lang.Rook;
 
 /**
- * <h1>OptionalRookPurl</h1>
+ * <h1>OptionalRingPurl</h1>
  * 
  * <p>
- * An {@code OptionalRookPurl} is a {@link org.github.evenjn.yarn.YarnRookPurl
- * YarnRookPurl} that provides access to output objects via
+ * An {@code OptionalRingPurl} is a {@link org.github.evenjn.yarn.YarnRingPurl
+ * YarnRingPurl} that provides access to output objects via
  * {@link java.util.Optional Optional} containers.
  * </p>
  * 
@@ -40,8 +40,8 @@ import org.github.evenjn.lang.Rook;
  *          The type of output objects.
  * @since 1.0
  */
-public interface OptionalRookPurl<I, O> extends
-		YarnRookPurl<I, O, Optional<O>> {
+public interface OptionalRingPurl<I, O> extends
+		YarnRingPurl<I, O, Optional<O>> {
 
 	/**
 	 * <p>

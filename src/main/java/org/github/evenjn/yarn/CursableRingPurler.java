@@ -21,8 +21,8 @@ import java.util.function.Supplier;
 
 /**
  * <p>
- * A {@code IteratorRookPurler} is a {@link Supplier} of
- * {@link IteratorRookPurl}. Each invocation of {@link #get()} returns a new
+ * A {@code CursableRingPurler} is a {@link Supplier} of
+ * {@link CursableRingPurl}. Each invocation of {@link #get()} returns a new
  * object.
  * </p>
  * 
@@ -37,6 +37,6 @@ import java.util.function.Supplier;
  * @since 1.0
  */
 @FunctionalInterface
-public interface IteratorRookPurler<I, O> extends
-		Supplier<IteratorRookPurl<I, O>> {
+public interface CursableRingPurler<I, O> extends
+		Supplier<CursableRingPurl<I, O>> {
 }

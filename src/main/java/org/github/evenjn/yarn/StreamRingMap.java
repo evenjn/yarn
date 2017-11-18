@@ -17,15 +17,17 @@
  */
 package org.github.evenjn.yarn;
 
+import java.util.stream.Stream;
+
 import org.github.evenjn.lang.Rook;
 
 /**
- * <h1>CursableRookMap</h1>
+ * <h1>StreamRingMap</h1>
  * 
  * <p>
- * A {@code CursableRookMap} is a {@linkplain org.github.evenjn.yarn.YarnRookMap
- * YarnRookMap} that provides access to output objects via
- * {@link org.github.evenjn.yarn.Cursable Cursable} containers.
+ * A {@code StreamRingMap} is a {@linkplain org.github.evenjn.yarn.YarnRingMap
+ * YarnRingMap} that provides access to output objects via
+ * {@link java.util.stream.Stream Stream} containers.
  * </p>
  * 
  * <p>
@@ -38,15 +40,14 @@ import org.github.evenjn.lang.Rook;
  *          The type of output objects.
  * @since 1.0
  */
-@FunctionalInterface
-public interface CursableRookMap<I, O> extends
-		YarnRookMap<I, O, Cursable<O>> {
+public interface StreamRingMap<I, O> extends
+		YarnRingMap<I, O, Stream<O>> {
 
 	/**
 	 * <p>
-	 * Returns a {@link org.github.evenjn.yarn.Cursable Cursable} with output
-	 * objects associated to the argument input while transferring the
-	 * responsiblity of closing any associated resources to the argument
+	 * Returns a {@link java.util.stream.Stream Stream} with output objects
+	 * associated to the argument input after transferring the responsiblity of
+	 * closing any associated resources to the argument
 	 * {@link org.github.evenjn.yarn.Rook Rook}.
 	 * </p>
 	 * 
@@ -54,10 +55,9 @@ public interface CursableRookMap<I, O> extends
 	 *          A {@link org.github.evenjn.yarn.Rook Rook}.
 	 * @param input
 	 *          An input object.
-	 * @return A {@link org.github.evenjn.yarn.Cursable Cursable} of output
-	 *         objects.
+	 * @return A {@link java.util.stream.Stream Stream} of output objects.
 	 * @since 1.0
 	 */
 	@Override
-	Cursable<O> get( Rook rook, I input );
+	Stream<O> get( Rook rook, I input );
 }

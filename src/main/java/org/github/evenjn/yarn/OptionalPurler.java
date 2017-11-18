@@ -21,8 +21,8 @@ import java.util.function.Supplier;
 
 /**
  * <p>
- * A {@code CursableRookPurler} is a {@link Supplier} of
- * {@link CursableRookPurl}. Each invocation of {@link #get()} returns a new
+ * A {@code CursableRingPurler} is a {@link Supplier} of
+ * {@link CursableRingPurl}. Each invocation of {@link #get()} returns a new
  * object.
  * </p>
  * 

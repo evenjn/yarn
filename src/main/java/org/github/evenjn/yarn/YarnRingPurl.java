@@ -20,10 +20,10 @@ package org.github.evenjn.yarn;
 import org.github.evenjn.lang.Rook;
 
 /**
- * <h1>YarnRookPurl</h1>
+ * <h1>YarnRingPurl</h1>
  * 
  * <p>
- * A {@code YarnRookPurl} provides methods to obtain a sequence of output
+ * A {@code YarnRingPurl} provides methods to obtain a sequence of output
  * elements associated to a sequence of input elements, building the resulting
  * sequence incrementally, while transferring the responsiblity of closing any
  * associated {@linkplain java.lang.AutoCloseable auto-closeable} resources to
@@ -42,20 +42,20 @@ import org.github.evenjn.lang.Rook;
  * <h2>Protocol</h2>
  * 
  * <p>
- * An object implementing the {@code YarnRookPurl} interface requires that the
+ * An object implementing the {@code YarnRingPurl} interface requires that the
  * client invokes {@link #next(Rook,Object)} once for each element of the input
  * sequence, each time providing as argument an element of the input sequence,
  * in the same order they appear in the input sequence.
  * </p>
  * 
  * <p>
- * An object implementing the {@code YarnRookPurl} interface requires that,
+ * An object implementing the {@code YarnRingPurl} interface requires that,
  * after the client has invoked {@link #next(Rook,Object)} once for each element
  * in the input sequence, the client invokes {@link #end(Rook)}.
  * </p>
  * 
  * <p>
- * An object implementing the {@code YarnRookPurl} interface requires that, once
+ * An object implementing the {@code YarnRingPurl} interface requires that, once
  * the client has invoked {@link #end(Rook)}, the client does not invoke
  * {@link #end(Rook)} or {@link #next(Rook,Object)} any more.
  * </p>
@@ -63,7 +63,7 @@ import org.github.evenjn.lang.Rook;
  * <h2>Service Contract</h2>
  * 
  * <p>
- * An object implementing the {@code YarnRookPurl} interface fulfils the
+ * An object implementing the {@code YarnRingPurl} interface fulfils the
  * following contract.
  * </p>
  * 
@@ -80,7 +80,7 @@ import org.github.evenjn.lang.Rook;
  * {@link #end(Rook)} requires opening {@linkplain java.lang.AutoCloseable
  * auto-closeable} resources (e.g. files) in order to produce output objects,
  * and those resources must stay open for the output objects to work as
- * intended, the {@code YarnRookPurl} opens those resources and hooks them to
+ * intended, the {@code YarnRingPurl} opens those resources and hooks them to
  * the argument {@link org.github.evenjn.yarn.Rook Rook}, which takes the
  * responsibility of closing those resources.
  * </p>
@@ -88,7 +88,7 @@ import org.github.evenjn.lang.Rook;
  * <h2>Disclaimer</h2>
  * 
  * <p>
- * An object implementing the {@code YarnRookPurl} interface does not provide
+ * An object implementing the {@code YarnRingPurl} interface does not provide
  * implicit guarantees.
  * </p>
  * 
@@ -109,7 +109,7 @@ import org.github.evenjn.lang.Rook;
  * 
  * <p>
  * There is no implicit guarantee of thread safety. This means that a system
- * that receives a {@code YarnRookPurl} should not assume that it is safe to
+ * that receives a {@code YarnRingPurl} should not assume that it is safe to
  * have multiple threads invoke {@link #next(Rook,Object)} or {@link #end(Rook)}
  * on the same object.
  * </p>
@@ -122,28 +122,28 @@ import org.github.evenjn.lang.Rook;
  * </p>
  * 
  * <p>
- * However, classes implementing {@code YarnRookPurl} or interfaces extending
- * {@code YarnRookPurl} might provide explicit guarantees.
+ * However, classes implementing {@code YarnRingPurl} or interfaces extending
+ * {@code YarnRingPurl} might provide explicit guarantees.
  * </p>
  * 
  * <h2>Design Notes</h2>
  * 
  * <p>
- * A {@code YarnRookPurl} object may (and typically will) be stateful: it may
+ * A {@code YarnRingPurl} object may (and typically will) be stateful: it may
  * accumulate information while processing elements, and use such information to
  * produce output elements.
  * </p>
  * 
  * <p>
- * A {@code YarnRookPurl} object encapsulates state and behaviour necessary to
- * carry out a single operation. The same {@code YarnRookPurl} object cannot be
+ * A {@code YarnRingPurl} object encapsulates state and behaviour necessary to
+ * carry out a single operation. The same {@code YarnRingPurl} object cannot be
  * reused to carry out two or more purl transformations. Compliant
  * implementations must throw exception accordingly.
  * </p>
  * 
  * <p>
- * {@code YarnRookPurl} is similar to {@link org.github.evenjn.yarn.YarnPurl
- * YarnPurl}. Unlike {@code YarnRookPurl}, {@code YarnPurl} does not provide
+ * {@code YarnRingPurl} is similar to {@link org.github.evenjn.yarn.YarnPurl
+ * YarnPurl}. Unlike {@code YarnRingPurl}, {@code YarnPurl} does not provide
  * support for {@linkplain java.lang.AutoCloseable auto-closeable} resources.
  * </p>
  * 
@@ -160,7 +160,7 @@ import org.github.evenjn.lang.Rook;
  * @since 1.0
  *
  */
-public interface YarnRookPurl<I, O, C> {
+public interface YarnRingPurl<I, O, C> {
 
 	/**
 	 * <p>

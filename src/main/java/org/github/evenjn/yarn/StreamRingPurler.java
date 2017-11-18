@@ -21,9 +21,8 @@ import java.util.function.Supplier;
 
 /**
  * <p>
- * A {@code IterableRookPurler} is a {@link Supplier} of
- * {@link IterableRookPurl}. Each invocation of {@link #get()} returns a new
- * object.
+ * A {@code StreamRingPurler} is a {@link Supplier} of {@link StreamRingPurl}.
+ * Each invocation of {@link #get()} returns a new object.
  * </p>
  * 
  * <p>
@@ -37,6 +36,6 @@ import java.util.function.Supplier;
  * @since 1.0
  */
 @FunctionalInterface
-public interface IterableRookPurler<I, O> extends
-		Supplier<IterableRookPurl<I, O>> {
+public interface StreamRingPurler<I, O> extends
+		Supplier<StreamRingPurl<I, O>> {
 }

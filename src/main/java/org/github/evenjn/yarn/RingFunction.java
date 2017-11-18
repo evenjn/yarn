@@ -17,12 +17,13 @@
  */
 package org.github.evenjn.yarn;
 
-import java.util.function.Supplier;
+import org.github.evenjn.lang.Rook;
 
 /**
  * <p>
- * A {@code StreamRookPurler} is a {@link Supplier} of {@link StreamRookPurl}.
- * Each invocation of {@link #get()} returns a new object.
+ * Returns an object associated to the argument object after passing the
+ * responsibility to close associated resources to the argument
+ * {@link org.github.evenjn.lang.Rook Rook}.
  * </p>
  * 
  * <p>
@@ -36,6 +37,21 @@ import java.util.function.Supplier;
  * @since 1.0
  */
 @FunctionalInterface
-public interface StreamRookPurler<I, O> extends
-		Supplier<StreamRookPurl<I, O>> {
+public interface RingFunction<I, O> {
+
+	/**
+	 * <p>
+	 * Returns an object associated to the argument object after passing the
+	 * responsibility to close associated resources to the argument
+	 * {@link org.github.evenjn.lang.Rook Rook}.
+	 * </p>
+	 * 
+	 * @param rook
+	 *          A {@link org.github.evenjn.lang.Rook Rook}.
+	 * @param object
+	 *          An input object.
+	 * @return An output object.
+	 * @since 1.0
+	 */
+	O apply( Rook rook, I object );
 }

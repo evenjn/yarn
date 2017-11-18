@@ -17,23 +17,21 @@
  */
 package org.github.evenjn.yarn;
 
-import java.util.Optional;
-
 import org.github.evenjn.lang.Rook;
 
 /**
- * <h1>OptionalRookMap</h1>
+ * <h1>CursableRingMap</h1>
  * 
  * <p>
- * An {@code OptionalRookMap} is a
- * {@linkplain org.github.evenjn.yarn.YarnRookMap YarnRookMap} that provides
- * access to output objects via {@link java.util.Optional Optional} containers.
+ * A {@code CursableRingMap} is a {@linkplain org.github.evenjn.yarn.YarnRingMap
+ * YarnRingMap} that provides access to output objects via
+ * {@link org.github.evenjn.yarn.Cursable Cursable} containers.
  * </p>
  * 
  * <p>
  * This class is part of package {@link org.github.evenjn.yarn Yarn}.
  * </p>
- *
+ * 
  * @param <I>
  *          The type of input objects.
  * @param <O>
@@ -41,14 +39,14 @@ import org.github.evenjn.lang.Rook;
  * @since 1.0
  */
 @FunctionalInterface
-public interface OptionalRookMap<I, O> extends
-		YarnRookMap<I, O, Optional<O>> {
+public interface CursableRingMap<I, O> extends
+		YarnRingMap<I, O, Cursable<O>> {
 
 	/**
 	 * <p>
-	 * Returns an {@link java.util.Optional Optional} with an output object
-	 * associated to the argument input after transferring the responsiblity of
-	 * closing any associated resources to the argument
+	 * Returns a {@link org.github.evenjn.yarn.Cursable Cursable} with output
+	 * objects associated to the argument input while transferring the
+	 * responsiblity of closing any associated resources to the argument
 	 * {@link org.github.evenjn.yarn.Rook Rook}.
 	 * </p>
 	 * 
@@ -56,10 +54,10 @@ public interface OptionalRookMap<I, O> extends
 	 *          A {@link org.github.evenjn.yarn.Rook Rook}.
 	 * @param input
 	 *          An input object.
-	 * @return An empty {@link java.util.Optional Optional}, or an
-	 *         {@link java.util.Optional Optional} with an output object.
+	 * @return A {@link org.github.evenjn.yarn.Cursable Cursable} of output
+	 *         objects.
 	 * @since 1.0
 	 */
 	@Override
-	Optional<O> get( Rook rook, I object );
+	Cursable<O> get( Rook rook, I input );
 }

@@ -20,11 +20,11 @@ package org.github.evenjn.yarn;
 import org.github.evenjn.lang.Rook;
 
 /**
- * <h1>IterableRookMap</h1>
+ * <h1>IterableRingMap</h1>
  * 
  * <p>
- * An {@code IterableRookMap} is a
- * {@linkplain org.github.evenjn.yarn.YarnRookMap YarnRookMap} that provides
+ * An {@code IterableRingMap} is a
+ * {@linkplain org.github.evenjn.yarn.YarnRingMap YarnRingMap} that provides
  * access to output objects via {@link java.lang.Iterable Iterable} containers.
  * </p>
  * 
@@ -39,8 +39,8 @@ import org.github.evenjn.lang.Rook;
  * @since 1.0
  */
 @FunctionalInterface
-public interface IterableRookMap<I, O> extends
-		YarnRookMap<I, O, Iterable<O>> {
+public interface IterableRingMap<I, O> extends
+		YarnRingMap<I, O, Iterable<O>> {
 
 	/**
 	 * <p>

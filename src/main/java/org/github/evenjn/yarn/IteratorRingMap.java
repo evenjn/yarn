@@ -17,21 +17,23 @@
  */
 package org.github.evenjn.yarn;
 
-import org.github.evenjn.lang.Tuple;
+import java.util.Iterator;
+
+import org.github.evenjn.lang.Rook;
 
 /**
- * <h1>TupleMap</h1>
+ * <h1>IteratorRingMap</h1>
  * 
  * <p>
- * A {@code TupleMap} is a {@linkplain org.github.evenjn.yarn.YarnMap YarnMap}
- * that provides access to output objects via
- * {@link org.github.evenjn.yarn.Tuple Tuple} containers.
+ * An {@code IteratorRingMap} is a
+ * {@linkplain org.github.evenjn.yarn.YarnRingMap YarnRingMap} that provides
+ * access to output objects via {@link java.util.Iterator Iterator} containers.
  * </p>
  * 
  * <p>
  * This class is part of package {@link org.github.evenjn.yarn Yarn}.
  * </p>
- *
+ * 
  * @param <I>
  *          The type of input objects.
  * @param <O>
@@ -39,20 +41,25 @@ import org.github.evenjn.lang.Tuple;
  * @since 1.0
  */
 @FunctionalInterface
-public interface TupleMap<I, O> extends
-		YarnMap<I, O, Tuple<O>> {
+public interface IteratorRingMap<I, O> extends
+		YarnRingMap<I, O, Iterator<O>> {
 
 	/**
 	 * <p>
-	 * Returns a {@link org.github.evenjn.yarn.Tuple Tuple} with output objects
-	 * associated to the argument {@code input}.
+	 * Returns a {@link java.util.Iterator Iterator} with output objects
+	 * associated to the argument input while transferring the responsiblity of
+	 * closing any associated resources to the argument
+	 * {@link org.github.evenjn.yarn.Rook Rook}.
 	 * </p>
 	 * 
+	 * @param rook
+	 *          A {@link org.github.evenjn.yarn.Rook Rook}.
 	 * @param input
 	 *          An input object.
-	 * @return A {@link org.github.evenjn.yarn.Tuple Tuple} of output objects.
+	 * @return A {@link java.util.Iterator Iterator} of output objects.
 	 * @since 1.0
 	 */
 	@Override
-	Tuple<O> get( I input );
+	Iterator<O> get( Rook rook, I input );
+
 }
