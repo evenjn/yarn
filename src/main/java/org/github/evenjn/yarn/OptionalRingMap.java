@@ -49,11 +49,11 @@ public interface OptionalRingMap<I, O> extends
 	 * Returns an {@link java.util.Optional Optional} with an output object
 	 * associated to the argument input after transferring the responsiblity of
 	 * closing any associated resources to the argument
-	 * {@link org.github.evenjn.yarn.Rook Rook}.
+	 * {@link org.github.evenjn.lang.Rook Rook}.
 	 * </p>
 	 * 
 	 * @param rook
-	 *          A {@link org.github.evenjn.yarn.Rook Rook}.
+	 *          A {@link org.github.evenjn.lang.Rook Rook}.
 	 * @param input
 	 *          An input object.
 	 * @return An empty {@link java.util.Optional Optional}, or an
@@ -61,5 +61,5 @@ public interface OptionalRingMap<I, O> extends
 	 * @since 1.0
 	 */
 	@Override
-	Optional<O> get( Rook rook, I object );
+	Optional<O> get( Rook rook, I input );
 }

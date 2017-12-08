@@ -27,7 +27,7 @@ import org.github.evenjn.lang.Rook;
  * the output objects, if any, associated to given input objects while
  * transferring the responsiblity of closing any associated
  * {@linkplain java.lang.AutoCloseable auto-closeable} resources to
- * {@link org.github.evenjn.yarn.Rook Rook} objects.
+ * {@link org.github.evenjn.lang.Rook Rook} objects.
  * </p>
  * 
  * <h2>Service Contract</h2>
@@ -46,7 +46,7 @@ import org.github.evenjn.lang.Rook;
  * {@linkplain java.lang.AutoCloseable closeable} resources (e.g. files) in
  * order to produce output objects, and those resources must stay open for the
  * output objects to work as intended, the {@code YarnRingMap} opens those
- * resources and hooks them to the argument {@link org.github.evenjn.yarn.Rook
+ * resources and hooks them to the argument {@link org.github.evenjn.lang.Rook
  * Rook}, which takes the responsibility of closing those resources.
  * </p>
  * 
@@ -116,11 +116,11 @@ public interface YarnRingMap<I, O, C> {
 	 * <p>
 	 * Returns a container with output objects associated to the argument input
 	 * while transferring the responsiblity of closing any associated resources to
-	 * the argument {@link org.github.evenjn.yarn.Rook Rook}.
+	 * the argument {@link org.github.evenjn.lang.Rook Rook}.
 	 * </p>
 	 * 
 	 * @param rook
-	 *          A {@link org.github.evenjn.yarn.Rook Rook}.
+	 *          A {@link org.github.evenjn.lang.Rook Rook}.
 	 * @param input
 	 *          An input object.
 	 * @return A container of output objects.

@@ -49,11 +49,11 @@ public interface StreamRingPurl<I, O> extends
 	 * all the output objects associated to the sequence of elements received in
 	 * input so far (including the argument {@code input}), while transferring the
 	 * responsiblity of closing any associated resources to the argument
-	 * {@link org.github.evenjn.yarn.Rook Rook}.
+	 * {@link org.github.evenjn.lang.Rook Rook}.
 	 * </p>
 	 * 
 	 * @param rook
-	 *          A {@link org.github.evenjn.yarn.Rook Rook}.
+	 *          A {@link org.github.evenjn.lang.Rook Rook}.
 	 * @param input
 	 *          An input object.
 	 * @return A {@link java.util.stream.Stream Stream} of output objects.
@@ -69,12 +69,12 @@ public interface StreamRingPurl<I, O> extends
 	 * Returns a {@link java.util.stream.Stream Stream} with none of, some of, or
 	 * all the output objects associated to the sequence of elements received in
 	 * input so far, while transferring the responsiblity of closing any
-	 * associated resources to the argument {@link org.github.evenjn.yarn.Rook
+	 * associated resources to the argument {@link org.github.evenjn.lang.Rook
 	 * Rook}.
 	 * </p>
 	 * 
 	 * @param rook
-	 *          A {@link org.github.evenjn.yarn.Rook Rook}.
+	 *          A {@link org.github.evenjn.lang.Rook Rook}.
 	 * @return A {@link java.util.stream.Stream Stream} of output objects.
 	 * @throws IllegalStateException
 	 *           when {@link #end(Rook)} has already been invoked.

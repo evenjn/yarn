@@ -47,11 +47,11 @@ public interface CursableRingMap<I, O> extends
 	 * Returns a {@link org.github.evenjn.yarn.Cursable Cursable} with output
 	 * objects associated to the argument input while transferring the
 	 * responsiblity of closing any associated resources to the argument
-	 * {@link org.github.evenjn.yarn.Rook Rook}.
+	 * {@link org.github.evenjn.lang.Rook Rook}.
 	 * </p>
 	 * 
 	 * @param rook
-	 *          A {@link org.github.evenjn.yarn.Rook Rook}.
+	 *          A {@link org.github.evenjn.lang.Rook Rook}.
 	 * @param input
 	 *          An input object.
 	 * @return A {@link org.github.evenjn.yarn.Cursable Cursable} of output

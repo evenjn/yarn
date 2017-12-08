@@ -48,11 +48,11 @@ public interface StreamRingMap<I, O> extends
 	 * Returns a {@link java.util.stream.Stream Stream} with output objects
 	 * associated to the argument input after transferring the responsiblity of
 	 * closing any associated resources to the argument
-	 * {@link org.github.evenjn.yarn.Rook Rook}.
+	 * {@link org.github.evenjn.lang.Rook Rook}.
 	 * </p>
 	 * 
 	 * @param rook
-	 *          A {@link org.github.evenjn.yarn.Rook Rook}.
+	 *          A {@link org.github.evenjn.lang.Rook Rook}.
 	 * @param input
 	 *          An input object.
 	 * @return A {@link java.util.stream.Stream Stream} of output objects.

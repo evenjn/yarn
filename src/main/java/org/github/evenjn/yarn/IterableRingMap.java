@@ -47,11 +47,11 @@ public interface IterableRingMap<I, O> extends
 	 * Returns an {@link java.lang.Iterable Iterable} with output objects
 	 * associated to the argument input while transferring the responsiblity of
 	 * closing any associated resources to the argument
-	 * {@link org.github.evenjn.yarn.Rook Rook}.
+	 * {@link org.github.evenjn.lang.Rook Rook}.
 	 * </p>
 	 * 
 	 * @param rook
-	 *          A {@link org.github.evenjn.yarn.Rook Rook}.
+	 *          A {@link org.github.evenjn.lang.Rook Rook}.
 	 * @param input
 	 *          An input object.
 	 * @return An {@link java.lang.Iterable Iterable} of output objects.

@@ -27,7 +27,7 @@ import org.github.evenjn.lang.Rook;
  * elements associated to a sequence of input elements, building the resulting
  * sequence incrementally, while transferring the responsiblity of closing any
  * associated {@linkplain java.lang.AutoCloseable auto-closeable} resources to
- * {@link org.github.evenjn.yarn.Rook Rook} objects. We refer to this operation
+ * {@link org.github.evenjn.lang.Rook Rook} objects. We refer to this operation
  * as <em>purl</em>, and to the resulting sequence as the <em>result of the
  * purl</em>
  * </p>
@@ -81,7 +81,7 @@ import org.github.evenjn.lang.Rook;
  * auto-closeable} resources (e.g. files) in order to produce output objects,
  * and those resources must stay open for the output objects to work as
  * intended, the {@code YarnRingPurl} opens those resources and hooks them to
- * the argument {@link org.github.evenjn.yarn.Rook Rook}, which takes the
+ * the argument {@link org.github.evenjn.lang.Rook Rook}, which takes the
  * responsibility of closing those resources.
  * </p>
  * 
@@ -168,11 +168,11 @@ public interface YarnRingPurl<I, O, C> {
 	 * associated to the sequence of elements received in input so far (including
 	 * the argument {@code input}), while transferring the responsiblity of
 	 * closing any associated resources to the argument
-	 * {@link org.github.evenjn.yarn.Rook Rook}.
+	 * {@link org.github.evenjn.lang.Rook Rook}.
 	 * </p>
 	 * 
 	 * @param rook
-	 *          A {@link org.github.evenjn.yarn.Rook Rook}.
+	 *          A {@link org.github.evenjn.lang.Rook Rook}.
 	 * @param input
 	 *          An input object.
 	 * @return A container of output objects.
@@ -188,11 +188,11 @@ public interface YarnRingPurl<I, O, C> {
 	 * Returns a container with none of, some of, or all the output objects
 	 * associated to the sequence of elements received in input so far, while
 	 * transferring the responsiblity of closing any associated resources to the
-	 * argument {@link org.github.evenjn.yarn.Rook Rook}.
+	 * argument {@link org.github.evenjn.lang.Rook Rook}.
 	 * </p>
 	 * 
 	 * @param rook
-	 *          A {@link org.github.evenjn.yarn.Rook Rook}.
+	 *          A {@link org.github.evenjn.lang.Rook Rook}.
 	 * @return A container of output objects.
 	 * @throws IllegalStateException
 	 *           when {@link #end(Rook)} has already been invoked.

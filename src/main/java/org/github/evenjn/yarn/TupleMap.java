@@ -25,7 +25,7 @@ import org.github.evenjn.lang.Tuple;
  * <p>
  * A {@code TupleMap} is a {@linkplain org.github.evenjn.yarn.YarnMap YarnMap}
  * that provides access to output objects via
- * {@link org.github.evenjn.yarn.Tuple Tuple} containers.
+ * {@link org.github.evenjn.lang.Tuple Tuple} containers.
  * </p>
  * 
  * <p>
@@ -44,13 +44,13 @@ public interface TupleMap<I, O> extends
 
 	/**
 	 * <p>
-	 * Returns a {@link org.github.evenjn.yarn.Tuple Tuple} with output objects
+	 * Returns a {@link org.github.evenjn.lang.Tuple Tuple} with output objects
 	 * associated to the argument {@code input}.
 	 * </p>
 	 * 
 	 * @param input
 	 *          An input object.
-	 * @return A {@link org.github.evenjn.yarn.Tuple Tuple} of output objects.
+	 * @return A {@link org.github.evenjn.lang.Tuple Tuple} of output objects.
 	 * @since 1.0
 	 */
 	@Override

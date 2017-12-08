@@ -25,7 +25,7 @@ import org.github.evenjn.lang.Tuple;
  * <p>
  * A {@code TuplePurl} is a {@link org.github.evenjn.yarn.YarnPurl YarnPurl}
  * that provides access to output objects via
- * {@link org.github.evenjn.yarn.Tuple Tuple} containers.
+ * {@link org.github.evenjn.lang.Tuple Tuple} containers.
  * </p>
  * 
  * <p>
@@ -43,14 +43,14 @@ public interface TuplePurl<I, O> extends
 
 	/**
 	 * <p>
-	 * Returns a {@link org.github.evenjn.yarn.Tuple Tuple} with none of, some of,
+	 * Returns a {@link org.github.evenjn.lang.Tuple Tuple} with none of, some of,
 	 * or all the output objects associated to the sequence of elements received
 	 * in input so far (including the argument {@code input}).
 	 * </p>
 	 * 
 	 * @param input
 	 *          An input object.
-	 * @return A {@link org.github.evenjn.yarn.Tuple Tuple} of output objects.
+	 * @return A {@link org.github.evenjn.lang.Tuple Tuple} of output objects.
 	 * @throws IllegalStateException
 	 *           when {@link #end()} has already been invoked.
 	 * @since 1.0
@@ -61,12 +61,12 @@ public interface TuplePurl<I, O> extends
 
 	/**
 	 * <p>
-	 * Returns a {@link org.github.evenjn.yarn.Tuple Tuple} with none of, some of,
+	 * Returns a {@link org.github.evenjn.lang.Tuple Tuple} with none of, some of,
 	 * or all the output objects associated to the sequence of elements received
 	 * in input so far.
 	 * </p>
 	 * 
-	 * @return A {@link org.github.evenjn.yarn.Tuple Tuple} of output objects.
+	 * @return A {@link org.github.evenjn.lang.Tuple Tuple} of output objects.
 	 * @throws IllegalStateException
 	 *           when {@link #end()} has already been invoked.
 	 * @since 1.0

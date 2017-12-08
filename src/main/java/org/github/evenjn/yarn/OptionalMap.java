@@ -55,5 +55,5 @@ public interface OptionalMap<I, O> extends
 	 * @since 1.0
 	 */
 	@Override
-	Optional<O> get( I object );
+	Optional<O> get( I input );
 }
