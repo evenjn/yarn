@@ -29,7 +29,7 @@ import java.util.Optional;
  * </p>
  * 
  * <p>
- * This class is part of package {@link org.github.evenjn.yarn Yarn}.
+ * This interface is part of package {@link org.github.evenjn.yarn Yarn}.
  * </p>
  *
  * @param <I>

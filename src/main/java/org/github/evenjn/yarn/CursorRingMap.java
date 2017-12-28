@@ -29,7 +29,7 @@ import org.github.evenjn.lang.Rook;
  * </p>
  * 
  * <p>
- * This class is part of package {@link org.github.evenjn.yarn Yarn}.
+ * This interface is part of package {@link org.github.evenjn.yarn Yarn}.
  * </p>
  * 
  * @param <I>
