@@ -114,9 +114,9 @@ package org.github.evenjn.yarn;
  * 
  * <p>
  * A {@code YarnPurl} object encapsulates state and behaviour necessary to carry
- * out a single operaion. The same {@code YarnPurl} object cannot be reused to
- * carry out two or more purl transformations. Compliant implementations must
- * throw exception accordingly.
+ * out a single operation. The same {@code YarnPurl} object cannot be reused to
+ * carry out two or more purls. Compliant implementations must throw exception
+ * accordingly.
  * </p>
  * 
  * <p>
