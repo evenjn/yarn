@@ -41,9 +41,9 @@ public interface IterablePurl<I, O> extends
 
 	/**
 	 * <p>
-	 * Returns an {@link java.lang.Iterable Iterable} with none of, some of, or
-	 * all the output objects associated to the sequence of elements received in
-	 * input so far (including the argument {@code input}).
+	 * {@code next} returns an {@link java.lang.Iterable Iterable} with none of,
+	 * some of, or all the output objects associated to the sequence of elements
+	 * received in input so far (including the argument {@code input}).
 	 * </p>
 	 * 
 	 * @param input
@@ -58,9 +58,9 @@ public interface IterablePurl<I, O> extends
 
 	/**
 	 * <p>
-	 * Returns an {@link java.lang.Iterable Iterable} with none of, some of, or
-	 * all the output objects associated to the sequence of elements received in
-	 * input so far.
+	 * {@code end} returns an {@link java.lang.Iterable Iterable} with none of,
+	 * some of, or all the output objects associated to the sequence of elements
+	 * received in input so far.
 	 * </p>
 	 * 
 	 * @return An {@link java.lang.Iterable Iterable} of output objects.

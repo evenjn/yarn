@@ -42,8 +42,8 @@ public interface CursorMap<I, O> extends
 
 	/**
 	 * <p>
-	 * Returns a {@link org.github.evenjn.yarn.Cursor Cursor} with output objects
-	 * associated to the argument {@code input}.
+	 * {@code get} returns a {@link org.github.evenjn.yarn.Cursor Cursor} with
+	 * output objects associated to the argument {@code input}.
 	 * </p>
 	 * 
 	 * @param input

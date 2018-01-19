@@ -41,8 +41,8 @@ public interface ArrayMap<I, O> extends
 
 	/**
 	 * <p>
-	 * Returns an array with the output objects associated to the argument
-	 * {@code input}.
+	 * {@code get} returns an array with the output objects associated to the
+	 * argument {@code input}.
 	 * </p>
 	 * 
 	 * @param input

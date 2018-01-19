@@ -44,8 +44,8 @@ public interface IteratorMap<I, O> extends
 
 	/**
 	 * <p>
-	 * Returns an {@link java.util.Iterator Iterator} with the output objects
-	 * associated to the argument {@code input}.
+	 * {@code get} returns an {@link java.util.Iterator Iterator} with the output
+	 * objects associated to the argument {@code input}.
 	 * </p>
 	 * 
 	 * @param input

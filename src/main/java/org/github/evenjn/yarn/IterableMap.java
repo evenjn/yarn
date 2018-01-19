@@ -42,8 +42,8 @@ public interface IterableMap<I, O> extends
 
 	/**
 	 * <p>
-	 * Returns an {@link java.lang.Iterable Iterable} with the output objects
-	 * associated to the argument {@code input}.
+	 * {@code get} returns an {@link java.lang.Iterable Iterable} with the output
+	 * objects associated to the argument {@code input}.
 	 * </p>
 	 * 
 	 * @param input

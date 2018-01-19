@@ -38,8 +38,8 @@ import org.github.evenjn.lang.Rook;
  * auto-closeable} resources (such as files or connections) in order to access
  * those elements, the cursable acquires those resources autonomously and
  * delegates the release of those resources via the argument
- * {@link org.github.evenjn.lang.Rook Rook}. (The actor that created the {@code Rook}
- * takes the responsibility of closing them as soon as the returned
+ * {@link org.github.evenjn.lang.Rook Rook}. (The actor that created the
+ * {@code Rook} takes the responsibility of closing them as soon as the returned
  * {@code Cursor} is not needed).
  * </p>
  * 
@@ -98,8 +98,10 @@ import org.github.evenjn.lang.Rook;
 public interface Cursable<I> {
 
 	/**
-	 * Returns a {@link org.github.evenjn.yarn.Cursor Cursor} providing access to
-	 * the elements in this sequence.
+	 * <p>
+	 * {@code pull} returns a {@link org.github.evenjn.yarn.Cursor Cursor}
+	 * providing access to the elements in this sequence.
+	 * </p>
 	 * 
 	 * @param rook
 	 *          An object that takes the responsibility to close the resources

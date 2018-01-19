@@ -98,8 +98,8 @@ public interface YarnMap<I, O, C> {
 
 	/**
 	 * <p>
-	 * Returns a container with output objects associated to the argument
-	 * {@code input}.
+	 * {@code get} returns a container with output objects associated to the
+	 * argument {@code input}.
 	 * </p>
 	 * 
 	 * @param input

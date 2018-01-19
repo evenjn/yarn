@@ -40,9 +40,9 @@ public interface ArrayPurl<I, O> extends
 
 	/**
 	 * <p>
-	 * Returns an array with none of, some of, or all the output objects
-	 * associated to the sequence of elements received in input so far (including
-	 * the argument {@code input}).
+	 * {@code next} returns an array with none of, some of, or all the output
+	 * objects associated to the sequence of elements received in input so far
+	 * (including the argument {@code input}).
 	 * </p>
 	 * 
 	 * @param input
@@ -57,8 +57,8 @@ public interface ArrayPurl<I, O> extends
 
 	/**
 	 * <p>
-	 * Returns an array with none of, some of, or all the output objects
-	 * associated to the sequence of elements received in input so far.
+	 * {@code end} returns an array with none of, some of, or all the output
+	 * objects associated to the sequence of elements received in input so far.
 	 * </p>
 	 * 
 	 * @return An array of output objects.

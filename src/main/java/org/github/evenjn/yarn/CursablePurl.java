@@ -41,9 +41,10 @@ public interface CursablePurl<I, O> extends
 
 	/**
 	 * <p>
-	 * Returns a {@link org.github.evenjn.yarn.Cursable Cursable} with none of,
-	 * some of, or all the output objects associated to the sequence of elements
-	 * received in input so far (including the argument {@code input}).
+	 * {@code next} returns a {@link org.github.evenjn.yarn.Cursable Cursable}
+	 * with none of, some of, or all the output objects associated to the sequence
+	 * of elements received in input so far (including the argument
+	 * {@code input}).
 	 * </p>
 	 * 
 	 * @param input
@@ -59,9 +60,9 @@ public interface CursablePurl<I, O> extends
 
 	/**
 	 * <p>
-	 * Returns a {@link org.github.evenjn.yarn.Cursable Cursable} with none of,
-	 * some of, or all the output objects associated to the sequence of elements
-	 * received in input so far.
+	 * {@code end} returns a {@link org.github.evenjn.yarn.Cursable Cursable} with
+	 * none of, some of, or all the output objects associated to the sequence of
+	 * elements received in input so far.
 	 * </p>
 	 * 
 	 * @return A {@link org.github.evenjn.yarn.Cursable Cursable} of output

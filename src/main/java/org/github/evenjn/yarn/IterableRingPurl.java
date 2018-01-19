@@ -43,11 +43,11 @@ public interface IterableRingPurl<I, O> extends
 
 	/**
 	 * <p>
-	 * Returns an {@link java.lang.Iterable Iterable} with none of, some of, or
-	 * all the output objects associated to the sequence of elements received in
-	 * input so far (including the argument {@code input}), while transferring the
-	 * responsiblity of closing any associated resources to the argument
-	 * {@link org.github.evenjn.lang.Rook Rook}.
+	 * {@code next} returns an {@link java.lang.Iterable Iterable} with none of,
+	 * some of, or all the output objects associated to the sequence of elements
+	 * received in input so far (including the argument {@code input}), while
+	 * transferring the responsiblity of closing any associated resources to the
+	 * argument {@link org.github.evenjn.lang.Rook Rook}.
 	 * </p>
 	 * 
 	 * @param rook
@@ -64,10 +64,10 @@ public interface IterableRingPurl<I, O> extends
 
 	/**
 	 * <p>
-	 * Returns an {@link java.lang.Iterable Iterable} with none of, some of, or
-	 * all the output objects associated to the sequence of elements received in
-	 * input so far, while transferring the responsiblity of closing any
-	 * associated resources to the argument {@link org.github.evenjn.lang.Rook
+	 * {@code end} returns an {@link java.lang.Iterable Iterable} with none of,
+	 * some of, or all the output objects associated to the sequence of elements
+	 * received in input so far, while transferring the responsiblity of closing
+	 * any associated resources to the argument {@link org.github.evenjn.lang.Rook
 	 * Rook}.
 	 * </p>
 	 * 

@@ -43,11 +43,11 @@ public interface CursorRingPurl<I, O> extends
 
 	/**
 	 * <p>
-	 * Returns a {@link org.github.evenjn.yarn.Cursor Cursor} with none of, some
-	 * of, or all the output objects associated to the sequence of elements
-	 * received in input so far (including the argument {@code input}), while
-	 * transferring the responsiblity of closing any associated resources to the
-	 * argument {@link org.github.evenjn.lang.Rook Rook}.
+	 * {@code next} returns a {@link org.github.evenjn.yarn.Cursor Cursor} with
+	 * none of, some of, or all the output objects associated to the sequence of
+	 * elements received in input so far (including the argument {@code input}),
+	 * while transferring the responsiblity of closing any associated resources to
+	 * the argument {@link org.github.evenjn.lang.Rook Rook}.
 	 * </p>
 	 * 
 	 * @param rook
@@ -64,11 +64,11 @@ public interface CursorRingPurl<I, O> extends
 
 	/**
 	 * <p>
-	 * Returns a {@link org.github.evenjn.yarn.Cursor Cursor} with none of, some
-	 * of, or all the output objects associated to the sequence of elements
-	 * received in input so far, while transferring the responsiblity of closing
-	 * any associated resources to the argument {@link org.github.evenjn.lang.Rook
-	 * Rook}.
+	 * {@code end} returns a {@link org.github.evenjn.yarn.Cursor Cursor} with
+	 * none of, some of, or all the output objects associated to the sequence of
+	 * elements received in input so far, while transferring the responsiblity of
+	 * closing any associated resources to the argument
+	 * {@link org.github.evenjn.lang.Rook Rook}.
 	 * </p>
 	 * 
 	 * @param rook

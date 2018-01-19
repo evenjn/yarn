@@ -41,8 +41,8 @@ public interface RingFunction<I, O> {
 
 	/**
 	 * <p>
-	 * Returns an object associated to the argument object after passing the
-	 * responsibility to close associated resources to the argument
+	 * {@code get} returns an object associated to the argument object after
+	 * passing the responsibility to close associated resources to the argument
 	 * {@link org.github.evenjn.lang.Rook Rook}.
 	 * </p>
 	 * 

@@ -124,8 +124,10 @@ package org.github.evenjn.yarn;
 public interface Cursor<I> {
 
 	/**
-	 * Returns a reference to the next object in the sequence. It might be
-	 * {@code null}.
+	 * <p>
+	 * {@code next} Returns a reference to the next object in the sequence. It
+	 * might be {@code null}.
+	 * </p>
 	 * 
 	 * @return A reference to the next object in the sequence. It might be
 	 *         {@code null}.

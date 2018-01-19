@@ -46,9 +46,9 @@ public interface OptionalRingMap<I, O> extends
 
 	/**
 	 * <p>
-	 * Returns an {@link java.util.Optional Optional} with an output object
-	 * associated to the argument input after transferring the responsiblity of
-	 * closing any associated resources to the argument
+	 * {@code get} returns an {@link java.util.Optional Optional} with an output
+	 * object associated to the argument input after transferring the
+	 * responsiblity of closing any associated resources to the argument
 	 * {@link org.github.evenjn.lang.Rook Rook}.
 	 * </p>
 	 * 

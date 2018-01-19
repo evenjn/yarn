@@ -47,10 +47,11 @@ public final class EndOfCursorException
 
 	/**
 	 * <p>
-	 * Returns a reference to the singleton {@code EndOfCursorException} object.
+	 * {@code neo} returns a reference to the singleton
+	 * {@code EndOfCursorException} object.
 	 * </p>
 	 * 
-	 * @return a reference to the singleton {@code EndOfCursorException} object.
+	 * @return A reference to the singleton {@code EndOfCursorException} object.
 	 * 
 	 * @since 1.0
 	 */

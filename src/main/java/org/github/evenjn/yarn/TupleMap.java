@@ -44,8 +44,8 @@ public interface TupleMap<I, O> extends
 
 	/**
 	 * <p>
-	 * Returns a {@link org.github.evenjn.lang.Tuple Tuple} with output objects
-	 * associated to the argument {@code input}.
+	 * {@code get} returns a {@link org.github.evenjn.lang.Tuple Tuple} with
+	 * output objects associated to the argument {@code input}.
 	 * </p>
 	 * 
 	 * @param input

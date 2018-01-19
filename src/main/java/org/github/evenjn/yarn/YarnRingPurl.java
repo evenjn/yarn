@@ -164,10 +164,10 @@ public interface YarnRingPurl<I, O, C> {
 
 	/**
 	 * <p>
-	 * Returns a container with none of, some of, or all the output objects
-	 * associated to the sequence of elements received in input so far (including
-	 * the argument {@code input}), while transferring the responsiblity of
-	 * closing any associated resources to the argument
+	 * {@code next} returns a container with none of, some of, or all the output
+	 * objects associated to the sequence of elements received in input so far
+	 * (including the argument {@code input}), while transferring the
+	 * responsiblity of closing any associated resources to the argument
 	 * {@link org.github.evenjn.lang.Rook Rook}.
 	 * </p>
 	 * 
@@ -185,10 +185,10 @@ public interface YarnRingPurl<I, O, C> {
 
 	/**
 	 * <p>
-	 * Returns a container with none of, some of, or all the output objects
-	 * associated to the sequence of elements received in input so far, while
-	 * transferring the responsiblity of closing any associated resources to the
-	 * argument {@link org.github.evenjn.lang.Rook Rook}.
+	 * {@code end} returns a container with none of, some of, or all the output
+	 * objects associated to the sequence of elements received in input so far,
+	 * while transferring the responsiblity of closing any associated resources to
+	 * the argument {@link org.github.evenjn.lang.Rook Rook}.
 	 * </p>
 	 * 
 	 * @param rook

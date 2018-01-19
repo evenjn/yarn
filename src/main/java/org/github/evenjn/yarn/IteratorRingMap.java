@@ -46,9 +46,9 @@ public interface IteratorRingMap<I, O> extends
 
 	/**
 	 * <p>
-	 * Returns a {@link java.util.Iterator Iterator} with output objects
-	 * associated to the argument input while transferring the responsiblity of
-	 * closing any associated resources to the argument
+	 * {@code get} returns a {@link java.util.Iterator Iterator} with output
+	 * objects associated to the argument input while transferring the
+	 * responsiblity of closing any associated resources to the argument
 	 * {@link org.github.evenjn.lang.Rook Rook}.
 	 * </p>
 	 * 

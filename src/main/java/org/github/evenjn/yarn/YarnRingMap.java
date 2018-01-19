@@ -114,9 +114,10 @@ public interface YarnRingMap<I, O, C> {
 
 	/**
 	 * <p>
-	 * Returns a container with output objects associated to the argument input
-	 * while transferring the responsiblity of closing any associated resources to
-	 * the argument {@link org.github.evenjn.lang.Rook Rook}.
+	 * {@code get} returns a container with output objects associated to the
+	 * argument input while transferring the responsiblity of closing any
+	 * associated resources to the argument {@link org.github.evenjn.lang.Rook
+	 * Rook}.
 	 * </p>
 	 * 
 	 * @param rook

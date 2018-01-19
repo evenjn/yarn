@@ -142,9 +142,9 @@ public interface YarnPurl<I, O, C> {
 
 	/**
 	 * <p>
-	 * Returns a container with none of, some of, or all the output objects
-	 * associated to the sequence of elements received in input so far (including
-	 * the argument {@code input}).
+	 * {@code next} returns a container with none of, some of, or all the output
+	 * objects associated to the sequence of elements received in input so far
+	 * (including the argument {@code input}).
 	 * </p>
 	 * 
 	 * @param input
@@ -159,8 +159,8 @@ public interface YarnPurl<I, O, C> {
 
 	/**
 	 * <p>
-	 * Returns a container with none of, some of, or all the output objects
-	 * associated to the sequence of elements received in input so far.
+	 * {@code end} returns a container with none of, some of, or all the output
+	 * objects associated to the sequence of elements received in input so far.
 	 * </p>
 	 * 
 	 * @return A container of output objects.

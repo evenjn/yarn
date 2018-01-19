@@ -45,9 +45,9 @@ public interface OptionalRingPurl<I, O> extends
 
 	/**
 	 * <p>
-	 * Returns an {@link java.util.Optional Optional} with none one of the output
-	 * objects associated to the sequence of elements received in input so far
-	 * (including the argument {@code input}), while transferring the
+	 * {@code next} returns an {@link java.util.Optional Optional} with none one
+	 * of the output objects associated to the sequence of elements received in
+	 * input so far (including the argument {@code input}), while transferring the
 	 * responsiblity of closing any associated resources to the argument
 	 * {@link org.github.evenjn.lang.Rook Rook}.
 	 * </p>
@@ -66,10 +66,11 @@ public interface OptionalRingPurl<I, O> extends
 
 	/**
 	 * <p>
-	 * Returns an {@link java.util.Optional Optional} with none or one of the
-	 * output objects associated to the sequence of elements received in input so
-	 * far, while transferring the responsiblity of closing any associated
-	 * resources to the argument {@link org.github.evenjn.lang.Rook Rook}.
+	 * {@code end} returns an {@link java.util.Optional Optional} with none or one
+	 * of the output objects associated to the sequence of elements received in
+	 * input so far, while transferring the responsiblity of closing any
+	 * associated resources to the argument {@link org.github.evenjn.lang.Rook
+	 * Rook}.
 	 * </p>
 	 * 
 	 * @param rook
