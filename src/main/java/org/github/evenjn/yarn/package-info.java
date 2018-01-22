@@ -12,10 +12,15 @@
  * </p>
  * 
  * <p>
- * Lazy sequence access interfaces: {@link org.github.evenjn.yarn.Cursable
+ * The cursor-based sequence interfaces: {@link org.github.evenjn.yarn.Cursable
  * Cursable} and {@link org.github.evenjn.yarn.Cursor Cursor}, and the related
  * exception {@link org.github.evenjn.yarn.EndOfCursorException
  * EndOfCursorException}.
+ * </p>
+ * 
+ * <p>
+ * The index-based sequence interface: {@link org.github.evenjn.yarn.Tuple
+ * Tuple}.
  * </p>
  * 
  * <p>

@@ -18,7 +18,7 @@
 package org.github.evenjn.yarn;
 
 import org.github.evenjn.lang.Rook;
-import org.github.evenjn.lang.Tuple;
+import org.github.evenjn.yarn.Tuple;
 
 /**
  * <h1>TupleRingMap</h1>
@@ -26,7 +26,7 @@ import org.github.evenjn.lang.Tuple;
  * <p>
  * A {@code TupleRingMap} is a {@linkplain org.github.evenjn.yarn.YarnRingMap
  * YarnRingMap} that provides access to output objects via
- * {@link org.github.evenjn.lang.Tuple Tuple} containers.
+ * {@link org.github.evenjn.yarn.Tuple Tuple} containers.
  * </p>
  * 
  * <p>
@@ -45,7 +45,7 @@ public interface TupleRingMap<I, O> extends
 
 	/**
 	 * <p>
-	 * {@code get} returns a {@link org.github.evenjn.lang.Tuple Tuple} with
+	 * {@code get} returns a {@link org.github.evenjn.yarn.Tuple Tuple} with
 	 * output objects associated to the argument input after transferring the
 	 * responsiblity of closing any associated resources to the argument
 	 * {@link org.github.evenjn.lang.Rook Rook}.
@@ -55,7 +55,7 @@ public interface TupleRingMap<I, O> extends
 	 *          A {@link org.github.evenjn.lang.Rook Rook}.
 	 * @param input
 	 *          An input object.
-	 * @return A {@link org.github.evenjn.lang.Tuple Tuple} of output objects.
+	 * @return A {@link org.github.evenjn.yarn.Tuple Tuple} of output objects.
 	 * @since 1.0
 	 */
 	@Override

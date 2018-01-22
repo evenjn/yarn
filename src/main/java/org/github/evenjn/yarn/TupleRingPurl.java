@@ -18,7 +18,7 @@
 package org.github.evenjn.yarn;
 
 import org.github.evenjn.lang.Rook;
-import org.github.evenjn.lang.Tuple;
+import org.github.evenjn.yarn.Tuple;
 
 /**
  * <h1>TupleRingPurl</h1>
