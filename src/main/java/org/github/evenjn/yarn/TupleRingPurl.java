@@ -26,7 +26,7 @@ import org.github.evenjn.yarn.Tuple;
  * <p>
  * A {@code TupleRingPurl} is a {@link org.github.evenjn.yarn.YarnRingPurl
  * YarnRingPurl} that provides access to output objects via
- * {@link java.util.stream.Tuple Tuple} containers.
+ * {@link org.github.evenjn.lang.Tuple Tuple} containers.
  * </p>
  * 
  * <p>
